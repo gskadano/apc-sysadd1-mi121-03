@@ -64,7 +64,7 @@ return array(
 			'tablePrefix' => 'tbl_ ',
 
 		),
-		*/
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
