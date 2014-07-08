@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `ERD_MOP`.`marriage` (
   `groom_id` INT NOT NULL,
   `father_id` INT NOT NULL,
   `mother_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `bride_id`, `groom_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_marriage_Employee1_idx` (`Employee_id` ASC),
   INDEX `fk_marriage_person1_idx` (`bride_id` ASC),
   INDEX `fk_marriage_person2_idx` (`groom_id` ASC),
@@ -215,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `ERD_MOP`.`bapGodParent` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `baptismal_id` INT NOT NULL,
   `person_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `baptismal_id`, `person_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_bapGodParent_baptismal1_idx` (`baptismal_id` ASC),
   INDEX `fk_bapGodParent_person1_idx` (`person_id` ASC),
   CONSTRAINT `fk_bapGodParent_baptismal1`
@@ -238,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `ERD_MOP`.`confGodParent` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `confirmation_id` INT NOT NULL,
   `person_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `confirmation_id`, `person_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_confGodParent_confirmation1_idx` (`confirmation_id` ASC),
   INDEX `fk_confGodParent_person1_idx` (`person_id` ASC),
   CONSTRAINT `fk_confGodParent_confirmation1`
@@ -261,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `ERD_MOP`.`marGodParent` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `marriage_id` INT NOT NULL,
   `person_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `marriage_id`, `person_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_marGodParent_marriage1_idx` (`marriage_id` ASC),
   INDEX `fk_marGodParent_person1_idx` (`person_id` ASC),
   CONSTRAINT `fk_marGodParent_marriage1`
