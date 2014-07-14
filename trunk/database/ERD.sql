@@ -209,9 +209,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ERD_MOP`.`bapGodParent`
+-- Table `ERD_MOP`.`bap_GodParent`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ERD_MOP`.`bapGodParent` (
+CREATE TABLE IF NOT EXISTS `ERD_MOP`.`bap_GodParent` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `baptismal_id` INT NOT NULL,
   `person_id` INT NOT NULL,
@@ -232,9 +232,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ERD_MOP`.`confGodParent`
+-- Table `ERD_MOP`.`conf_GodParent`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ERD_MOP`.`confGodParent` (
+CREATE TABLE IF NOT EXISTS `ERD_MOP`.`conf_GodParent` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `confirmation_id` INT NOT NULL,
   `person_id` INT NOT NULL,
@@ -255,9 +255,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `ERD_MOP`.`marGodParent`
+-- Table `ERD_MOP`.`mar_GodParent`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ERD_MOP`.`marGodParent` (
+CREATE TABLE IF NOT EXISTS `ERD_MOP`.`mar_GodParent` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `marriage_id` INT NOT NULL,
   `person_id` INT NOT NULL,
