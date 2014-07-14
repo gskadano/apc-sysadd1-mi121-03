@@ -1,7 +1,7 @@
 <?php
 class UserIdentity extends CUserIdentity
 {
-private $id;
+private $_id;
 public function authenticate()
 {
 $username=strtolower($this->username);
@@ -12,7 +12,7 @@ else if(!$user->validatePassword($this->password))
 $this->errorCode=self::ERROR_PASSWORD_INVALID;
 else
 {
-$this-> id=$user->id;
+$this->_id=$user->id;
 $this->username=$user->username;
 $this->errorCode=self::ERROR_NONE;
 }
@@ -20,7 +20,7 @@ return $this->errorCode==self::ERROR_NONE;
 }
 public function getId()
 {
-return $this-> id;
+return $this->_id;
 }
 }
 
