@@ -1,0 +1,24 @@
+2014/07/21 19:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index.php".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/mopccss/index.php?r=index.php
+---
+2014/07/21 20:03:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index.php".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('index.php')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/mopccss/index.php?r=index.php
+---
+2014/07/21 20:06:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Baptismal".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Baptismal')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/mopccss/index.php?r=Baptismal
+---
