@@ -22,3 +22,11 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/mopccss/index.php?r=Baptismal
 ---
+2014/07/21 23:43:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "Church".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Church')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/mopccss/index.php?r=Church
+---
