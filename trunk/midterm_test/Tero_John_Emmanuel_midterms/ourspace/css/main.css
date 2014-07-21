@@ -3,7 +3,7 @@ body
 	margin: 0;
 	padding: 0;
 	color: #555;
-	font: normal 10pt Arial,Helvetica,sans-serif;
+	font: normal 10pt Times New Roman,Helvetica,sans-serif;
 	background: #EFEFEF;
 }
 
@@ -11,7 +11,7 @@ body
 {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	background: white;
+	background: yellow;
 	border: 1px solid #C9E0ED;
 }
 
@@ -19,12 +19,12 @@ body
 {
 	margin: 0;
 	padding: 0;
-	border-top: 3px solid #C9E0ED;
+	border-top: 4px solid #C9E0ED;
 }
 
 #content
 {
-    padding: 20px;
+    padding: 0px;
 }
 
 #sidebar
