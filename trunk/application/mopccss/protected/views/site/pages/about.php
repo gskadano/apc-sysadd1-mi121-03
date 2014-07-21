@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 ?>
 <h1>About</h1>
 
-==<b><font color=#808080>Military Ordinariate of the Philippines Profile</font></b>==
+<b><font color=#808080>Military Ordinariate of the Philippines Profile</font></b>
 
 <p>About MOP
 
