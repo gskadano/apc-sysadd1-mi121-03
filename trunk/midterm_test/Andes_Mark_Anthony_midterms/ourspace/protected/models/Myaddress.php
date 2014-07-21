@@ -61,14 +61,14 @@ class Myaddress extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'firstname' => 'Firstname',
-			'middlename' => 'Middlename',
-			'lastname' => 'Lastname',
-			'gender' => 'Gender',
-			'created_at' => 'Created At',
-			'home_address' => 'Home Address',
-			'landline' => 'Landline',
-			'cellphone' => 'Cellphone',
+			'firstname ' => 'Firstname Online',
+			'middlename' => 'Middlename Online',
+			'lastname' => 'Lastname Online',
+			'gender' => 'Gender Online',
+			'created_at' => 'Created At Online',
+			'home_address' => 'Home Address Online',
+			'landline' => 'Landline Online',
+			'cellphone' => 'Cellphone Online',
 		);
 	}
 
