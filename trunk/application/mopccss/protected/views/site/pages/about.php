@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 ?>
 <h1>About</h1>
 
-<img src="http://directory.ucanews.com/uploads/images/1357896339.jpg"" alt="mop logo" width="100" height="100">
+<img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="mop logo" width="100" height="100">
 <b><font color=#808080><h3>Military Ordinariate of the Philippines Profile</h3></font></b>
 
 <p>The Military Ordinariate of the Philippines or MOP is a personal diocese of men and women in uniform or for the different branch of service. The said branch of service includes the Armed Forces of the Philippines (A.F.P.), Philippine National Police (P.N.P.), Bureau of Jail Management and Penology (B.J.M.P.), and the Philippine Coast Guard. </p>
