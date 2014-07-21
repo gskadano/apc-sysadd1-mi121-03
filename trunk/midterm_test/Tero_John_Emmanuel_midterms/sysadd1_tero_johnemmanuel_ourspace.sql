@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2014 at 11:23 AM
+-- Generation Time: Jul 21, 2014 at 11:37 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -43,7 +43,8 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
 --
 
 INSERT INTO `myaddress` (`id`, `firstname`, `lastname`, `gender`, `created_at`, `home_address`, `landline`, `cellphone`) VALUES
-(0, '', '', '', '2014-07-21 09:03:04', NULL, NULL, NULL);
+(0, '', '', '', '2014-07-21 09:03:04', NULL, NULL, NULL),
+(10, 'John', 'Tero', 'M', '0000-00-00 00:00:00', 'Paranaque', '8244135', '09162087125');
 
 -- --------------------------------------------------------
 
@@ -57,6 +58,28 @@ CREATE TABLE IF NOT EXISTS `mycomment` (
   `author` varchar(255) NOT NULL,
   `body` longtext NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mycomment`
+--
+
+INSERT INTO `mycomment` (`id`, `myaddress_id`, `author`, `body`, `created_at`) VALUES
+(10, 141, 'hfghf', 'bvg', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `profile` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
