@@ -1,0 +1,62 @@
+2014/07/22 02:10:36 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity._id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\components\UserIdentity.php(27): CComponent->__set('_id', '1')
+#1 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#2 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\controllers\SiteController.php(94): CModel->validate()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/ourspace/index.php?r=site/login
+HTTP_REFERER=http://localhost/ourspace/index.php?r=site/login
+---
+2014/07/22 02:12:08 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "validatePassword".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
+#1 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\components\UserIdentity.php(38): CActiveRecord->__call('validatePasswor...', Array)
+#2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\components\UserIdentity.php(38): User->validatePassword('demo')
+#3 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ourspace/index.php?r=site/login
+HTTP_REFERER=http://localhost/ourspace/index.php?r=site/login
+---
+2014/07/22 02:14:34 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity._id" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\components\UserIdentity.php(42): CComponent->__set('_id', '1')
+#1 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#2 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\protected\controllers\SiteController.php(94): CModel->validate()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\midterm_test\Kadano_GeneAnthony_midterms\ouspace\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/ourspace/index.php?r=site/login
+HTTP_REFERER=http://localhost/ourspace/index.php?r=site/login
+---
