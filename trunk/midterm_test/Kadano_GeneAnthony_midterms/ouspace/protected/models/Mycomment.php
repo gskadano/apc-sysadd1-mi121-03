@@ -55,7 +55,7 @@ class Mycomment extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'myaddress_id' => 'Myaddress',
+			'myaddress_id' => 'My Address',
 			'author' => 'Author',
 			'body' => 'Body',
 			'created_at' => 'Created At',
