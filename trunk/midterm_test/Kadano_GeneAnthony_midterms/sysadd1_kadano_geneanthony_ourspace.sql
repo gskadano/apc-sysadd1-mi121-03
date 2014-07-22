@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2014 at 01:50 AM
+-- Generation Time: Jul 22, 2014 at 02:04 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `myaddress` (
 --
 
 INSERT INTO `myaddress` (`id`, `firstname`, `middlename`, `lastname`, `gender`, `created_at`, `home_address`, `landline`, `cellphone`) VALUES
-(1, 'Gene Anthony', 'Sabiniano', 'Kadano', 'M', '0000-00-00 00:00:00', 'Quezon City', '', '');
+(1, 'Gene Anthony', 'Sabiniano', 'Kadano', 'M', '2014-07-21 23:59:00', 'Quezon City', '1234567', '09198994784');
 
 -- --------------------------------------------------------
 
@@ -67,6 +67,21 @@ CREATE TABLE IF NOT EXISTS `mycomment` (
 
 INSERT INTO `mycomment` (`id`, `myaddress_id`, `author`, `body`, `created_at`) VALUES
 (1, 1, 'Gene', 'Sample test', '2014-07-21 11:48:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `profile` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
