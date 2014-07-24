@@ -6,7 +6,7 @@ $this->pageTitle=Yii::app()->name;
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
 
-<img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="Smiley face" style="float: left">
+<!--<img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="Smiley face" style="float: left">-->
 
 <table style="float: right"> 
     <tr> <td><h2 style="float: right">Calendar: </h2> </td> </tr>
