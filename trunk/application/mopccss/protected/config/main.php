@@ -55,7 +55,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=erd_mop',
+			'connectionString' => 'mysql:host=localhost;dbname=mopccss',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
