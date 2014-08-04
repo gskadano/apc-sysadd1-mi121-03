@@ -28,9 +28,10 @@ This is the civilian national police force of the Philippines that aims to prote
 This government organization provides armed and uniformed service and also enforces law within Philippine waters. As one of the main branch of the Military Ordinariate of the Philippines it is also one of the main dependent branch of government that needs the service of MOP when it comes to the storage of Baptism, Confirmation and Wedding Certificates which are all important files.
 </p>
 
-<p><img src="http://lakankali.com/images/bjmp_logo.png" alt="bjmp logo" width="100" height="100">
-<h3>Bureau of Jail Management and Penology</h3> </br>
-Is a branch of government that concerns the jail management and penology problems. This organization will need the services of the Military Ordinariate of the Philippines for the handling of Baptism, Confirmation and Wedding Certificates which is all-known as important and confidential files.
+<p><img src="https://lh4.googleusercontent.com/-CzpDKCdcBJ0/TrjtsqxZcFI/AAAAAAAAAKc/SSWFcxGcLZQ/s400/bfp%252520logo.jpg" alt="bjmp logo" width="100" height="100">
+<h3>Bureau Fire Protection</h3> </br>
+is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to Firefighting and Protection as well as implementation of the Philippine Fire Code (PD 1185), which was repealed and replaced by the New Fire Code of the Philippines (RA 9514). Formerly known as the Constabulary Fire Protection Bureau, the BFP is in charge of the administration and management of municipal and city fire and emergency services all over the country.
 </p>
+
 
 
