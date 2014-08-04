@@ -12,6 +12,7 @@
  */
 class TblUser extends CActiveRecord
 {
+	
 	//Password Validation
 	public function validatePassword($password){
 		return CPasswordHelper::verifyPassword($password,$this->password);

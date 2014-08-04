@@ -136,3 +136,69 @@ REQUEST_URI=/myblog/index.php?r=tblUser/create
 in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\views\tblUser\_form.php (30)
 in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\views\tblUser\create.php (18)
 in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\controllers\TblUserController.php (79)
+2014/08/01 01:38:37 [error] [php] hash(): Unknown hashing algorithm: demo (C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\components\UserIdentity.php:27)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#1 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#2 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#3 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\controllers\SiteController.php(94): LoginForm->validate()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\index.php(13): CWebApplication->run()
+REQUEST_URI=/myblog/index.php?r=site/login
+in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\components\UserIdentity.php (27)
+in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\models\LoginForm.php (52)
+in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\controllers\SiteController.php (94)
+2014/08/01 01:39:34 [error] [php] hash(): Unknown hashing algorithm: demo (C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\components\UserIdentity.php:27)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#1 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#2 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#3 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\controllers\SiteController.php(94): LoginForm->validate()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\index.php(13): CWebApplication->run()
+REQUEST_URI=/myblog/index.php?r=site/login
+in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\components\UserIdentity.php (27)
+in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\models\LoginForm.php (52)
+in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\controllers\SiteController.php (94)
+2014/08/01 01:40:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tbleuser".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tbleuser')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/myblog/index.php?r=tbleuser
+---
+2014/08/01 01:42:10 [error] [exception.CException] exception 'CException' with message 'TblUser and its behaviors do not have a method or closure named "validatePassword".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
+#1 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\components\UserIdentity.php(27): CActiveRecord->__call('validatePasswor...', Array)
+#2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\components\UserIdentity.php(27): TblUser->validatePassword(true)
+#3 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 C:\xampp\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 C:\xampp\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 C:\xampp\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\protected\controllers\SiteController.php(94): CModel->validate()
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\practice\yii_bloc_kadano_GeneAnthony\myblog\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/myblog/index.php?r=site/login
+HTTP_REFERER=http://localhost/myblog/index.php?r=site/login
+---
