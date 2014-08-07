@@ -35,6 +35,9 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Baptismal', 'url'=>array('/views/baptismal')),
+				array('label'=>'Confirmation', 'url'=>array('/views/confirmation')),
+				array('label'=>'Marriage', 'url'=>array('/views/marriage')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
