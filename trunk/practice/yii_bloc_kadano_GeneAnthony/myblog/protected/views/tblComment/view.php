@@ -25,7 +25,7 @@ $this->menu=array(
 		'content',
 		'status',
 		'create_time',
-		'author',
+		array('label'=>'Author', 'value'=>$model->TblUser->username),
 		'email',
 		'url',
 		'post_id',
