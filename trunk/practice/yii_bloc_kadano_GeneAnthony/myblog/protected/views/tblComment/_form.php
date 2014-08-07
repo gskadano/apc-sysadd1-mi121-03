@@ -39,7 +39,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'author'); ?>
-		<?php echo $form->textField($model,'author',array('size'=>60,'maxlength'=>128)); ?>
+		<!--<?php echo $form->textField($model,'author',array('size'=>60,'maxlength'=>128)); ?>-->
+		<?php echo $form->dropDownList($model, 'author', CHtml::listData(
+			TblUser::model()->findAll(), 'id', 'username'),
+			array('prompt' => 'Select an Author')
+			); ?>
+		<!--<?php echo $form->dropDownList($model, 'author', CHtml::listData(
+			TblUser::model()->findAll(), 'id', 'username'), array('multiple'=>'multiple', 'size'=>5)
+			); ?>-->
 		<?php echo $form->error($model,'author'); ?>
 	</div>
 
@@ -57,7 +64,11 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'post_id'); ?>
-		<?php echo $form->textField($model,'post_id'); ?>
+		<!--<?php echo $form->textField($model,'post_id'); ?>-->
+		<?php echo $form->dropDownList($model, 'post_id', CHtml::listData(
+			TblPost::model()->findAll(), 'id', 'title'),
+			array('prompt' => 'Select an Post')
+			); ?>
 		<?php echo $form->error($model,'post_id'); ?>
 	</div>
 
