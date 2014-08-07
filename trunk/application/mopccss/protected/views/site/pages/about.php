@@ -18,7 +18,7 @@ $this->breadcrumbs=array(
 This branch of the government is dependent to the Military Ordinariate of the Philippines as its own diocese. Also, it is one of the main branches of service that the diocese is handling. It is a volunteer force that is composed of three major branches: Philippine Army, Philippine Navy, and the Philippine Army. All under the Armed Forces of the Philippines is privileged to store their personal data including their Baptism, Confirmation and Wedding Certificate thus making the data secured and stored in one unique file system which is in MOP.
 </p>
 
-<p><img src="http://www.emb.gov.ph/portal/portals/40/Images/logo/pnp-logo.png" alt="pnp logo" width="100" height="100">
+<p><img src="http://2.bp.blogspot.com/-6cOTG_P3w7Y/T27eRz7U-_I/AAAAAAAAAtw/hOTgWhgry5w/s1600/logo+pnp+3.png" alt="pnp logo" width="100" height="100">
 <h3>Philippine National Police (PNP)</h3> </br>
 This is the civilian national police force of the Philippines that aims to protect civilians and enforce the law. PNP is also part of the main dependent organization of the Military Ordinariate of the Philippines. All of the personal files of these men including their Baptism, Confirmation and Wedding Certificates are all going to be taken care of the Military Ordinariate of the Philippines.
 </p>
