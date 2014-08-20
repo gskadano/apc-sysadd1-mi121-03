@@ -36,7 +36,6 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'bap_priest'); ?>
-		<!--<?php echo $form->textField($model,'bap_priest',array('size'=>45,'maxlength'=>45)); ?>-->
 		<?php echo $form->dropDownList($model, 'bap_priest', CHtml::listData(
 			Church::model()->findAll(), 'ch_priest', 'ch_priest'),
 			array('prompt' => 'Select a Priest')

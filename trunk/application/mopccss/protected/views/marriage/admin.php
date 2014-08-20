@@ -48,13 +48,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'mar_marDate',
 		'mar_priest',
+		/*
 		'Employee_id',
 		'bride_id',
 		'groom_id',
-		/*
 		'father_id',
 		'mother_id',
 		*/
+		array('name'=>'Employee_id', 'header'=>'Employee', 'value'=>'$data->employee->FullName'),
+		array('label'=>'bride_id', 'header'=>'Bride Full Name', 'value'=>'$data->bride->FullName'),
+		array('label'=>'groom_id', 'header'=>'Groom Full Name', 'value'=>'$data->groom->FullName'),
+		array('name'=>'father_id', 'header'=>'Father Last name', 'value'=>'$data->father->FullName'),
+		array('name'=>'mother_id', 'header'=>'Mother Last name', 'value'=>'$data->mother->FullName'),
 		array(
 			'class'=>'CButtonColumn',
 		),

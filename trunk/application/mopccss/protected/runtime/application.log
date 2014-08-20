@@ -944,3 +944,233 @@ Stack trace:
 REQUEST_URI=/mopccss/index.php?r=confGodparent/create
 HTTP_REFERER=http://localhost/mopccss/index.php?r=confGodparent/create
 ---
+2014/08/20 10:30:40 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.b_bapDate" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('b_bapDate')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('b_bapDate')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Marriage), 'b_bapDate')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Marriage), 'b_bapDate', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Marriage), 'b_bapDate', Array)
+#5 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\_form.php(24): CActiveForm->textField(Object(Marriage), 'b_bapDate')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#9 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): MarriageController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=baptismal/create
+---
+2014/08/20 11:07:29 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:07:57 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:07:58 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:08:34 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:09:23 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:09:25 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('11')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=11
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:10:03 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('13')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=13
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
