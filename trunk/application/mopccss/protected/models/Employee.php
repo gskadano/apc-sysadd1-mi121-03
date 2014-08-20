@@ -127,4 +127,8 @@ class Employee extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getFullName(){
+		return $this->emp_lname . ", " . $this->emp_fname;
+	}
 }

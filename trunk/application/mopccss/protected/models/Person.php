@@ -144,4 +144,8 @@ class Person extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getFullName(){
+		return $this->p_lname . ", " . $this->p_fname . " " . $this->p_middlename;
+	}
 }

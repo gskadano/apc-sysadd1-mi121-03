@@ -72,10 +72,10 @@ class Baptismal extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'bap_bapDate' => 'Bap Bap Date',
-			'bap_priest' => 'Bap Priest',
-			'bap_church' => 'Bap Church',
-			'bap_churchAdd' => 'Bap Church Add',
+			'bap_bapDate' => 'Baptismal Date',
+			'bap_priest' => 'Priest',
+			'bap_church' => 'Church',
+			'bap_churchAdd' => 'Church Address',
 			'Employee_id' => 'Employee',
 			'person_id' => 'Person',
 			'father_id' => 'Father',
@@ -106,10 +106,20 @@ class Baptismal extends CActiveRecord
 		$criteria->compare('bap_priest',$this->bap_priest,true);
 		$criteria->compare('bap_church',$this->bap_church,true);
 		$criteria->compare('bap_churchAdd',$this->bap_churchAdd,true);
-		$criteria->compare('Employee_id',$this->Employee_id);
-		$criteria->compare('person_id',$this->person_id);
-		$criteria->compare('father_id',$this->father_id);
-		$criteria->compare('mother_id',$this->mother_id);
+		//$criteria->compare('Employee_id',$this->Employee_id);
+		//$criteria->compare('person_id',$this->person_id);
+		//$criteria->compare('father_id',$this->father_id);
+		//$criteria->compare('mother_id',$this->mother_id);
+		
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('employee.emp_lname',$this->Employee_id, true);
+		$criteria->compare('person.p_lname',$this->person_id, true);
+		$criteria->compare('person.p_lname',$this->father_id, true);
+		$criteria->compare('person.p_lname',$this->mother_id, true);
+
+		//load the related table at the same time:
+		$criteria->with=array('employee','person');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

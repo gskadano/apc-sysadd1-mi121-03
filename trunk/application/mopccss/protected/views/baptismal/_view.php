@@ -26,22 +26,25 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Employee_id')); ?>:</b>
-	<?php echo CHtml::encode($data->Employee_id); ?>
+	<?php //echo CHtml::encode($data->Employee_id); 
+			echo CHtml::encode($data->employee->FullName); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
-	<?php echo CHtml::encode($data->person_id); ?>
+	<?php //echo CHtml::encode($data->person_id);
+			echo CHtml::encode($data->person->FullName); ?>
 	<br />
 
-	<?php /*
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('father_id')); ?>:</b>
-	<?php echo CHtml::encode($data->father_id); ?>
+	<?php //echo CHtml::encode($data->father_id); 
+			echo CHtml::encode($data->father->FullName); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('mother_id')); ?>:</b>
-	<?php echo CHtml::encode($data->mother_id); ?>
+	<?php //echo CHtml::encode($data->mother_id); 
+			echo CHtml::encode($data->mother->FullName); ?>
 	<br />
 
-	*/ ?>
 
 </div>
