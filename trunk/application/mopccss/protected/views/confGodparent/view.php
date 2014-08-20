@@ -22,7 +22,9 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'confirmation_id',
-		'person_id',
+		array('label'=>'Confirmation id', 'value'=>$model->confirmation->id),
+		//'confirmation_id',
+		array('label'=>'Person', 'value'=>$model->person->FullName),
+		//'person_id',
 	),
 )); ?>

@@ -46,8 +46,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'confirmation_id',
-		'person_id',
+		
+		array('name'=>'confirmation_id', 'header'=>'Confirmation', 'value'=>'$data->confirmation->id'),
+		array('name'=>'person_id', 'header'=>'Godparent', 'value'=>'$data->person->FullName'),
+		//'confirmation_id',
+		
+		//'person_id',
 		array(
 			'class'=>'CButtonColumn',
 		),

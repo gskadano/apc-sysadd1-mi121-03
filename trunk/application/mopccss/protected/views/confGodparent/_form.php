@@ -21,13 +21,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'confirmation_id'); ?>
-		<?php echo $form->textField($model,'confirmation_id'); ?>
+		<?php echo $form->dropDownList($model, 'confirmation_id', CHtml::listData(
+				Confirmation::model()->findAll(), 'id', 'id'),//dapat full name
+				array('prompt' => 'Select a Confirmation')
+				); ?>
 		<?php echo $form->error($model,'confirmation_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'person_id'); ?>
-		<?php echo $form->textField($model,'person_id'); ?>
+		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+				Person::model()->findAll(), 'id', 'FullName'),
+				array('prompt' => 'Select a Person')
+				); ?>
 		<?php echo $form->error($model,'person_id'); ?>
 	</div>
 
