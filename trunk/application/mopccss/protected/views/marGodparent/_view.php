@@ -14,7 +14,8 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
-	<?php echo CHtml::encode($data->person_id); ?>
+	<?php //echo CHtml::encode($data->person_id); 
+        echo CHtml::encode($data->person->FullName); ?>
 	<br />
 
 

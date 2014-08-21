@@ -23,6 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'marriage_id',
-		'person_id',
+		//'person_id',
+                array('label'=>'Person Name', 'value'=>$model->person->FullName)
 	),
 )); ?>
