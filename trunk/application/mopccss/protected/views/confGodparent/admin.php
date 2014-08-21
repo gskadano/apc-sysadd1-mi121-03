@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ConfGodparent', 'url'=>array('index')),
-	array('label'=>'Create ConfGodparent', 'url'=>array('create')),
+	array('label'=>'List Godparent', 'url'=>array('index')),
+	array('label'=>'Create Godparent', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Conf Godparents</h1>
+<h1>Manage Confirmation Godparents</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>

@@ -82,8 +82,16 @@ class ConfGodparent extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('confirmation_id',$this->confirmation_id);
-		$criteria->compare('person_id',$this->person_id);
+		//$criteria->compare('confirmation_id',$this->confirmation_id);
+		//$criteria->compare('person_id',$this->person_id);
+		
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('confirmation.id',$this->confirmation_id, true);
+		$criteria->compare('person.p_lname',$this->person_id, true);
+
+		//load the related table at the same time:
+		$criteria->with=array('confirmation','person');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

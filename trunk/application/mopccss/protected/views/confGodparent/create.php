@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ConfGodparent', 'url'=>array('index')),
-	array('label'=>'Manage ConfGodparent', 'url'=>array('admin')),
+	array('label'=>'List Godparent', 'url'=>array('index')),
+	array('label'=>'Manage Godparent', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create ConfGodparent</h1>
+<h1>Create Confirmation Godparent</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
