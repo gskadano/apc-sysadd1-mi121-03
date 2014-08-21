@@ -25,7 +25,7 @@
 	        'model'=>$model, 'attribute'=>'mar_marDate',
 	        'options'=>array(
             'dateFormat'=>'yy-mm-dd',
-            'yearRange'=>'-10:+20',
+            'yearRange'=>'-30:+20',
             'changeYear'=>'true',
 	        'changeMonth'=>'true',
         ),

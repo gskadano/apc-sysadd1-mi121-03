@@ -51,13 +51,31 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'emp_hireDate'); ?>
-		<?php echo $form->textField($model,'emp_hireDate'); ?>
+		<!--<?php echo $form->textField($model,'emp_hireDate'); ?>-->
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+	        'model'=>$model, 'attribute'=>'emp_hireDate',
+	        'options'=>array(
+	            'dateFormat'=>'yy-mm-dd',
+            'yearRange'=>'-20:+20',
+            'changeYear'=>'true',
+            'changeMonth'=>'true',
+	        ),
+		)); ?>
 		<?php echo $form->error($model,'emp_hireDate'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'emp_retireDate'); ?>
-		<?php echo $form->textField($model,'emp_retireDate'); ?>
+		<!--<?php echo $form->textField($model,'emp_retireDate'); ?>-->
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+	        'model'=>$model, 'attribute'=>'emp_retireDate',
+	        'options'=>array(
+	            'dateFormat'=>'yy-mm-dd',
+            'yearRange'=>'-20:+20',
+            'changeYear'=>'true',
+            'changeMonth'=>'true',
+	        ),
+		)); ?>
 		<?php echo $form->error($model,'emp_retireDate'); ?>
 	</div>
 
