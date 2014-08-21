@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List BapGodparent', 'url'=>array('index')),
-	array('label'=>'Create BapGodparent', 'url'=>array('create')),
+	array('label'=>'List Godparents', 'url'=>array('index')),
+	array('label'=>'Create Godparent', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -45,9 +45,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		/*'id',
 		'baptismal_id',
-		'person_id',
+		'person_id',*/
+		array('name'=>'baptismal_id', 'header'=>'Baptismal', 'value'=>'$data->baptismal->id'),
+		array('name'=>'person_id', 'header'=>'Godparent', 'value'=>'$data->person->FullName'),
 		array(
 			'class'=>'CButtonColumn',
 		),

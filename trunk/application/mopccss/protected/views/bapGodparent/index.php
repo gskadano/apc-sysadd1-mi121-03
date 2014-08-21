@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create BapGodparent', 'url'=>array('create')),
-	array('label'=>'Manage BapGodparent', 'url'=>array('admin')),
+	array('label'=>'Create Godparent', 'url'=>array('create')),
+	array('label'=>'Manage Godparents', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Bap Godparents</h1>
+<h1>Baptismal Godparents</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

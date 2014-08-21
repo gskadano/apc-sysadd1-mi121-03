@@ -73,11 +73,11 @@ class Confirmation extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'conf_confDate' => 'Conf Conf Date',
-			'conf_bapChurch' => 'Conf Bap Church',
-			'conf_bapAdd' => 'Conf Bap Add',
-			'conf_church' => 'Conf Church',
-			'conf_priest' => 'Conf Priest',
+			'conf_confDate' => 'Date of Confirmation',
+			'conf_bapChurch' => 'Name of church when baptized',
+			'conf_bapAdd' => 'Address of church when baptized',
+			'conf_church' => 'Church name',
+			'conf_priest' => 'Priest',
 			'Employee_id' => 'Employee',
 			'person_id' => 'Person',
 			'father_id' => 'Father',
@@ -109,10 +109,20 @@ class Confirmation extends CActiveRecord
 		$criteria->compare('conf_bapAdd',$this->conf_bapAdd,true);
 		$criteria->compare('conf_church',$this->conf_church,true);
 		$criteria->compare('conf_priest',$this->conf_priest,true);
-		$criteria->compare('Employee_id',$this->Employee_id);
+		/*$criteria->compare('Employee_id',$this->Employee_id);
 		$criteria->compare('person_id',$this->person_id);
 		$criteria->compare('father_id',$this->father_id);
-		$criteria->compare('mother_id',$this->mother_id);
+		$criteria->compare('mother_id',$this->mother_id);*/
+		
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('employee.emp_lname',$this->Employee_id, true);
+		$criteria->compare('person.p_lname',$this->person_id, true);
+		$criteria->compare('father.p_lname',$this->father_id, true);
+		$criteria->compare('mother.p_lname',$this->mother_id, true);
+
+		//load the related table at the same time:
+		$criteria->with=array('employee','person','father','mother');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List BapGodparent', 'url'=>array('index')),
-	array('label'=>'Create BapGodparent', 'url'=>array('create')),
-	array('label'=>'Update BapGodparent', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete BapGodparent', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage BapGodparent', 'url'=>array('admin')),
+	array('label'=>'List Godparents', 'url'=>array('index')),
+	array('label'=>'Create Godparent', 'url'=>array('create')),
+	array('label'=>'Update Godparent', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Godparent', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Manage Godparent', 'url'=>array('admin')),
 );
 ?>
 
@@ -22,7 +22,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'baptismal_id',
-		'person_id',
+		/*'baptismal_id',*/array('label'=>'Baptismal', 'value'=>$model->baptismal->id),
+		/*'person_id',*/array('label'=>'Godparent', 'value'=>$model->person->FullName),
 	),
 )); ?>

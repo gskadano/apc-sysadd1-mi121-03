@@ -21,13 +21,23 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'baptismal_id'); ?>
-		<?php echo $form->textField($model,'baptismal_id'); ?>
+		<!--<?php echo $form->textField($model,'baptismal_id'); ?>-->
+		
+		<?php echo $form->dropDownList($model, 'baptismal_id', CHtml::listData(
+			Baptismal::model()->findAll(), 'id', 'id'),//dapat name ng bibinyagan
+			array('prompt' => 'Select baptismal')
+			); ?>
+		
 		<?php echo $form->error($model,'baptismal_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'person_id'); ?>
-		<?php echo $form->textField($model,'person_id'); ?>
+		<!--<?php echo $form->textField($model,'person_id'); ?>-->
+		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+			Person::model()->findAll(), 'id', 'FullName'),
+			array('prompt' => 'Select Godparents')
+			); ?>
 		<?php echo $form->error($model,'person_id'); ?>
 	</div>
 

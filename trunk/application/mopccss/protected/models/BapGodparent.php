@@ -82,8 +82,16 @@ class BapGodparent extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('baptismal_id',$this->baptismal_id);
-		$criteria->compare('person_id',$this->person_id);
+		//$criteria->compare('baptismal_id',$this->baptismal_id);
+		//$criteria->compare('person_id',$this->person_id);
+		
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('baptismal.id',$this->baptismal_id, true);
+		$criteria->compare('person.p_lname',$this->person_id, true);
+		
+		//load the related table at the same time:
+		$criteria->with=array('baptismal','person');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

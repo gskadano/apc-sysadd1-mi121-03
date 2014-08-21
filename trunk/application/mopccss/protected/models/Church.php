@@ -57,9 +57,9 @@ class Church extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'ch_name' => 'Ch Name',
-			'ch_address' => 'Ch Address',
-			'ch_priest' => 'Ch Priest',
+			'ch_name' => 'Church Name',
+			'ch_address' => 'Church Address',
+			'ch_priest' => 'Church Priest',
 		);
 	}
 

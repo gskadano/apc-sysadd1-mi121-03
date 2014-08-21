@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List BapGodparent', 'url'=>array('index')),
-	array('label'=>'Manage BapGodparent', 'url'=>array('admin')),
+	array('label'=>'List Godparents', 'url'=>array('index')),
+	array('label'=>'Manage Godparents', 'url'=>array('admin')),
 );
 ?>
 
