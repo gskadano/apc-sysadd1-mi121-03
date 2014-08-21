@@ -18,26 +18,30 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Employee_id')); ?>:</b>
-	<?php echo CHtml::encode($data->Employee_id); ?>
+	<?php //echo CHtml::encode($data->Employee_id);
+		echo CHtml::encode($data->employee->FullName); ?>
+	
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('bride_id')); ?>:</b>
-	<?php echo CHtml::encode($data->bride_id); ?>
+	<?php //echo CHtml::encode($data->bride_id); 
+			echo CHtml::encode($data->bride->FullName); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('groom_id')); ?>:</b>
-	<?php echo CHtml::encode($data->groom_id); ?>
+	<?php //echo CHtml::encode($data->groom_id); 
+			echo CHtml::encode($data->groom->FullName); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('father_id')); ?>:</b>
-	<?php echo CHtml::encode($data->father_id); ?>
+	<?php //echo CHtml::encode($data->father_id); 
+			echo CHtml::encode($data->father->FullName); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('mother_id')); ?>:</b>
-	<?php echo CHtml::encode($data->mother_id); ?>
+	<?php //echo CHtml::encode($data->mother_id); 
+			echo CHtml::encode($data->mother->FullName); ?>
 	<br />
 
-	*/ ?>
 
 </div>
