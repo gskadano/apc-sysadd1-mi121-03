@@ -45,7 +45,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		//'id',
 		'mar_marDate',
 		'mar_priest',
 		/*
@@ -55,7 +55,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'father_id',
 		'mother_id',
 		*/
-		array('name'=>'Employee_id', 'header'=>'Employee', 'value'=>'$data->employee->FullName'),
+		array('name'=>'Employee_id','header'=>'Employee', 'value'=>'$data->employee->FullName'),
 		array('label'=>'bride_id', 'header'=>'Bride Full Name', 'value'=>'$data->bride->FullName'),
 		array('label'=>'groom_id', 'header'=>'Groom Full Name', 'value'=>'$data->groom->FullName'),
 		array('name'=>'father_id', 'header'=>'Father Last name', 'value'=>'$data->father->FullName'),
