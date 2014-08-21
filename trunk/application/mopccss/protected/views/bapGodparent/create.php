@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create BapGodparent</h1>
+<h1>Create Baptismal Godparent</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
