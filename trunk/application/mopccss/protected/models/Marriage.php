@@ -73,8 +73,8 @@ class Marriage extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'mar_marDate' => 'Mar Mar Date',
-			'mar_priest' => 'Mar Priest',
+			'mar_marDate' => 'Marriage Date',
+			'mar_priest' => 'Priest',
 			'Employee_id' => 'Employee',
 			'bride_id' => 'Bride',
 			'groom_id' => 'Groom',

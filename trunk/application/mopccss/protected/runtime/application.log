@@ -528,6 +528,7 @@ Stack trace:
 REQUEST_URI=/mopccss/index.php?r=baptismal/create
 HTTP_REFERER=http://localhost/mopccss/index.php?r=baptismal/create
 ---
+<<<<<<< HEAD
 2014/08/20 23:51:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`bap_godparent`, CONSTRAINT `fk_bapGodParent_baptismal1` FOREIGN KEY (`baptismal_id`) REFERENCES `baptismal` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `bap_godparent` (`baptismal_id`, `person_id`) VALUES (:yp0, :yp1).
 in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\BapGodparentController.php (73)
 in C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
@@ -537,6 +538,133 @@ Stack trace:
 #1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
 #2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\BapGodparentController.php(73): CActiveRecord->save()
 #3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): BapGodparentController->actionCreate()
+=======
+2014/08/20 08:44:14 [error] [php] Trying to get property of non-object (C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php:50)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): ConfGodparentController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): ConfGodparentController->renderPartial()
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(143): ConfGodparentController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ConfGodparentController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ConfGodparentController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): ConfGodparentController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ConfGodparentController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CWebApplication->run()
+REQUEST_URI=/mopccss/index.php?r=confGodparent/admin
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php (50)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (143)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 08:45:38 [error] [php] Trying to get property of non-object (C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php:50)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): ConfGodparentController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): ConfGodparentController->renderPartial()
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(143): ConfGodparentController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ConfGodparentController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ConfGodparentController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): ConfGodparentController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ConfGodparentController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CWebApplication->run()
+REQUEST_URI=/mopccss/index.php?r=confGodparent/admin
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php (50)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (143)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 08:47:00 [error] [php] Trying to get property of non-object (C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php:50)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): ConfGodparentController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): ConfGodparentController->renderPartial()
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(143): ConfGodparentController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ConfGodparentController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ConfGodparentController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): ConfGodparentController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ConfGodparentController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CWebApplication->run()
+REQUEST_URI=/mopccss/index.php?r=confGodparent/admin
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php (50)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (143)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 08:55:59 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.0" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('0', 'person_id')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(ConfGodparentController), 'zii.widgets.gri...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php(54): CBaseController->widget('zii.widgets.gri...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(143): CController->render('admin', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionAdmin()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confGodparent/a...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=confGodparent/admin
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confGodparent/create
+---
+2014/08/20 09:02:32 [error] [php] Trying to get property of non-object (C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php:49)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): ConfGodparentController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): ConfGodparentController->renderPartial()
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(143): ConfGodparentController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionAdmin()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ConfGodparentController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ConfGodparentController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): ConfGodparentController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ConfGodparentController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CWebApplication->run()
+REQUEST_URI=/mopccss/index.php?r=confGodparent/admin
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\confGodparent\admin.php (49)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (143)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:09:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:09:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfirmationController->actionCreate()
+>>>>>>> b58402af44643ca63c084661c380d00c6712191e
 #4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -546,6 +674,7 @@ Stack trace:
 #10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+<<<<<<< HEAD
 #13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bapGodparent/cr...')
 #14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #15 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
@@ -562,6 +691,24 @@ Stack trace:
 #1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
 #2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\BapGodparentController.php(73): CActiveRecord->save()
 #3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): BapGodparentController->actionCreate()
+=======
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confirmation/cr...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confirmation/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/create
+---
+2014/08/20 09:09:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:09:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfirmationController->actionCreate()
+>>>>>>> b58402af44643ca63c084661c380d00c6712191e
 #4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -571,6 +718,7 @@ Stack trace:
 #10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+<<<<<<< HEAD
 #13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bapGodparent/cr...')
 #14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #15 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
@@ -587,6 +735,24 @@ Stack trace:
 #1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
 #2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\BapGodparentController.php(73): CActiveRecord->save()
 #3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): BapGodparentController->actionCreate()
+=======
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confirmation/cr...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confirmation/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/create
+---
+2014/08/20 09:10:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:10:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfirmationController->actionCreate()
+>>>>>>> b58402af44643ca63c084661c380d00c6712191e
 #4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -596,6 +762,7 @@ Stack trace:
 #10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+<<<<<<< HEAD
 #13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bapGodparent/cr...')
 #14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #15 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
@@ -612,6 +779,24 @@ Stack trace:
 #1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
 #2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\BapGodparentController.php(73): CActiveRecord->save()
 #3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): BapGodparentController->actionCreate()
+=======
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confirmation/cr...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confirmation/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/create
+---
+2014/08/20 09:12:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:12:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfirmationController->actionCreate()
+>>>>>>> b58402af44643ca63c084661c380d00c6712191e
 #4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -621,6 +806,7 @@ Stack trace:
 #10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+<<<<<<< HEAD
 #13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bapGodparent/cr...')
 #14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #15 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
@@ -637,6 +823,24 @@ Stack trace:
 #1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
 #2 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\BapGodparentController.php(73): CActiveRecord->save()
 #3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): BapGodparentController->actionCreate()
+=======
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confirmation/cr...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confirmation/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/create
+---
+2014/08/20 09:15:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:15:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfirmationController->actionCreate()
+>>>>>>> b58402af44643ca63c084661c380d00c6712191e
 #4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
 #6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
@@ -646,6 +850,7 @@ Stack trace:
 #10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
 #11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
 #12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+<<<<<<< HEAD
 #13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bapGodparent/cr...')
 #14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #15 C:\Users\Gene\Documents\sysadd1-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
@@ -997,4 +1202,417 @@ Stack trace:
 #31 {main}
 REQUEST_URI=/mopccss/index.php?Confirmation%5Bconf_confDate%5D=&Confirmation%5Bconf_bapChurch%5D=&Confirmation%5Bconf_bapAdd%5D=&Confirmation%5Bconf_church%5D=&Confirmation%5Bconf_priest%5D=&Confirmation%5BEmployee_id%5D=&Confirmation%5Bperson_id%5D=&Confirmation%5Bfather_id%5D=g&Confirmation%5Bmother_id%5D=&Confirmation_page=1&ajax=confirmation-grid&r=confirmation%2Fadmin
 HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/admin
+=======
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confirmation/cr...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confirmation/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/create
+---
+2014/08/20 09:16:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:16:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_Employee1` FOREIGN KEY (`Employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfirmationController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confirmation/cr...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confirmation/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/create
+---
+2014/08/20 09:19:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`employee`, CONSTRAINT `fk_Employee_church1` FOREIGN KEY (`church_id`) REFERENCES `church` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `employee` (`emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `church_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\EmployeeController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:19:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`employee`, CONSTRAINT `fk_Employee_church1` FOREIGN KEY (`church_id`) REFERENCES `church` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `employee` (`emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `church_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\EmployeeController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): EmployeeController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('employee/create')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=employee/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=employee/create
+---
+2014/08/20 09:20:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_person1` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:20:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`confirmation`, CONSTRAINT `fk_confirmation_person1` FOREIGN KEY (`person_id`) REFERENCES `person` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `confirmation` (`conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfirmationController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfirmationController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confirmation/cr...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confirmation/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confirmation/create
+---
+2014/08/20 09:25:00 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:25:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confGodparent/c...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confGodparent/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confGodparent/create
+---
+2014/08/20 09:31:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:31:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confGodparent/c...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confGodparent/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confGodparent/create
+---
+2014/08/20 09:36:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:36:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confGodparent/c...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confGodparent/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confGodparent/create
+---
+2014/08/20 09:37:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1).
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php (73)
+in C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php (13)
+2014/08/20 09:37:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mopccss`.`conf_godparent`, CONSTRAINT `fk_confGodParent_confirmation1` FOREIGN KEY (`confirmation_id`) REFERENCES `confirmation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `conf_godparent` (`confirmation_id`, `person_id`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\ConfGodparentController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): ConfGodparentController->actionCreate()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('confGodparent/c...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/mopccss/index.php?r=confGodparent/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=confGodparent/create
+---
+2014/08/20 10:30:40 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.b_bapDate" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('b_bapDate')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('b_bapDate')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Marriage), 'b_bapDate')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Marriage), 'b_bapDate', Array)
+#4 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(725): CHtml::activeTextField(Object(Marriage), 'b_bapDate', Array)
+#5 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\_form.php(24): CActiveForm->textField(Object(Marriage), 'b_bapDate')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#9 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\create.php(18): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#14 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(79): CController->render('create', Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): MarriageController->actionCreate()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/create')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#27 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/create
+HTTP_REFERER=http://localhost/mopccss/index.php?r=baptismal/create
+---
+2014/08/20 11:07:29 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:07:57 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:07:58 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:08:34 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:09:23 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('12')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=12
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:09:25 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('11')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=11
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+---
+2014/08/20 11:10:03 [error] [exception.CException] exception 'CException' with message 'Property "Marriage.person" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('person')
+#1 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\views\marriage\view.php(30): CActiveRecord->__get('person')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\Users\jetmon...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\Users\jetmon...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\Users\jetmon...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('view', Array, true)
+#6 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\protected\controllers\MarriageController.php(56): CController->render('view', Array)
+#7 [internal function]: MarriageController->actionView('13')
+#8 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(MarriageController), Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(MarriageController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('marriage/view')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\Users\jetmond96\Documents\sysadd-mi121\apc-sysadd1-mi121-03\trunk\application\mopccss\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/mopccss/index.php?r=marriage/view&id=13
+HTTP_REFERER=http://localhost/mopccss/index.php?r=marriage/create
+>>>>>>> b58402af44643ca63c084661c380d00c6712191e
 ---
