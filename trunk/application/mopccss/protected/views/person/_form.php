@@ -20,7 +20,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'p_fname'); ?>
+		<?php echo $form->labelEx($model,'p_fname') ; ?>
 		<?php echo $form->textField($model,'p_fname',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'p_fname'); ?>
 	</div>
@@ -39,7 +39,19 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'p_dateOfBirth'); ?>
-		<?php echo $form->textField($model,'p_dateOfBirth'); ?>
+		<!--<?php echo $form->textField($model,'p_dateOfBirth'); ?> -->
+                
+                <!--Calendar -->
+            <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+        'model'=>$model, 'attribute'=>'p_dateOfBirth',
+        'options'=>array(
+            'dateFormat'=>'yy-mm-dd',
+            'yearRange'=>'-10:+20',
+            'changeYear'=>'true',
+            'changeMonth'=>'true',
+        ),
+            )); ?>
+                
 		<?php echo $form->error($model,'p_dateOfBirth'); ?>
 	</div>
 
@@ -57,13 +69,30 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'p_dateOfDeath'); ?>
-		<?php echo $form->textField($model,'p_dateOfDeath'); ?>
+		<!--<?php echo $form->textField($model,'p_dateOfDeath'); ?>-->
+            <!--Calendar -->
+            <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+        'model'=>$model, 'attribute'=>'p_dateOfDeath',
+        'options'=>array(
+            'dateFormat'=>'yy-mm-dd',
+            'yearRange'=>'-10:+20',
+            'changeYear'=>'true',
+            'changeMonth'=>'true',
+        ),
+            )); ?>
+            
+            
 		<?php echo $form->error($model,'p_dateOfDeath'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'p_gender'); ?>
-		<?php echo $form->textField($model,'p_gender',array('size'=>45,'maxlength'=>45)); ?>
+            
+		<?php // echo $form->textField($model,'p_gender',array('size'=>45,'maxlength'=>45)); ?>
+            
+           <?php echo $form->dropDownList($model,'p_gender',array("Male"=>"Male", "Female"=>"Female" )
+		,array('empty'=>'Select Customer Type')); ?>
+            
 		<?php echo $form->error($model,'p_gender'); ?>
 	</div>
 

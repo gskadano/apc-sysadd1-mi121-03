@@ -90,14 +90,14 @@ class Person extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'p_fname' => 'P Fname',
-			'p_middlename' => 'P Middlename',
-			'p_lname' => 'P Lname',
-			'p_dateOfBirth' => 'P Date Of Birth',
-			'p_placeOfBirth' => 'P Place Of Birth',
-			'p_address' => 'P Address',
-			'p_dateOfDeath' => 'P Date Of Death',
-			'p_gender' => 'P Gender',
+			'p_fname' => 'Firstname',
+			'p_middlename' => 'Middlename',
+			'p_lname' => 'Lastname',
+			'p_dateOfBirth' => 'Date Of Birth',
+			'p_placeOfBirth' => 'Place Of Birth',
+			'p_address' => 'Address',
+			'p_dateOfDeath' => 'Date Of Death',
+			'p_gender' => 'Gender',
 		);
 	}
 
