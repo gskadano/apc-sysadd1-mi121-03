@@ -50,7 +50,7 @@ class Position extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'client' => array(self::BELONGS_TO, 'Person', 'client_id'),
+			'client' => array(self::BELONGS_TO, 'Employee', 'client_id'),
 		);
 	}
 
@@ -66,7 +66,7 @@ class Position extends CActiveRecord
 			'branchOfService' => 'Branch Of Service',
 			'unitAddress' => 'Unit Address',
 			'positioncol' => 'Positioncol',
-			'client_id' => 'Person',
+			'client_id' => 'Client',
 		);
 	}
 
@@ -112,4 +112,6 @@ class Position extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        
 }

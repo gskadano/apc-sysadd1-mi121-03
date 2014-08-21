@@ -27,6 +27,7 @@ $this->menu=array(
 		'branchOfService',
 		'unitAddress',
 		'positioncol',
-		'client_id',
+		//'client_id',
+                array('label'=>'Client', 'value'=>$model->client->Fullname),
 	),
 )); ?>

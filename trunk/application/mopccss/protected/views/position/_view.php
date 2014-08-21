@@ -30,7 +30,8 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('client_id')); ?>:</b>
-	<?php echo CHtml::encode($data->client_id); ?>
+	<?php //echo CHtml::encode($data->client_id); 
+            echo CHtml::encode($data->client->FullName); ?>
 	<br />
 
 
