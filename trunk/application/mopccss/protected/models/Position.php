@@ -62,11 +62,11 @@ class Position extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'rank' => 'Rank',
-			'afpServiceNum' => 'Afp Service Num',
+			'afpServiceNum' => 'AFP Service Number',
 			'branchOfService' => 'Branch Of Service',
 			'unitAddress' => 'Unit Address',
 			'positioncol' => 'Positioncol',
-			'client_id' => 'Client',
+			'client_id' => 'Person',
 		);
 	}
 
@@ -95,6 +95,7 @@ class Position extends CActiveRecord
 		$criteria->compare('unitAddress',$this->unitAddress,true);
 		$criteria->compare('positioncol',$this->positioncol,true);
 		$criteria->compare('client_id',$this->client_id);
+                
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
