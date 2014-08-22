@@ -3,16 +3,16 @@
 /* @var $model MarGodparent */
 
 $this->breadcrumbs=array(
-	'Mar Godparents'=>array('index'),
+	'Marriage Godparents'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List MarGodparent', 'url'=>array('index')),
-	array('label'=>'Manage MarGodparent', 'url'=>array('admin')),
+	array('label'=>'List MarriageGodparent', 'url'=>array('index')),
+	array('label'=>'Manage Marriage Godparent', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create MarGodparent</h1>
+<h1>Create Marriage Godparent</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

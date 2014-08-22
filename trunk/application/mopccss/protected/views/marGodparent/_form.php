@@ -23,7 +23,7 @@
 		<?php echo $form->labelEx($model,'marriage_id'); ?>
 		<!--<?php echo $form->textField($model,'marriage_id'); ?> -->
                  <?php echo $form->dropDownList($model, 'marriage_id', CHtml::listData(
-			Person::model()->findAll(), 'id', 'id'),
+			marriage::model()->findAll(), 'id', 'id'),
 			array('prompt' => 'Select a marriage')
 			); ?>
 		<?php echo $form->error($model,'marriage_id'); ?>

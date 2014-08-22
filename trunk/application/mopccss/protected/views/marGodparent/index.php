@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Mar Godparents',
+	'Marriage Godparents',
 );
 
 $this->menu=array(
-	array('label'=>'Create MarGodparent', 'url'=>array('create')),
-	array('label'=>'Manage MarGodparent', 'url'=>array('admin')),
+	array('label'=>'Create  Marriage Godparent', 'url'=>array('create')),
+	array('label'=>'Manage  Marriage Godparent', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Mar Godparents</h1>
+<h1>Marriage Godparents</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
