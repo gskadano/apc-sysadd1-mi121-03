@@ -30,6 +30,7 @@
 	        'changeMonth'=>'true',
         ),
 			)); ?>
+            <?php echo $form->error($model,'mar_marDate'); ?>
 	</div>
 
 	<div class="row">
