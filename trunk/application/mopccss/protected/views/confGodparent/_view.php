@@ -11,7 +11,7 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('confirmation_id')); ?>:</b>
 	<?php //echo CHtml::encode($data->confirmation_id); 
-			echo CHtml::encode($data->confirmation->FullName); ?>
+			echo CHtml::encode($data->confirmation->id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
