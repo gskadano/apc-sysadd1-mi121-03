@@ -83,8 +83,14 @@ class MarGodparent extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('marriage_id',$this->marriage_id);
-		$criteria->compare('person_id',$this->person_id);
+		//$criteria->compare('person_id',$this->person_id);
 
+                $criteria->compare('t.id',$this->id);
+		$criteria->compare('person.p_lname',$this->person_id, true);
+		
+		//load the related table at the same time:
+		$criteria->with=array('person');
+                
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
