@@ -87,7 +87,11 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'church_id'); ?>
-		<?php echo $form->textField($model,'church_id'); ?>
+		<!--<?php echo $form->textField($model,'church_id'); ?>-->
+		<?php echo $form->dropDownList($model, 'church_id', CHtml::listData(
+			Church::model()->findAll(), 'ch_name', 'ch_name'),
+			array('prompt' => 'Select a Church')
+			); ?>
 		<?php echo $form->error($model,'church_id'); ?>
 	</div>
 
