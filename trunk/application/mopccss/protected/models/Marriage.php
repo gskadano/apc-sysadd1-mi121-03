@@ -104,12 +104,25 @@ class Marriage extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('mar_marDate',$this->mar_marDate,true);
 		$criteria->compare('mar_priest',$this->mar_priest,true);
-		$criteria->compare('Employee_id',$this->Employee_id);
-		$criteria->compare('bride_id',$this->bride_id);
-		$criteria->compare('groom_id',$this->groom_id);
-		$criteria->compare('father_id',$this->father_id);
-		$criteria->compare('mother_id',$this->mother_id);
+		//$criteria->compare('Employee_id',$this->Employee_id);
+		//$criteria->compare('bride_id',$this->bride_id);
+		//$criteria->compare('groom_id',$this->groom_id);
+		//$criteria->compare('father_id',$this->father_id);
+		//$criteria->compare('mother_id',$this->mother_id);
 
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('employee.emp_lname',$this->Employee_id, true);
+		$criteria->compare('bride.p_lname',$this->bride_id, true);
+		$criteria->compare('groom.p_lname',$this->groom_id, true);
+		$criteria->compare('father.p_lname',$this->father_id, true);
+		$criteria->compare('mother.p_lname',$this->mother_id, true);
+		
+
+//load the related table at the same time:
+$criteria->with=array('employee','bride','groom','father','mother');
+		
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
