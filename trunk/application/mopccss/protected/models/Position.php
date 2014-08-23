@@ -94,9 +94,15 @@ class Position extends CActiveRecord
 		$criteria->compare('branchOfService',$this->branchOfService,true);
 		$criteria->compare('unitAddress',$this->unitAddress,true);
 		$criteria->compare('positioncol',$this->positioncol,true);
-		$criteria->compare('client_id',$this->client_id);
-                
-
+		//$criteria->compare('client_id',$this->client_id,true);
+		
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('client.emp_lname',$this->client_id, true);
+		
+		//load the related table at the same time:
+		$criteria->with=array('client');
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

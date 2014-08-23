@@ -22,7 +22,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'confirmation_id'); ?>
 		<?php echo $form->dropDownList($model, 'confirmation_id', CHtml::listData(
-				Confirmation::model()->findAll(), 'id', 'id'),//dapat full name
+                 Person::model()->findAll(), 'id', 'FullName'),//dapat full name
 				array('prompt' => 'Select a Confirmation')
 				); ?>
 		<?php echo $form->error($model,'confirmation_id'); ?>
