@@ -25,9 +25,10 @@ $this->menu=array(
 		'content',
 		'status',
 		'create_time',
-		array('label'=>'Author', 'value'=>$model->TblUser->username),
+		'author',
 		'email',
 		'url',
-		'post_id',
+		//'post_id',
+		array('label'=>'Post Title', 'value'=>$model->post->title)
 	),
 )); ?>

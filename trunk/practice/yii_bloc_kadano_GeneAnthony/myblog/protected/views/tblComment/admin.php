@@ -50,12 +50,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'status',
 		'create_time',
 		'author',
-		//array('name'=>'author', 'header'=>'Author', 'value'=>'$data->tblUser->username'),
 		'email',
 		/*
 		'url',
 		'post_id',
 		*/
+		array('name'=>'post_id', 'header'=>'Post Title', 'value'=>'$data->post->title'),
 		array(
 			'class'=>'CButtonColumn',
 		),

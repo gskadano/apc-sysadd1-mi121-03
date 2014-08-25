@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2014 at 12:40 AM
+-- Generation Time: Aug 20, 2014 at 07:47 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `church` (
   `ch_address` varchar(100) DEFAULT NULL,
   `ch_priest` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `church`
@@ -78,7 +78,8 @@ CREATE TABLE IF NOT EXISTS `church` (
 
 INSERT INTO `church` (`id`, `ch_name`, `ch_address`, `ch_priest`) VALUES
 (2, 'Saint Ignatious', 'Baguio City', 'Father William Dionisio'),
-(3, 'Saint Ignatious', 'Camp Aguinaldo', 'Father Harley Flores');
+(3, 'Saint Ignatious', 'Camp Aguinaldo', 'Father Harley Flores'),
+(4, 'Our Lady of Holy Rosary', 'Quiapo', 'Father John Tero');
 
 -- --------------------------------------------------------
 

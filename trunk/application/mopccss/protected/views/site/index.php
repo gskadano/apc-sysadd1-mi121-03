@@ -9,8 +9,66 @@ $this->pageTitle=Yii::app()->name;
 <!--<img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="Smiley face" style="float: left">-->
 
 <table style="float: right"> 
-    <tr> <td><h2 style="float: right">Calendar: </h2> </td> </tr>
-    <tr><td><input type="date" style="float: right"> </td></tr>
+    <!--<tr> <td><h2 style="float: right">Calendar: </h2> </td> </tr>
+    <tr><td><input type="date" style="float: right"> </td></tr>-->
+	<?php /*$this->widget('application.extensions.fullcalendar.FullcalendarGraphWidget', 
+    array(
+        'data'=>array(
+                'title'=> 'All Day Event',
+                'start'=> date('Y-m-j'),
+                'color'=>'#000000',
+ 
+        ),
+        'options'=>array(
+            'editable'=>true,
+            'defaultView'=>'agendaWeek',
+            'eventClick'=>'js:function(event, eventElement){
+                                                                            alert("hello");
+                                                                        }',
+        ),
+ 
+        'htmlOptions'=>array(
+               'style'=>'width:800px;margin: 0 auto;'
+        ),
+    )
+);*/
+//------------------------------------------------------------------------------------
+/*$this->widget('application.extensions.EFullCalendar.EFullCalendar', array(
+    // polish version available, uncomment to use it
+    // 'lang'=>'pl',
+    // you can create your own translation by copying locale/pl.php
+    // and customizing it
+ 
+    // remove to use without theme
+    // this is relative path to:
+    // themes/<path>
+    //'themeCssFile'=>'cupertino/theme.css',
+ 
+    // raw html tags
+    'htmlOptions'=>array(
+        // you can scale it down as well, try 80%
+        'style'=>'width:100%'
+    ),
+    // FullCalendar's options.
+    // Documentation available at
+    // http://arshaw.com/fullcalendar/docs/
+    'options'=>array(
+        'header'=>array(
+            'left'=>'prev,next',
+            'center'=>'title',
+            'right'=>'today'
+        ),
+        'lazyFetching'=>true,
+        'events'=>$calendarEventsUrl, // action URL for dynamic events, or
+        'events'=>array(), // pass array of events directly
+ 
+        // event handling
+        // mouseover for example
+        'eventMouseover'=>new CJavaScriptExpression("js_function_callback"),
+    )
+));*/
+//-------------------------------------------------------------------------------------------------------------
+	//$this->widget('ext.calendar-advance.AdvanceCalendarWidget',array('month'=>$month, 'year'=>$year, 'events'=>$events));?>
 </table>
 
 <head>
@@ -40,6 +98,7 @@ $(function(){
  
 </head>
 <body>
+
 <div class="fadein">
 <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/10347545_4456510787838_5598134013676143985_n.jpg">
 <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/10537363_4456510227824_3020636130644429675_n.jpg">

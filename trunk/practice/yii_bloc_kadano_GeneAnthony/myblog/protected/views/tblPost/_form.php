@@ -57,7 +57,11 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'author_id'); ?>
-		<?php echo $form->textField($model,'author_id'); ?>
+		<!--<?php echo $form->textField($model,'author_id'); ?>-->
+		<?php echo $form->dropDownList($model, 'author_id', CHtml::listData(
+			TblUser::model()->findAll(), 'id', 'username'),
+			array('prompt' => 'Select an Author')
+			); ?>
 		<?php echo $form->error($model,'author_id'); ?>
 	</div>
 

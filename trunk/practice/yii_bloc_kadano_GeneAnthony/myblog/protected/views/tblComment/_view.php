@@ -23,7 +23,7 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('author')); ?>:</b>
 	<?php echo CHtml::encode($data->author); ?>
-	<?php //echo CHtml::encode($data->tblUser->username); ?>
+	<?php //echo CHtml::encode($data->TblUser->username); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
@@ -34,11 +34,8 @@
 	<?php echo CHtml::encode($data->url); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('post_id')); ?>:</b>
-	<?php echo CHtml::encode($data->post_id); ?>
+	<?php echo CHtml::encode($data->getAttributeLabel('post_id')); ?>:</b>
+	<?php echo CHtml::encode($data->post->title); ?>
 	<br />
-
-	*/ ?>
 
 </div>

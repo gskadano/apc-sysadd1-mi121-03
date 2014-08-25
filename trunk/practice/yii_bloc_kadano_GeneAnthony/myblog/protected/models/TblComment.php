@@ -48,6 +48,7 @@ class TblComment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'post' => array(self::BELONGS_TO, 'TblPost', 'post_id'),
 		);
 	}
 
@@ -93,7 +94,13 @@ class TblComment extends CActiveRecord
 		$criteria->compare('author',$this->author,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('url',$this->url,true);
-		$criteria->compare('post_id',$this->post_id);
+		//$criteria->compare('post_id',$this->post_id);
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('post.title',$this->post_id, true);
+
+		//load the related table at the same time:
+		$criteria->with=array('post');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
