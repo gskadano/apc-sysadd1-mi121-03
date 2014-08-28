@@ -56,7 +56,8 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'emp_hireDate',
 		'emp_retireDate',
 		'emp_chapAssign',
-		'church_id',
+		//'church_id',
+		array('name'=>'church_id', 'header'=>'Church', 'value'=>'$data->church->ch_name'),
 		
 		array(
 			'class'=>'CButtonColumn',

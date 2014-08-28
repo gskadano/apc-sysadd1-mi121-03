@@ -41,11 +41,13 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('emp_chapAssign')); ?>:</b>
 	<?php echo CHtml::encode($data->emp_chapAssign); ?>
 	<br />
+		*/ ?>
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('church_id')); ?>:</b>
-	<?php echo CHtml::encode($data->church_id); ?>
+	<?php //echo CHtml::encode($data->church_id); 
+			echo CHtml::encode($data->church->ch_name);?>
 	<br />
 
-	*/ ?>
+
 
 </div>

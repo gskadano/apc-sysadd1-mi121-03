@@ -110,7 +110,14 @@ class Employee extends CActiveRecord
 		$criteria->compare('emp_hireDate',$this->emp_hireDate,true);
 		$criteria->compare('emp_retireDate',$this->emp_retireDate,true);
 		$criteria->compare('emp_chapAssign',$this->emp_chapAssign,true);
-		$criteria->compare('church_id',$this->church_id);
+		//$criteria->compare('church_id',$this->church_id);
+		
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('church.ch_name',$this->church_id, true);
+		
+		//load the related table at the same time:
+		$criteria->with=array('church');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

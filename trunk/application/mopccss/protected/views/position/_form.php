@@ -53,7 +53,7 @@
 		<?php echo $form->labelEx($model,'client_id'); ?>
 		<!--<?php echo $form->textField($model,'client_id'); ?> -->
                 <?php echo $form->dropDownList($model, 'client_id', CHtml::listData(
-			Employee::model()->findAll(), 'id', 'FullName'),
+			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select an Client')
 			); ?>
                 

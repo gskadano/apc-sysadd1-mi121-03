@@ -30,6 +30,6 @@ $this->menu=array(
 		'emp_hireDate',
 		'emp_retireDate',
 		'emp_chapAssign',
-		'church_id',
+		/*'church_id',*/array('label'=>'Church', 'value'=>$model->church->ch_name),
 	),
 )); ?>
