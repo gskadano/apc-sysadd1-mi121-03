@@ -101,7 +101,7 @@ class Employee extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		//$criteria->compare('id',$this->id);
 		$criteria->compare('emp_username',$this->emp_username,true);
 		$criteria->compare('emp_password',$this->emp_password,true);
 		$criteria->compare('emp_usertype',$this->emp_usertype,true);

@@ -81,7 +81,7 @@ class MarGodparent extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		//$criteria->compare('id',$this->id);
 		$criteria->compare('marriage_id',$this->marriage_id);
 		//$criteria->compare('person_id',$this->person_id);
 

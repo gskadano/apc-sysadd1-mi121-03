@@ -28,6 +28,6 @@ $this->menu=array(
 		'unitAddress',
 		'positioncol',
 		//'client_id',
-        array('label'=>'Client', 'value'=>$model->client->Fullname),
+        array('label'=>'Client', 'value'=>$model->client->FullName),
 	),
 )); ?>

@@ -50,7 +50,7 @@ class Position extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'client' => array(self::BELONGS_TO, 'Employee', 'client_id'),
+			'client' => array(self::BELONGS_TO, 'Person', 'client_id'),
 		);
 	}
 
@@ -88,7 +88,7 @@ class Position extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		//$criteria->compare('id',$this->id);
 		$criteria->compare('rank',$this->rank,true);
 		$criteria->compare('afpServiceNum',$this->afpServiceNum);
 		$criteria->compare('branchOfService',$this->branchOfService,true);
@@ -98,7 +98,7 @@ class Position extends CActiveRecord
 		
 		//add the magic letter 't' to refer to the 'main' (not the related) table:
 		$criteria->compare('t.id',$this->id);
-		$criteria->compare('client.emp_lname',$this->client_id, true);
+		$criteria->compare('client.p_lname',$this->client_id, true);
 		
 		//load the related table at the same time:
 		$criteria->with=array('client');

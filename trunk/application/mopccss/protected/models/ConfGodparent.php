@@ -81,7 +81,7 @@ class ConfGodparent extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		//$criteria->compare('id',$this->id);
 		//$criteria->compare('confirmation_id',$this->confirmation_id);
 		//$criteria->compare('person_id',$this->person_id);
 		
