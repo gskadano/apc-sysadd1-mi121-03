@@ -33,3 +33,23 @@ $this->menu=array(
 		/*'mother_id',*/array('label'=>'Mother', 'value'=>$model->mother->FullName),
 	),
 )); ?>
+
+<?php $confirmation_id= $model->id;?>
+
+<?php $conf= ConfGodparent::model()->findAll('id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Confirmation God Parent</h2>
+<?php foreach ($conf as $row) { ?>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+        'data'=>$row,
+        'attributes'=>array('id',
+		//array('label'=>'Confirmation id', 'value'=>$model->confirmation->id),
+		'confirmation_id',
+		array('label'=>'Person', 'value'=>$model->person->FullName),
+		//'person_id',
+	),
+)); ?>
+<br>
+<?php }} ?>
