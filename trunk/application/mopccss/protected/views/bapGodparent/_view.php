@@ -10,8 +10,8 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('baptismal_id')); ?>:</b>
-	<?php //echo CHtml::encode($data->baptismal_id); 
-			echo CHtml::encode($data->baptismal->id); ?>
+	<?php echo CHtml::encode($data->baptismal_id); 
+			/*echo CHtml::encode($data->baptismal->FullNameBap);*/ ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>

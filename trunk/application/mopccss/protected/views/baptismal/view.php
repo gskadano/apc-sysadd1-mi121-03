@@ -32,3 +32,20 @@ $this->menu=array(
 		/*'mother_id',*/array('label'=>'Mother', 'value'=>$model->mother->FullName),
 	),
 )); ?>
+
+<?php $en=BapGodparent::model()->findAll('baptismal_id = :a', array(':a'=>$model->id));?>
+<?php if (count($en) !== 0){?>
+<br>
+<h2>God Parents</h2>
+<?php foreach ($en as $row) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
+array('BapGodparent/update', 'id'=>$row->id)); ?>
+<?php $this->widget ('zii.widgets.CdetailView', array(
+        'data'=>$row,
+        'attributes'=>array(
+            'baptismal_id',
+            'person.FullName',
+        ),
+));
+?><br>
+<?php }} ?>
