@@ -30,4 +30,22 @@ $this->menu=array(
 		/*'father_id',*/array('label'=>'Father', 'value'=>$model->father->FullName),
 		/*'mother_id',*/array('label'=>'Mother', 'value'=>$model->mother->FullName),
 	),
+)); ?><?php $marriage_id= $model->id;?>
+
+<?php $marriage= MarGodparent::model()->findAll('id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h2>Marriage Godparent</h2>
+<?php foreach ($conf as $row) { ?>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+        'data'=>$row,
+        'attributes'=>array('id',
+		//array('label'=>'Marriage id', 'value'=>$model->marriage->id),
+		'marriage_id',
+		array('label'=>'Person', 'value'=>$model->person->FullName),
+		//'person_id',
+	),
 )); ?>
+<br>
+<?php }} ?>
