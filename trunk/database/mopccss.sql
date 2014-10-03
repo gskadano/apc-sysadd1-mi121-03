@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 26, 2014 at 09:37 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Host: localhost
+-- Generation Time: Sep 23, 2014 at 04:15 AM
+-- Server version: 5.5.38
+-- PHP Version: 5.3.10-1ubuntu3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -41,15 +41,16 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
   KEY `fk_baptismal_client1_idx` (`person_id`),
   KEY `fk_baptismal_person1_idx` (`father_id`),
   KEY `fk_baptismal_person2_idx` (`mother_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `baptismal`
 --
 
 INSERT INTO `baptismal` (`id`, `bap_bapDate`, `bap_priest`, `bap_church`, `bap_churchAdd`, `Employee_id`, `person_id`, `father_id`, `mother_id`) VALUES
-(1, '2014-08-06', 'Father William Dionisio', 'Saint Ignatius', 'Quezon City', 18, 5, 1, 6),
-(2, '2014-08-12', 'Father William Dionisio', 'Saint Ignatius', 'Quezon City', 18, 2, 4, 3);
+(1, '2014-08-06', 'Father William Dionisio', 'Saint Ignatius', 'Magallanes, Makati City', 18, 3, 1, 6),
+(2, '2014-08-12', 'Father William Dionisio', 'Saint Ignatius', 'Quezon City', 18, 2, 4, 3),
+(3, '2015-04-22', 'Father William Dionisio', 'Saint Ignatius', 'Quezon City', 18, 5, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -252,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `person` (
   `p_dateOfDeath` date DEFAULT NULL,
   `p_gender` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `person`
@@ -264,7 +265,8 @@ INSERT INTO `person` (`id`, `p_fname`, `p_middlename`, `p_lname`, `p_dateOfBirth
 (3, 'Christine Joy', 'Aggabao', 'Ferrer', '1995-11-18', 'Laguna City', 'Balibago Sta.Rosa, Laguna', '0000-00-00', 'Female'),
 (4, 'Mark Anthony', 'Suezo', 'Andes', '1995-10-20', 'Makati City', 'Palar, Makati City', '0000-00-00', 'Male'),
 (5, 'Adrianne', 'Joseph', 'Montalban', '1995-06-09', 'Pasay City', 'Villamor Air Base, Pasay City', '0000-00-00', 'Female'),
-(6, 'Jerica', 'Natividad', 'Flores', '1996-04-28', 'Makati City', 'Makati City', '0000-00-00', 'Female');
+(6, 'Jerica', 'Natividad', 'Flores', '1996-04-28', 'Makati City', 'Makati City', '0000-00-00', 'Female'),
+(7, 'RODOLFO', 'DERRAMAS', 'JAUDITA ', '2010-02-15', 'PAMPANGA', 'SAN MATEO, RIZAL', '0000-00-00', 'Male');
 
 -- --------------------------------------------------------
 
@@ -282,15 +284,15 @@ CREATE TABLE IF NOT EXISTS `position` (
   `client_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_position_client_idx` (`client_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `position`
 --
 
 INSERT INTO `position` (`id`, `rank`, `afpServiceNum`, `branchOfService`, `unitAddress`, `positioncol`, `client_id`) VALUES
-(3, '', NULL, '', '', '', 3),
-(4, 'Technical Sergeant', 123, 'AFP', 'test', 'test', 1);
+(4, 'Technical Sergeant', 123, 'AFP', 'test', 'test', 1),
+(6, 'Staff Sergeant', 12345, 'Army', '12345', '12345', 2);
 
 --
 -- Constraints for dumped tables
