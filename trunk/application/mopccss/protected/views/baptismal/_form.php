@@ -37,7 +37,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'bap_priest'); ?>
 		<?php echo $form->dropDownList($model, 'bap_priest', CHtml::listData(
-			Church::model()->findAll(), 'ch_priest', 'ch_priest'),
+			Priest::model()->findAll(), 'pfname', 'PFullName'),
 			array('prompt' => 'Select a Priest')
 			); ?>
 		<?php echo $form->error($model,'bap_priest'); ?>

@@ -106,4 +106,8 @@ class Priest extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	public function getPFullName(){
+		return "Fr. " . $this->pfname . " " . $this->plname;
+	}
 }
