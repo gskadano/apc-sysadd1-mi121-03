@@ -1,6 +1,6 @@
 <?php
-/* @var $this ChurchController */
-/* @var $model Church */
+/* @var $this PriestController */
+/* @var $model Priest */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,13 +17,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'ch_name'); ?>
-		<?php echo $form->textField($model,'ch_name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'pfname'); ?>
+		<?php echo $form->textField($model,'pfname',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'ch_address'); ?>
-		<?php echo $form->textField($model,'ch_address',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->label($model,'plname'); ?>
+		<?php echo $form->textField($model,'plname',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'church_id'); ?>
+		<?php echo $form->textField($model,'church_id'); ?>
 	</div>
 
 	<div class="row buttons">

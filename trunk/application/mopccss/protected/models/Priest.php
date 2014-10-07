@@ -1,21 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "church".
+ * This is the model class for table "priest".
  *
- * The followings are the available columns in table 'church':
+ * The followings are the available columns in table 'priest':
  * @property integer $id
- * @property string $ch_name
- * @property string $ch_address
+ * @property string $pfname
+ * @property string $plname
+ * @property integer $church_id
  */
-class Church extends CActiveRecord
+class Priest extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'church';
+		return 'priest';
 	}
 
 	/**
@@ -26,11 +27,12 @@ class Church extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ch_name', 'length', 'max'=>45),
-			array('ch_address', 'length', 'max'=>100),
+			array('pfname, plname, church_id', 'required'),
+			array('church_id', 'numerical', 'integerOnly'=>true),
+			array('pfname, plname', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, ch_name, ch_address', 'safe', 'on'=>'search'),
+			array('id, pfname, plname, church_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -42,8 +44,7 @@ class Church extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'employees' => array(self::HAS_MANY, 'Employee', 'church_id'),
-			'priest' => array(self::HAS_MANY, 'Priest', 'church_id'),
+			'church' => array(self::BELONGS_TO, 'Church', 'church_id'),
 		);
 	}
 
@@ -54,8 +55,9 @@ class Church extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'ch_name' => 'Church Name',
-			'ch_address' => 'Church Address',
+			'pfname' => 'First name',
+			'plname' => 'Last name',
+			'church_id' => 'Church',
 		);
 	}
 
@@ -78,8 +80,16 @@ class Church extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('ch_name',$this->ch_name,true);
-		$criteria->compare('ch_address',$this->ch_address,true);
+		$criteria->compare('pfname',$this->pfname,true);
+		$criteria->compare('plname',$this->plname,true);
+		//$criteria->compare('church_id',$this->church_id);
+		
+		//add the magic letter 't' to refer to the 'main' (not the related) table:
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('church.ch_name',$this->church_id, true);
+		
+		//load the related table at the same time:
+		$criteria->with=array('church');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -90,7 +100,7 @@ class Church extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Church the static model class
+	 * @return Priest the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

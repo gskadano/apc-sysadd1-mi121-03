@@ -24,6 +24,5 @@ $this->menu=array(
 		'id',
 		'ch_name',
 		'ch_address',
-		'ch_priest',
 	),
 )); ?>

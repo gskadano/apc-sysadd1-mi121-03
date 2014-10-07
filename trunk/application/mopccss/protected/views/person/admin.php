@@ -55,8 +55,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'p_address',
 		'p_dateOfDeath',
 		'p_gender',
+		'p_father',
+		'p_mother',
 		*/
-            
 		array(
 			'class'=>'CButtonColumn',
 		),

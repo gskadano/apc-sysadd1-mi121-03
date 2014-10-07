@@ -96,6 +96,18 @@
 		<?php echo $form->error($model,'p_gender'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'p_father'); ?>
+		<?php echo $form->textField($model,'p_father',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'p_father'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'p_mother'); ?>
+		<?php echo $form->textField($model,'p_mother',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'p_mother'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

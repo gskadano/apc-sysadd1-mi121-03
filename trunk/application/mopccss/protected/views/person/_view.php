@@ -32,14 +32,6 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('p_address')); ?>:</b>
 	<?php echo CHtml::encode($data->p_address); ?>
 	<br />
-        
-        <b><?php echo CHtml::encode($data->getAttributeLabel('p_dateOfDeath')); ?>:</b>
-	<?php echo CHtml::encode($data->p_dateOfDeath); ?>
-        <br/>
-
-        <b><?php echo CHtml::encode($data->getAttributeLabel('p_gender')); ?>:</b>
-	<?php echo CHtml::encode($data->p_gender); ?>
-
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('p_dateOfDeath')); ?>:</b>
@@ -48,6 +40,14 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('p_gender')); ?>:</b>
 	<?php echo CHtml::encode($data->p_gender); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('p_father')); ?>:</b>
+	<?php echo CHtml::encode($data->p_father); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('p_mother')); ?>:</b>
+	<?php echo CHtml::encode($data->p_mother); ?>
 	<br />
 
 	*/ ?>

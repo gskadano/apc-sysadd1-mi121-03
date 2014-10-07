@@ -17,9 +17,5 @@
 	<?php echo CHtml::encode($data->ch_address); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('ch_priest')); ?>:</b>
-	<?php echo CHtml::encode($data->ch_priest); ?>
-	<br />
-
 
 </div>

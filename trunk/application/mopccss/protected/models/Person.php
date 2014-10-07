@@ -13,22 +13,8 @@
  * @property string $p_address
  * @property string $p_dateOfDeath
  * @property string $p_gender
- *
- * The followings are the available model relations:
- * @property BapGodparent[] $bapGodparents
- * @property Baptismal[] $baptismals
- * @property Baptismal[] $baptismals1
- * @property Baptismal[] $baptismals2
- * @property ConfGodparent[] $confGodparents
- * @property Confirmation[] $confirmations
- * @property Confirmation[] $confirmations1
- * @property Confirmation[] $confirmations2
- * @property MarGodparent[] $marGodparents
- * @property Marriage[] $marriages
- * @property Marriage[] $marriages1
- * @property Marriage[] $marriages2
- * @property Marriage[] $marriages3
- * @property Position[] $positions
+ * @property string $p_father
+ * @property string $p_mother
  */
 class Person extends CActiveRecord
 {
@@ -50,11 +36,11 @@ class Person extends CActiveRecord
 		return array(
 			array('p_fname, p_lname, p_dateOfBirth, p_gender', 'required'),
 			array('p_fname, p_middlename, p_lname, p_placeOfBirth, p_gender', 'length', 'max'=>45),
-			array('p_address', 'length', 'max'=>100),
+			array('p_address, p_father, p_mother', 'length', 'max'=>100),
 			array('p_dateOfDeath', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, p_fname, p_middlename, p_lname, p_dateOfBirth, p_placeOfBirth, p_address, p_dateOfDeath, p_gender', 'safe', 'on'=>'search'),
+			array('id, p_fname, p_middlename, p_lname, p_dateOfBirth, p_placeOfBirth, p_address, p_dateOfDeath, p_gender, p_father, p_mother', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -90,14 +76,16 @@ class Person extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'p_fname' => 'Firstname',
-			'p_middlename' => 'Middlename',
-			'p_lname' => 'Lastname',
+			'p_fname' => 'First name',
+			'p_middlename' => 'Middle name',
+			'p_lname' => 'Last name',
 			'p_dateOfBirth' => 'Date Of Birth',
 			'p_placeOfBirth' => 'Place Of Birth',
 			'p_address' => 'Address',
 			'p_dateOfDeath' => 'Date Of Death',
 			'p_gender' => 'Gender',
+			'p_father' => 'Father',
+			'p_mother' => 'Mother',
 		);
 	}
 
@@ -128,6 +116,8 @@ class Person extends CActiveRecord
 		$criteria->compare('p_address',$this->p_address,true);
 		$criteria->compare('p_dateOfDeath',$this->p_dateOfDeath,true);
 		$criteria->compare('p_gender',$this->p_gender,true);
+		$criteria->compare('p_father',$this->p_father,true);
+		$criteria->compare('p_mother',$this->p_mother,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -30,5 +30,7 @@ $this->menu=array(
 		'p_address',
 		'p_dateOfDeath',
 		'p_gender',
+		'p_father',
+		'p_mother',
 	),
 )); ?>

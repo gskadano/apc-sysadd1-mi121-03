@@ -31,12 +31,6 @@
 		<?php echo $form->error($model,'ch_address'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ch_priest'); ?>
-		<?php echo $form->textField($model,'ch_priest',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'ch_priest'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

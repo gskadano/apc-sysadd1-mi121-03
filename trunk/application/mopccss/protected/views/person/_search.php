@@ -41,20 +41,30 @@
 		<?php echo $form->textField($model,'p_placeOfBirth',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
-<!--	<div class="row">
-		<?php //echo $form->label($model,'p_address'); ?>
-		<?php //echo $form->textField($model,'p_address',array('size'=>60,'maxlength'=>100)); ?>
+	<div class="row">
+		<?php echo $form->label($model,'p_address'); ?>
+		<?php echo $form->textField($model,'p_address',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
-		<?php //echo $form->label($model,'p_dateOfDeath'); ?>
-		<?php //echo $form->textField($model,'p_dateOfDeath'); ?>
+		<?php echo $form->label($model,'p_dateOfDeath'); ?>
+		<?php echo $form->textField($model,'p_dateOfDeath'); ?>
 	</div>
 
 	<div class="row">
-		<?php //echo $form->label($model,'p_gender'); ?>
-		<?php //echo $form->textField($model,'p_gender',array('size'=>45,'maxlength'=>45)); ?>
-	</div>-->
+		<?php echo $form->label($model,'p_gender'); ?>
+		<?php echo $form->textField($model,'p_gender',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'p_father'); ?>
+		<?php echo $form->textField($model,'p_father',array('size'=>60,'maxlength'=>100)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'p_mother'); ?>
+		<?php echo $form->textField($model,'p_mother',array('size'=>60,'maxlength'=>100)); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
