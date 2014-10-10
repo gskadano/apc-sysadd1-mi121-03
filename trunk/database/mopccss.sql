@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`person` (
   `p_address` VARCHAR(100) NULL DEFAULT NULL,
   `p_dateOfDeath` DATE NULL DEFAULT NULL,
   `p_gender` VARCHAR(45) NOT NULL,
-  `p_father` VARCHAR(100) NULL,
-  `p_mother` VARCHAR(100) NULL,
+  `p_father` VARCHAR(100) NOT NULL,
+  `p_mother` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 8;

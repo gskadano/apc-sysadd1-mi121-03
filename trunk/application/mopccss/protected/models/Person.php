@@ -34,7 +34,7 @@ class Person extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('p_fname, p_lname, p_dateOfBirth, p_gender', 'required'),
+			array('p_fname, p_lname, p_dateOfBirth, p_gender, p_father, p_mother', 'required'),
 			array('p_fname, p_middlename, p_lname, p_placeOfBirth, p_gender', 'length', 'max'=>45),
 			array('p_address, p_father, p_mother', 'length', 'max'=>100),
 			array('p_dateOfDeath', 'safe'),
