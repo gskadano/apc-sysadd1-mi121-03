@@ -29,8 +29,6 @@ $this->menu=array(
 		'conf_priest',
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
 		/*'person_id',*/array('label'=>'Person', 'value'=>$model->person->FullName),
-		/*'father_id',*/array('label'=>'Father', 'value'=>$model->father->FullName),
-		/*'mother_id',*/array('label'=>'Mother', 'value'=>$model->mother->FullName),
 	),
 )); ?>
 

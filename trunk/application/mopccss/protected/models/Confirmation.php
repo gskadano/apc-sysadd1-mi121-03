@@ -40,13 +40,13 @@ class Confirmation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('conf_confDate, Employee_id, person_id, father_id, mother_id', 'required'),
-			array('Employee_id, person_id, father_id, mother_id', 'numerical', 'integerOnly'=>true),
+			array('conf_confDate, Employee_id, person_id', 'required'),
+			array('Employee_id, person_id', 'numerical', 'integerOnly'=>true),
 			array('conf_bapChurch, conf_church, conf_priest', 'length', 'max'=>45),
 			array('conf_bapAdd', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, conf_confDate, conf_bapChurch, conf_bapAdd, conf_church, conf_priest, Employee_id, person_id, father_id, mother_id', 'safe', 'on'=>'search'),
+			array('id, conf_confDate, conf_bapChurch, conf_bapAdd, conf_church, conf_priest, Employee_id, person_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,8 +61,6 @@ class Confirmation extends CActiveRecord
 			'confGodparents' => array(self::HAS_MANY, 'ConfGodparent', 'confirmation_id'),
 			'employee' => array(self::BELONGS_TO, 'Employee', 'Employee_id'),
 			'person' => array(self::BELONGS_TO, 'Person', 'person_id'),
-			'father' => array(self::BELONGS_TO, 'Person', 'father_id'),
-			'mother' => array(self::BELONGS_TO, 'Person', 'mother_id'),
 		);
 	}
 
@@ -80,8 +78,6 @@ class Confirmation extends CActiveRecord
 			'conf_priest' => 'Priest',
 			'Employee_id' => 'Employee',
 			'person_id' => 'Person',
-			'father_id' => 'Father',
-			'mother_id' => 'Mother',
 		);
 	}
 
@@ -118,11 +114,9 @@ class Confirmation extends CActiveRecord
 		$criteria->compare('t.id',$this->id);
 		$criteria->compare('employee.emp_lname',$this->Employee_id, true);
 		$criteria->compare('person.p_lname',$this->person_id, true);
-		$criteria->compare('father.p_lname',$this->father_id, true);
-		$criteria->compare('mother.p_lname',$this->mother_id, true);
 
 		//load the related table at the same time:
-		$criteria->with=array('employee','person','father','mother');
+		$criteria->with=array('employee','person');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

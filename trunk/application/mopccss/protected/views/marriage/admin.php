@@ -52,14 +52,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'Employee_id',
 		'bride_id',
 		'groom_id',
-		'father_id',
-		'mother_id',
 		*/
 		array('name'=>'Employee_id','header'=>'Employee', 'value'=>'$data->employee->FullName'),
 		array('name'=>'bride_id', 'header'=>'Bride Full Name', 'value'=>'$data->bride->FullName'),
 		array('name'=>'groom_id', 'header'=>'Groom Full Name', 'value'=>'$data->groom->FullName'),
-		array('name'=>'father_id', 'header'=>'Father Last Name', 'value'=>'$data->father->FullName'),
-		array('name'=>'mother_id', 'header'=>'Mother Last Name', 'value'=>'$data->mother->FullName'),
 		array(
 			'class'=>'CButtonColumn',
 		),

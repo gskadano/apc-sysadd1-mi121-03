@@ -58,8 +58,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		*/
 		array('name'=>'Employee_id', 'header'=>'Employee', 'value'=>'$data->employee->FullName'),
 		array('name'=>'person_id', 'header'=>'Person Full Name', 'value'=>'$data->person->FullName'),
-		array('name'=>'father_id', 'header'=>'Father Last name', 'value'=>'$data->father->FullName'),
-		array('name'=>'mother_id', 'header'=>'Mother Last name', 'value'=>'$data->mother->FullName'),
 		array(
 			'class'=>'CButtonColumn',
 		),

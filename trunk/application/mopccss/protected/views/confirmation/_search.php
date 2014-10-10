@@ -51,16 +51,6 @@
 		<?php echo $form->textField($model,'person_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'father_id'); ?>
-		<?php echo $form->textField($model,'father_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'mother_id'); ?>
-		<?php echo $form->textField($model,'mother_id'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

@@ -27,8 +27,6 @@ $this->menu=array(
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
 		/*'bride_id',*/array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
 		/*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
-		/*'father_id',*/array('label'=>'Father', 'value'=>$model->father->FullName),
-		/*'mother_id',*/array('label'=>'Mother', 'value'=>$model->mother->FullName),
 	),
 )); ?><?php $marriage_id= $model->id;?>
 

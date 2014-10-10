@@ -39,13 +39,13 @@ class Marriage extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Employee_id, bride_id, groom_id, father_id, mother_id', 'required'),
-			array('Employee_id, bride_id, groom_id, father_id, mother_id', 'numerical', 'integerOnly'=>true),
+			array('Employee_id, bride_id, groom_id', 'required'),
+			array('Employee_id, bride_id, groom_id', 'numerical', 'integerOnly'=>true),
 			array('mar_priest', 'length', 'max'=>45),
 			array('mar_marDate', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, mar_marDate, mar_priest, Employee_id, bride_id, groom_id, father_id, mother_id', 'safe', 'on'=>'search'),
+			array('id, mar_marDate, mar_priest, Employee_id, bride_id, groom_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,8 +61,6 @@ class Marriage extends CActiveRecord
 			'employee' => array(self::BELONGS_TO, 'Employee', 'Employee_id'),
 			'bride' => array(self::BELONGS_TO, 'Person', 'bride_id'),
 			'groom' => array(self::BELONGS_TO, 'Person', 'groom_id'),
-			'father' => array(self::BELONGS_TO, 'Person', 'father_id'),
-			'mother' => array(self::BELONGS_TO, 'Person', 'mother_id'),
 		);
 	}
 
@@ -78,8 +76,6 @@ class Marriage extends CActiveRecord
 			'Employee_id' => 'Employee',
 			'bride_id' => 'Bride',
 			'groom_id' => 'Groom',
-			'father_id' => 'Father',
-			'mother_id' => 'Mother',
 		);
 	}
 
@@ -107,20 +103,16 @@ class Marriage extends CActiveRecord
 		//$criteria->compare('Employee_id',$this->Employee_id);
 		//$criteria->compare('bride_id',$this->bride_id);
 		//$criteria->compare('groom_id',$this->groom_id);
-		//$criteria->compare('father_id',$this->father_id);
-		//$criteria->compare('mother_id',$this->mother_id);
 
 		//add the magic letter 't' to refer to the 'main' (not the related) table:
 		$criteria->compare('t.id',$this->id);
 		$criteria->compare('employee.emp_lname',$this->Employee_id, true);
 		$criteria->compare('bride.p_lname',$this->bride_id, true);
 		$criteria->compare('groom.p_lname',$this->groom_id, true);
-		$criteria->compare('father.p_lname',$this->father_id, true);
-		$criteria->compare('mother.p_lname',$this->mother_id, true);
 		
 
 //load the related table at the same time:
-$criteria->with=array('employee','bride','groom','father','mother');
+$criteria->with=array('employee','bride','groom');
 		
 		
 		return new CActiveDataProvider($this, array(
