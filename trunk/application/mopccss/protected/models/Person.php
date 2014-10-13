@@ -34,7 +34,7 @@ class Person extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('p_fname, p_lname, p_dateOfBirth, p_gender', 'required'),
+			array('p_fname, p_lname, p_dateOfBirth, p_gender, p_father, p_mother', 'required'),
 			array('p_fname, p_middlename, p_lname, p_placeOfBirth, p_gender', 'length', 'max'=>45),
 			array('p_address, p_father, p_mother', 'length', 'max'=>100),
 			array('p_dateOfDeath', 'safe'),
@@ -54,17 +54,11 @@ class Person extends CActiveRecord
 		return array(
 			'bapGodparents' => array(self::HAS_MANY, 'BapGodparent', 'person_id'),
 			'baptismals' => array(self::HAS_MANY, 'Baptismal', 'person_id'),
-			'baptismals1' => array(self::HAS_MANY, 'Baptismal', 'father_id'),
-			'baptismals2' => array(self::HAS_MANY, 'Baptismal', 'mother_id'),
 			'confGodparents' => array(self::HAS_MANY, 'ConfGodparent', 'person_id'),
 			'confirmations' => array(self::HAS_MANY, 'Confirmation', 'person_id'),
-			'confirmations1' => array(self::HAS_MANY, 'Confirmation', 'father_id'),
-			'confirmations2' => array(self::HAS_MANY, 'Confirmation', 'mother_id'),
 			'marGodparents' => array(self::HAS_MANY, 'MarGodparent', 'person_id'),
 			'marriages' => array(self::HAS_MANY, 'Marriage', 'bride_id'),
 			'marriages1' => array(self::HAS_MANY, 'Marriage', 'groom_id'),
-			'marriages2' => array(self::HAS_MANY, 'Marriage', 'father_id'),
-			'marriages3' => array(self::HAS_MANY, 'Marriage', 'mother_id'),
 			'positions' => array(self::HAS_MANY, 'Position', 'client_id'),
 		);
 	}

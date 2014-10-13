@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`person` (
   `p_address` VARCHAR(100) NULL DEFAULT NULL,
   `p_dateOfDeath` DATE NULL DEFAULT NULL,
   `p_gender` VARCHAR(45) NOT NULL,
-  `p_father` VARCHAR(100) NULL,
-  `p_mother` VARCHAR(100) NULL,
+  `p_father` VARCHAR(100) NOT NULL,
+  `p_mother` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 8;
@@ -75,13 +75,9 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`baptismal` (
   `bap_churchAdd` VARCHAR(100) NULL DEFAULT NULL,
   `Employee_id` INT(11) NOT NULL,
   `person_id` INT(11) NOT NULL,
-  `father_id` INT(11) NOT NULL,
-  `mother_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_baptismal_Employee1_idx` (`Employee_id` ASC),
   INDEX `fk_baptismal_client1_idx` (`person_id` ASC),
-  INDEX `fk_baptismal_person1_idx` (`father_id` ASC),
-  INDEX `fk_baptismal_person2_idx` (`mother_id` ASC),
   CONSTRAINT `fk_baptismal_client1`
     FOREIGN KEY (`person_id`)
     REFERENCES `mopccss`.`person` (`id`)
@@ -90,16 +86,6 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`baptismal` (
   CONSTRAINT `fk_baptismal_Employee1`
     FOREIGN KEY (`Employee_id`)
     REFERENCES `mopccss`.`employee` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_baptismal_person1`
-    FOREIGN KEY (`father_id`)
-    REFERENCES `mopccss`.`person` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_baptismal_person2`
-    FOREIGN KEY (`mother_id`)
-    REFERENCES `mopccss`.`person` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -144,13 +130,9 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`confirmation` (
   `conf_priest` VARCHAR(45) NULL DEFAULT NULL,
   `Employee_id` INT(11) NOT NULL,
   `person_id` INT(11) NOT NULL,
-  `father_id` INT(11) NOT NULL,
-  `mother_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_confirmation_Employee1_idx` (`Employee_id` ASC),
   INDEX `fk_confirmation_person1_idx` (`person_id` ASC),
-  INDEX `fk_confirmation_person2_idx` (`father_id` ASC),
-  INDEX `fk_confirmation_person3_idx` (`mother_id` ASC),
   CONSTRAINT `fk_confirmation_Employee1`
     FOREIGN KEY (`Employee_id`)
     REFERENCES `mopccss`.`employee` (`id`)
@@ -158,16 +140,6 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`confirmation` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_confirmation_person1`
     FOREIGN KEY (`person_id`)
-    REFERENCES `mopccss`.`person` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_confirmation_person2`
-    FOREIGN KEY (`father_id`)
-    REFERENCES `mopccss`.`person` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_confirmation_person3`
-    FOREIGN KEY (`mother_id`)
     REFERENCES `mopccss`.`person` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -211,14 +183,10 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`marriage` (
   `Employee_id` INT(11) NOT NULL,
   `bride_id` INT(11) NOT NULL,
   `groom_id` INT(11) NOT NULL,
-  `father_id` INT(11) NOT NULL,
-  `mother_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_marriage_Employee1_idx` (`Employee_id` ASC),
   INDEX `fk_marriage_person1_idx` (`bride_id` ASC),
   INDEX `fk_marriage_person2_idx` (`groom_id` ASC),
-  INDEX `fk_marriage_person3_idx` (`father_id` ASC),
-  INDEX `fk_marriage_person4_idx` (`mother_id` ASC),
   CONSTRAINT `fk_marriage_Employee1`
     FOREIGN KEY (`Employee_id`)
     REFERENCES `mopccss`.`employee` (`id`)
@@ -231,16 +199,6 @@ CREATE TABLE IF NOT EXISTS `mopccss`.`marriage` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_marriage_person2`
     FOREIGN KEY (`groom_id`)
-    REFERENCES `mopccss`.`person` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_marriage_person3`
-    FOREIGN KEY (`father_id`)
-    REFERENCES `mopccss`.`person` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_marriage_person4`
-    FOREIGN KEY (`mother_id`)
     REFERENCES `mopccss`.`person` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

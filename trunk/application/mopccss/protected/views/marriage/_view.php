@@ -33,15 +33,5 @@
 			echo CHtml::encode($data->groom->FullName); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('father_id')); ?>:</b>
-	<?php //echo CHtml::encode($data->father_id); 
-			echo CHtml::encode($data->father->FullName); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('mother_id')); ?>:</b>
-	<?php //echo CHtml::encode($data->mother_id); 
-			echo CHtml::encode($data->mother->FullName); ?>
-	<br />
-
 
 </div>

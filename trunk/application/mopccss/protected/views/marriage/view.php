@@ -22,6 +22,7 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
+<<<<<<< HEAD
 		array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
 		array('label'=>'Birthday', 'value'=>$model->bride->p_dateOfBirth),
 		array('label'=>'Birth Place', 'value'=>$model->bride->p_placeOfBirth),
@@ -29,6 +30,14 @@ $this->menu=array(
 		array('label'=>'Gender', 'value'=>$model->bride->p_gender),
 		array('label'=>'Father', 'value'=>$model->bride->p_father),
 		array('label'=>'Mother', 'value'=>$model->bride->p_mother),
+=======
+		'id',
+		'mar_marDate',
+		'mar_priest',
+		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
+		/*'bride_id',*/array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
+		/*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
+>>>>>>> fd973bf8317a84efd182ad87dcf73efdb7a17136
 	),
 )); ?>
 <br>

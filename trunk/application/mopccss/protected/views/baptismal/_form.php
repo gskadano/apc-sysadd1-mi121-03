@@ -76,31 +76,21 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'person_id'); ?>
 		<!--<?php echo $form->textField($model,'person_id'); ?>-->
-		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+		<!--<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select a person')
-			); ?>
+			); ?>-->
+		<?php echo $form->dropDownList($model,'person_id', CHtml::listData(
+			Person::model()->findAll(), 'id', 'FullName'), 
+			array('empty'=>'Select a person'), array(
+            'ajax' => array(
+                'type' => 'POST',
+                'url' => CController::createUrl('BaptismalController/getpar'),
+                //'data' => array('category', 'js:this.value'),
+                'update' => '#'.CHtml::activeId($model, 'father_id')
+        ))); ?>
+        
 		<?php echo $form->error($model,'person_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'father_id'); ?>
-		<!--<?php echo $form->textField($model,'father_id'); ?>-->
-		<?php echo $form->dropDownList($model, 'father_id', CHtml::listData(
-			Person::model()->findAll(), 'id', 'FullName'),
-			array('prompt' => 'Select the father')
-			); ?>
-		<?php echo $form->error($model,'father_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'mother_id'); ?>
-		<!--<?php echo $form->textField($model,'mother_id'); ?>-->
-		<?php echo $form->dropDownList($model, 'mother_id', CHtml::listData(
-			Person::model()->findAll(), 'id', 'FullName'),
-			array('prompt' => 'Select the mother')
-			); ?>
-		<?php echo $form->error($model,'mother_id'); ?>
 	</div>
 
 	<div class="row buttons">
