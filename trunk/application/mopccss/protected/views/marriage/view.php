@@ -31,11 +31,7 @@ $this->menu=array(
 		array('label'=>'Father', 'value'=>$model->bride->p_father),
 		array('label'=>'Mother', 'value'=>$model->bride->p_mother),
 
-		//'id',
-		//'mar_marDate',
-		//'mar_priest',
-		/*'bride_id',*/array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
-		/*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
+		
 
 	),
 )); ?>
