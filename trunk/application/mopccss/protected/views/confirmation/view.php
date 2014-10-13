@@ -29,12 +29,14 @@ $this->menu=array(
 		'conf_priest',
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
 		/*'person_id',*/array('label'=>'Person', 'value'=>$model->person->FullName),
+                array('label'=>'Father', 'value'=>$model->person->p_father),
+                array('label'=>'Mother', 'value'=>$model->person->p_mother),
 	),
 )); ?>
 
 <?php $confirmation_id= $model->id;?>
 
-<?php $conf= ConfGodparent::model()->findAll('id = :a', array(':a'=>$model->id));?>
+<?php $conf= ConfGodparent::model()->findAll('confirmation_id = :a', array(':a'=>$model->id));?>
 <?php if (count($conf) !== 0){?>
 <br>
 <h2>Confirmation God Parent</h2>
@@ -42,9 +44,9 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
         'data'=>$row,
-        'attributes'=>array('id',
+        'attributes'=>array(//'id',
 		//array('label'=>'Confirmation id', 'value'=>$model->confirmation->id),
-		'confirmation_id',
+		//'confirmation_id',
 		array('label'=>'Person', 'value'=>$model->person->FullName),
 		//'person_id',
 	),
