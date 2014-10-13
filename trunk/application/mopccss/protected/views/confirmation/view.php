@@ -16,21 +16,36 @@ $this->menu=array(
 );
 ?>
 
+
 <h1>View Confirmation #<?php echo $model->id; ?></h1>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		array('label'=>'Name', 'value'=>$model->person->FullName),
+                array('label'=>'Date Of Birth', 'value'=>$model->person->p_dateOfBirth),
+                array('label'=>'Place Of Birth', 'value'=>$model->person->p_placeOfBirth),
+                array('label'=>'Address', 'value'=>$model->person->p_address),
+                array('label'=>'Gender', 'value'=>$model->person->p_gender),
+                array('label'=>'Father', 'value'=>$model->person->p_father),
+                array('label'=>'Mother', 'value'=>$model->person->p_mother),
+		
+		
+	),
+)); ?>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
+		//'id',
 		'conf_confDate',
 		'conf_bapChurch',
 		'conf_bapAdd',
 		'conf_church',
 		'conf_priest',
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
-		/*'person_id',*/array('label'=>'Person', 'value'=>$model->person->FullName),
-                array('label'=>'Father', 'value'=>$model->person->p_father),
-                array('label'=>'Mother', 'value'=>$model->person->p_mother),
+		/*'person_id',*///array('label'=>'Person', 'value'=>$model->person->FullName),
+              //  array('label'=>'Father', 'value'=>$model->person->p_father),
+              //  array('label'=>'Mother', 'value'=>$model->person->p_mother),
 	),
 )); ?>
 
@@ -47,7 +62,7 @@ $this->menu=array(
         'attributes'=>array(//'id',
 		//array('label'=>'Confirmation id', 'value'=>$model->confirmation->id),
 		//'confirmation_id',
-		array('label'=>'Person', 'value'=>$model->person->FullName),
+		array('label'=>'God Parent', 'value'=>$model->person->FullName),
 		//'person_id',
 	),
 )); ?>
