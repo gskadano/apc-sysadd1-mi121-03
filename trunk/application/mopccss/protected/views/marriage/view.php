@@ -31,10 +31,9 @@ $this->menu=array(
 		array('label'=>'Father', 'value'=>$model->bride->p_father),
 		array('label'=>'Mother', 'value'=>$model->bride->p_mother),
 
-		'id',
-		'mar_marDate',
-		'mar_priest',
-		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
+		//'id',
+		//'mar_marDate',
+		//'mar_priest',
 		/*'bride_id',*/array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
 		/*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
 
@@ -62,6 +61,7 @@ $this->menu=array(
 		//'id',
 		'mar_marDate',
 		'mar_priest',
+		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
 		///*'bride_id',*/array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
 		///*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
 		///*'father_id',*/array('label'=>'Father', 'value'=>$model->father->FullName),
