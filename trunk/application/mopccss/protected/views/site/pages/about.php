@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 ?>
 <h1>About</h1>
 
-<img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="mop logo" width="100" height="100">
+<p><img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="mop logo" width="100" height="100"></p>
 <b><font color=#808080><h3>Military Ordinariate of the Philippines Profile</h3></font></b>
 
 <p>The Military Ordinariate of the Philippines or MOP is a personal diocese of men and women in uniform or for the different branch of service. The said branch of service includes the Armed Forces of the Philippines (A.F.P.), Philippine National Police (P.N.P.), Bureau of Jail Management and Penology (B.J.M.P.), and the Philippine Coast Guard. </p>
@@ -30,7 +30,7 @@ This government organization provides armed and uniformed service and also enfor
 
 <p><img src="https://lh4.googleusercontent.com/-CzpDKCdcBJ0/TrjtsqxZcFI/AAAAAAAAAKc/SSWFcxGcLZQ/s400/bfp%252520logo.jpg" alt="bjmp logo" width="100" height="100">
 <h3>Bureau Fire Protection</h3> </br>
-is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to Firefighting and Protection as well as implementation of the Philippine Fire Code (PD 1185), which was repealed and replaced by the New Fire Code of the Philippines (RA 9514). Formerly known as the Constabulary Fire Protection Bureau, the BFP is in charge of the administration and management of municipal and city fire and emergency services all over the country.
+Is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to Firefighting and Protection as well as implementation of the Philippine Fire Code (PD 1185), which was repealed and replaced by the New Fire Code of the Philippines (RA 9514). Formerly known as the Constabulary Fire Protection Bureau, the BFP is in charge of the administration and management of municipal and city fire and emergency services all over the country.
 </p>
 
 
