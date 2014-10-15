@@ -21,13 +21,20 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
+		array('label'=>'Name', 'value'=>$model->person->FullName),
+        array('label'=>'Date Of Birth', 'value'=>$model->person->p_dateOfBirth),
+        array('label'=>'Place Of Birth', 'value'=>$model->person->p_placeOfBirth),
+        array('label'=>'Address', 'value'=>$model->person->p_address),
+        array('label'=>'Gender', 'value'=>$model->person->p_gender),
+        array('label'=>'Father', 'value'=>$model->person->p_father),
+        array('label'=>'Mother', 'value'=>$model->person->p_mother),
+		//'id',
 		'bap_bapDate',
 		'bap_priest',
 		'bap_church',
 		'bap_churchAdd',
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
-		/*'person_id',*/array('label'=>'Person', 'value'=>$model->person->FullName),
+		///*'person_id',*/array('label'=>'Person', 'value'=>$model->person->FullName),
 	),
 )); ?>
 
@@ -41,9 +48,8 @@ array('BapGodparent/update', 'id'=>$row->id)); ?>
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(
-            'baptismal_id',
-            'person.FullName',
+			array('label'=>'God Parent', 'value'=>$row->person->FullName),
         ),
 ));
-?><br>
+?>
 <?php }} ?>

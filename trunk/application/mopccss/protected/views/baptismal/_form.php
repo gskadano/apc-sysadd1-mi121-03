@@ -76,20 +76,10 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'person_id'); ?>
 		<!--<?php echo $form->textField($model,'person_id'); ?>-->
-		<!--<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select a person')
-			); ?>-->
-		<?php echo $form->dropDownList($model,'person_id', CHtml::listData(
-			Person::model()->findAll(), 'id', 'FullName'), 
-			array('empty'=>'Select a person'), array(
-            'ajax' => array(
-                'type' => 'POST',
-                'url' => CController::createUrl('BaptismalController/getpar'),
-                //'data' => array('category', 'js:this.value'),
-                'update' => '#'.CHtml::activeId($model, 'father_id')
-        ))); ?>
-        
+			); ?>
 		<?php echo $form->error($model,'person_id'); ?>
 	</div>
 

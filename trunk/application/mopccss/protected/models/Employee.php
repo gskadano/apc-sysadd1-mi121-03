@@ -23,6 +23,16 @@
  */
 class Employee extends CActiveRecord
 {
+	
+	//Password Validation
+	public function validatePassword($password){
+		return CPasswordHelper::verifyPassword($password,$this->emp_password);
+	}
+	
+	public function hashPassword($password){
+		return CPasswordHelper::hashPassword($password);
+	}
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -137,5 +147,11 @@ class Employee extends CActiveRecord
 	
 	public function getFullName(){
 		return $this->emp_lname . ", " . $this->emp_fname;
+	}
+	
+	public function beforeSave(){
+		$this->emp_password = hash_hmac('sha256', $this->emp_password, 
+		Yii::app()->params['encryptionKey']); 
+		return parent::beforeSave();
 	}
 }
