@@ -16,34 +16,67 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Marriage #<?php echo $model->id; ?></h1>
 
+<h1>View Marriage #<?php echo $model->id; ?></h1>
+<h4>Bride</h4>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
-		'mar_marDate',
-		'mar_priest',
-		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
-		/*'bride_id',*/array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
-		/*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
-	),
-)); ?><?php $marriage_id= $model->id;?>
 
-<?php $marriage= MarGodparent::model()->findAll('id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h2>Marriage Godparent</h2>
-<?php foreach ($conf as $row) { ?>
+		array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
+		array('label'=>'Birthday', 'value'=>$model->bride->p_dateOfBirth),
+		array('label'=>'Birth Place', 'value'=>$model->bride->p_placeOfBirth),
+		array('label'=>'Address', 'value'=>$model->bride->p_address),
+		array('label'=>'Gender', 'value'=>$model->bride->p_gender),
+		array('label'=>'Father', 'value'=>$model->bride->p_father),
+		array('label'=>'Mother', 'value'=>$model->bride->p_mother),
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-        'data'=>$row,
-        'attributes'=>array('id',
-		//array('label'=>'Marriage id', 'value'=>$model->marriage->id),
-		'marriage_id',
-		array('label'=>'Person', 'value'=>$model->person->FullName),
-		//'person_id',
+		
+
 	),
 )); ?>
 <br>
+<h4>Groom</h4>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
+		array('label'=>'Birthday', 'value'=>$model->groom->p_dateOfBirth),
+		array('label'=>'Birth Place', 'value'=>$model->groom->p_placeOfBirth),
+		array('label'=>'Address', 'value'=>$model->groom->p_address),
+		array('label'=>'Gender', 'value'=>$model->groom->p_gender),
+		array('label'=>'Father', 'value'=>$model->groom->p_father),
+		array('label'=>'Mother', 'value'=>$model->groom->p_mother),
+	),
+)); ?>
+<br>
+<h4>Marriage Details</h4>
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		//'id',
+		'mar_marDate',
+		'mar_priest',
+		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
+		///*'bride_id',*/array('label'=>'Bride Name', 'value'=>$model->bride->FullName),
+		///*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
+		///*'father_id',*/array('label'=>'Father', 'value'=>$model->father->FullName),
+		///*'mother_id',*/array('label'=>'Mother', 'value'=>$model->mother->FullName),
+	),
+)); ?>
+
+<?php $en=MarGodparent::model()->findAll('marriage_id = :a', array(':a'=>$model->id));?>
+<?php if (count($en) !== 0){?>
+<br>
+<h4>Marriage Godparent</h4>
+<?php foreach ($en as $row) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
+array('MarGodparent/update', 'id'=>$row->id)); ?>
+<?php $this->widget ('zii.widgets.CdetailView', array(
+        'data'=>$row,
+        'attributes'=>array(
+            array('label'=>'God Parent', 'value'=>$row->person->FullName),
+        ),
+));
+?><br>
 <?php }} ?>

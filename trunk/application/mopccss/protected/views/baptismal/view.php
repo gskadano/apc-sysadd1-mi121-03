@@ -41,7 +41,8 @@ $this->menu=array(
 <?php $en=BapGodparent::model()->findAll('baptismal_id = :a', array(':a'=>$model->id));?>
 <?php if (count($en) !== 0){?>
 <br>
-<h2>God Parents</h2>
+
+<h1>Baptismal Godparents</h1>
 <?php foreach ($en as $row) { ?>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
 array('BapGodparent/update', 'id'=>$row->id)); ?>

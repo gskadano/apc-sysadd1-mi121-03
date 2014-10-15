@@ -26,3 +26,25 @@ $this->menu=array(
 		'ch_address',
 	),
 )); ?>
+
+<?php $conf= Employee::model()->findAll('church_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h1>Employee Information</h1>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+                'data'=>$row,
+                'attributes'=>array(   
+                                'emp_username',
+								'emp_password',
+								'emp_usertype',
+								'emp_fname',
+								'emp_lname',
+								'emp_hireDate',
+								'emp_retireDate',
+								'emp_chapAssign',
+                        			),
+        )); ?>
+<br><?php }} ?>
+
+
