@@ -81,14 +81,14 @@ class Employee extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'emp_username' => 'Employee Username',
-			'emp_password' => 'Employee Password',
-			'emp_usertype' => 'Employee User Type',
-			'emp_fname' => 'Employee Firstname',
-			'emp_lname' => 'Employee Lastname',
-			'emp_hireDate' => 'Employee Hire Date',
-			'emp_retireDate' => 'Employee Retire Date',
-			'emp_chapAssign' => 'Employee Assigned Chapter',
+			'emp_username' => 'Username',
+			'emp_password' => 'Password',
+			'emp_usertype' => 'User Type',
+			'emp_fname' => 'Firstname',
+			'emp_lname' => 'Lastname',
+			'emp_hireDate' => 'Hire Date',
+			'emp_retireDate' => 'Retire Date',
+			'emp_chapAssign' => 'Assigned Chapter',
 			'church_id' => 'Church',
 		);
 	}
