@@ -16,15 +16,16 @@ $this->menu=array(
 );
 ?>
 
-<h1>View ConfGodparent #<?php echo $model->id; ?></h1>
+<h1>View Confirmation of God Parent #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		array('label'=>'Confirmation id', 'value'=>$model->confirmation->id),
+                array('label'=>'Person', 'value'=>$model->person->FullName),
+		//array('label'=>'Confirmation ID', 'value'=>$model->confirmation->id),
 		//'confirmation_id',
-		array('label'=>'Person', 'value'=>$model->person->FullName),
+		
 		//'person_id',
 	),
 )); ?>
