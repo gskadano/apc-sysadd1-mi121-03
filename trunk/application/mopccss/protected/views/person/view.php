@@ -16,7 +16,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Person #<?php echo $model->id; ?></h1>
+<!--<h1>View Person #<?php echo $model->id; ?></h1>-->
+<h1><b><?php echo $model->FullName; ?></b></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -34,3 +35,29 @@ $this->menu=array(
 		'p_mother',
 	),
 )); ?>
+
+<?php $client_id= $model->id;?>
+
+
+<?php $conf=Position::model()->findAll('client_id=:a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h1> <b>Position</b></h1>
+<?php foreach ($conf as $row) { ?>
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+        'data'=>$row,
+        'attributes'=>array(
+             //  'id',
+		'rank',
+		'afpServiceNum',
+		'branchOfService',
+		'unitAddress',
+		'positioncol',
+		//'person.FullName',
+        //array('label'=>'Client', 'value'=>$model->FullName),
+	),
+)); ?>
+
+<br>
+<?php }} ?>
