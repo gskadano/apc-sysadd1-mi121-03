@@ -22,12 +22,13 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
+                array('label'=>'Client', 'value'=>$model->client->FullName),
 		'rank',
 		'afpServiceNum',
 		'branchOfService',
 		'unitAddress',
 		'positioncol',
 		//'client_id',
-        array('label'=>'Client', 'value'=>$model->client->FullName),
+       
 	),
 )); ?>

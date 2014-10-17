@@ -5,11 +5,16 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->person->FullName), array('view', 'id'=>$data->id)); ?>
 	<br />
+        
+<!--        <b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
+	<?php //echo CHtml::encode($data->person_id);
+			echo CHtml::encode($data->person->FullName); ?>
+	<br />-->
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('conf_confDate')); ?>:</b>
+<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('conf_confDate')); ?>:</b>
 	<?php echo CHtml::encode($data->conf_confDate); ?>
 	<br />
 
@@ -21,22 +26,19 @@
 	<?php echo CHtml::encode($data->conf_bapAdd); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('conf_church')); ?>:</b>
-	<?php echo CHtml::encode($data->conf_church); ?>
-	<br />
+	
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('conf_priest')); ?>:</b>
 	<?php echo CHtml::encode($data->conf_priest); ?>
-	<br />
+	<br />-->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('Employee_id')); ?>:</b>
 	<?php //echo CHtml::encode($data->Employee_id); 
 			echo CHtml::encode($data->employee->FullName); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
-	<?php //echo CHtml::encode($data->person_id);
-			echo CHtml::encode($data->person->FullName); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('conf_church')); ?>:</b>
+	<?php echo CHtml::encode($data->conf_church); ?>
 	<br />
 
 </div>

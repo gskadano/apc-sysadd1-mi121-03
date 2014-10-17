@@ -12,7 +12,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Confirmation Godparents</h1>
+<h1>Confirmation God Parents</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
