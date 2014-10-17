@@ -55,6 +55,7 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		//'id',
+		array('label'=>'Church', 'value'=>$model->employee->church->ch_name),
 		'mar_marDate',
 		'mar_priest',
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
@@ -75,7 +76,7 @@ array('MarGodparent/update', 'id'=>$row->id)); ?>
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(
-            array('label'=>'God Parent', 'value'=>$row->person->FullName),
+            array('label'=>'Godparent', 'value'=>$row->person->FullName),
         ),
 ));
 ?><br>
