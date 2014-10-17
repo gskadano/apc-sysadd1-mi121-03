@@ -30,7 +30,7 @@ $this->menu=array(
 <?php $conf= Employee::model()->findAll('church_id = :a', array(':a'=>$model->id));?>
 <?php if (count($conf) !== 0){?>
 <br>
-<h1>Employee Information</h1>
+<h1>Employee's Information</h1>
 <?php foreach ($conf as $row) { ?>
 <?php $this->widget('zii.widgets.CDetailView', array(
                 'data'=>$row,
@@ -43,7 +43,22 @@ $this->menu=array(
 								'emp_hireDate',
 								'emp_retireDate',
 								'emp_chapAssign',
-                        			),
+            ),
+        )); ?>
+<br><?php }} ?>
+
+<?php $conf= Priest::model()->findAll('church_id = :a', array(':a'=>$model->id));?>
+<?php if (count($conf) !== 0){?>
+<br>
+<h1>Priest's Information</h1>
+<?php foreach ($conf as $row) { ?>
+<?php $this->widget('zii.widgets.CDetailView', array(
+                'data'=>$row,
+                'attributes'=>array(   
+                                'pfname',
+								'plname',
+								'church.ch_name',
+            ),
         )); ?>
 <br><?php }} ?>
 

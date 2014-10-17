@@ -44,13 +44,13 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Bap Godparents', 'url'=>array('/bapGodparent/index'),'visible'=>!Yii::app()->user->isGuest),
+				//array('label'=>'Bap Godparents', 'url'=>array('/bapGodparent/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Baptismal', 'url'=>array('/baptismal/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Church', 'url'=>array('/church/index'),'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Conf Godparents', 'url'=>array('/confGodparent/index'),'visible'=>!Yii::app()->user->isGuest),
+				//array('label'=>'Conf Godparents', 'url'=>array('/confGodparent/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Confirmation', 'url'=>array('/confirmation/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Employee', 'url'=>array('/employee/index'),'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Mar Godparents', 'url'=>array('/marGodparent/index'),'visible'=>!Yii::app()->user->isGuest),
+				//array('label'=>'Mar Godparents', 'url'=>array('/marGodparent/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Marriage', 'url'=>array('/marriage/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Person', 'url'=>array('/person/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Position', 'url'=>array('/position/index'),'visible'=>!Yii::app()->user->isGuest),

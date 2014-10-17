@@ -5,17 +5,17 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
+	<!--<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<br />-->
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('pname')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->PFullName), array('view', 'id'=>$data->id));?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('pfname')); ?>:</b>
-	<?php echo CHtml::encode($data->pfname); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('plname')); ?>:</b>
+	<!--<b><?php echo CHtml::encode($data->getAttributeLabel('plname')); ?>:</b>
 	<?php echo CHtml::encode($data->plname); ?>
-	<br />
+	<br />-->
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('church_id')); ?>:</b>
 	<?php //echo CHtml::encode($data->church_id); 

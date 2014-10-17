@@ -58,6 +58,7 @@ class Priest extends CActiveRecord
 			'pfname' => 'First name',
 			'plname' => 'Last name',
 			'church_id' => 'Church',
+			'pname' => 'Priest Name',
 		);
 	}
 
