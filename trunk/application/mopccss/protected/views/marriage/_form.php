@@ -57,7 +57,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'bride_id'); ?>
 			<?php echo $form->dropDownList($model, 'bride_id', CHtml::listData(
-				Person::model()->findAll(), 'id', 'FullName'),
+				Person::model()->findAll('p_gender=:gender', array(':gender'=>'Female')), 'id', 'FullName'),
 				array('prompt' => 'Select the bride')
 				); ?>
 		<?php echo $form->error($model,'bride_id'); ?>
@@ -66,7 +66,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'groom_id'); ?>
 			<?php echo $form->dropDownList($model, 'groom_id', CHtml::listData(
-				Person::model()->findAll(), 'id', 'FullName'),
+				Person::model()->findAll('p_gender=:gender', array(':gender'=>'Male')), 'id', 'FullName'),
 				array('prompt' => 'Select the groom')
 				); ?>
 		<?php echo $form->error($model,'groom_id'); ?>
