@@ -15,4 +15,4 @@ $this->menu=array(
 
 <h1>Create Marriage</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'godparent'=>$godparent)); ?>
