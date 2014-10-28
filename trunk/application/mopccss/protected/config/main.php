@@ -12,7 +12,7 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array('log'),
-	// 'theme'=>'techmania1',
+	//'theme'=>'mattskitchen',
 
 	// autoloading model and component classes
 	'import'=>array(
