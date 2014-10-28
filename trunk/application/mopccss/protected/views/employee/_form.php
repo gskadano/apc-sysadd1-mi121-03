@@ -33,7 +33,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'emp_usertype'); ?>
-		<?php echo $form->textField($model,'emp_usertype',array('size'=>45,'maxlength'=>45)); ?>
+		<!--<?php echo $form->textField($model,'emp_usertype',array('size'=>45,'maxlength'=>45)); ?>-->
+		<?php echo $form->dropDownList($model,'emp_usertype',array("Admin"=>"Admin", "Regular"=>"Regular" )
+			,array('empty'=>'Select user type')); ?>
 		<?php echo $form->error($model,'emp_usertype'); ?>
 	</div>
 

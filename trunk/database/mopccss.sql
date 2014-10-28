@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2014 at 04:17 PM
+-- Generation Time: Oct 24, 2014 at 09:26 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
   PRIMARY KEY (`id`),
   KEY `fk_baptismal_Employee1_idx` (`Employee_id`),
   KEY `fk_baptismal_client1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `baptismal`
@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
 INSERT INTO `baptismal` (`id`, `bap_bapDate`, `bap_priest`, `bap_church`, `bap_churchAdd`, `Employee_id`, `person_id`) VALUES
 (1, '2014-10-31', 'Leopoldo', 'Shrine of Saint Therese of the Child Jesus', 'Pasay City', 5, 15),
 (3, '2014-10-31', 'Leopoldo', 'Shrine of Saint Therese of the Child Jesus', 'Pasay City', 4, 11),
-(4, '2014-10-31', 'Harley', 'Shrine of Saint Therese of the Child Jesus', 'Quezon City', 5, 10);
+(4, '2014-10-31', 'Harley', 'Shrine of Saint Therese of the Child Jesus', 'Quezon City', 5, 10),
+(5, '2014-12-01', 'Leopoldo', 'Saint Ignatious Cathedral', 'Quezon City', 4, 16);
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `bap_godparent` (
   PRIMARY KEY (`id`),
   KEY `fk_bapGodParent_baptismal1_idx` (`baptismal_id`),
   KEY `fk_bapGodParent_person1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `bap_godparent`
@@ -70,7 +71,8 @@ CREATE TABLE IF NOT EXISTS `bap_godparent` (
 INSERT INTO `bap_godparent` (`id`, `baptismal_id`, `person_id`) VALUES
 (1, 1, 11),
 (2, 3, 15),
-(3, 3, 8);
+(3, 3, 8),
+(4, 5, 11);
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `church_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Employee_church1_idx` (`church_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `employee`
@@ -171,7 +173,8 @@ INSERT INTO `employee` (`id`, `emp_username`, `emp_password`, `emp_usertype`, `e
 (4, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', '2014-10-01', '0000-00-00', 'MOP', 1),
 (5, 'hssantos', 'a4c6b15502f68768488cd48f496a1ac24e69a11b2786f556e0da023059d7f9bb', 'Admin', 'John Michael', 'Santos', '2014-10-01', '0000-00-00', 'MOP', 2),
 (6, 'mdronquillo', '75f3735825c0b6565a8afa3252277e3de30093611a2254e2efa8d2ad5be366ad', 'Regular', 'Joshua', 'Ronquillo', '2014-10-01', '0000-00-00', 'MOP', 1),
-(7, 'cdnerez', '47fffc37684fd11de7961e2dca8e207f5e0f6b40d7ed37335d10fae8cb6c0306', 'Regular', 'Carlos', 'Nerez', '2014-10-31', '0000-00-00', 'MOP', 1);
+(7, 'cdnerez', '47fffc37684fd11de7961e2dca8e207f5e0f6b40d7ed37335d10fae8cb6c0306', 'Regular', 'Carlos', 'Nerez', '2014-10-31', '0000-00-00', 'MOP', 1),
+(8, 'jjtero', 'fbd20032e8cc8e50a80fc3870e5e21e6476a2cd2624898494a80d7640b90d8c8', 'Regular', 'John Emmanuel', 'Tero', '2014-10-22', '0000-00-00', 'MOP Chancery', 2);
 
 -- --------------------------------------------------------
 
@@ -240,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `person` (
   `p_father` varchar(100) NOT NULL,
   `p_mother` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `person`
@@ -254,7 +257,8 @@ INSERT INTO `person` (`id`, `p_fname`, `p_middlename`, `p_lname`, `p_dateOfBirth
 (12, 'Mark Joshua', '', 'Ronquillo', '1996-02-21', 'Taguig City', 'Taguig City', '0000-00-00', 'Male', 'Alfonso Ronquillo', 'Maria Ronquillo'),
 (13, 'Adrianne', '', 'Montalban', '1995-06-09', 'Pasay City', 'Pasay City', '0000-00-00', 'Female', 'Arnulfo Montalban', 'Ping Montalban'),
 (14, 'Jerica', '', 'Flores', '1996-04-28', 'Makati City', 'Makati City', '0000-00-00', 'Female', 'Roel Flores', 'Emily Flores'),
-(15, 'Christine Joy', '', 'Ferrer', '1996-11-18', 'Laguna City', 'Laguna City', '0000-00-00', 'Female', 'Willie Ferrer', 'Ernestine Ferrer');
+(15, 'Christine Joy', '', 'Ferrer', '1996-11-18', 'Laguna City', 'Laguna City', '0000-00-00', 'Female', 'Willie Ferrer', 'Ernestine Ferrer'),
+(16, 'Tytus Zinan', 'Laplana', 'Manuel', '2014-03-29', 'Cagayan De oro City', 'Zone 3 patag,Cagayan De Oro City', '0000-00-00', 'Male', 'Cristofer S. Manuel', 'Mary Joy L Manuel');
 
 -- --------------------------------------------------------
 

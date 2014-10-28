@@ -82,6 +82,32 @@
 			); ?>
 		<?php echo $form->error($model,'person_id'); ?>
 	</div>
+	
+	<H2>God Parent</H2>
+	
+	<div class="row">
+		<!--<?php echo $form->labelEx($godparent,'baptismal_id'); ?>-->
+		<!--<?php echo $form->textField($godparent,'baptismal_id'); ?>-->
+		
+		<?php echo $form->hiddenField($godparent,'baptismal_id'); ?>
+		
+		<!--<?php echo $form->dropDownList($godparent, 'baptismal_id', CHtml::listData(
+			Baptismal::model()->findAll(), 'id', 'id'),//dapat name ng bibinyagan
+			array('prompt' => 'Select baptismal')
+			); ?>-->
+		
+		<!--<?php echo $form->error($godparent,'baptismal_id'); ?>-->
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($godparent,'person_id'); ?>
+		<!--<?php echo $form->textField($godparent,'person_id'); ?>-->
+		<?php echo $form->dropDownList($godparent, 'person_id', CHtml::listData(
+			Person::model()->findAll(), 'id', 'FullName'),
+			array('prompt' => 'Select Godparents')
+			); ?>
+		<?php echo $form->error($godparent,'person_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

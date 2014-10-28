@@ -63,6 +63,7 @@ class BapGodparentController extends Controller
 	public function actionCreate()
 	{
 		$model=new BapGodparent;
+		$model->baptismal_id = Yii::app()->getRequest()->getParam('baptismal_id');//-----------------------------
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

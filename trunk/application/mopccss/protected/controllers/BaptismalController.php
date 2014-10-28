@@ -69,19 +69,39 @@ class BaptismalController extends Controller
 	public function actionCreate()
 	{
 		$model=new Baptismal;
+		$godparent=new BapGodparent;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
+		if(isset($_POST['Baptismal']))
+		{
+			$model->attributes=$_POST['Baptismal'];
+              if($model->save()){
+				if(isset($_POST['BapGodparent']))
+					{
+                        $godparent->attributes=$_POST['BapGodparent'];
+						$godparent->baptismal_id=$model->id;
+					}
+								
+				if($godparent->save())
+				{
+					$this->redirect(array('view','id'=>$model->id));
+				}
+			}
+		}
+/*
 		if(isset($_POST['Baptismal']))
 		{
 			$model->attributes=$_POST['Baptismal'];
 			if($model->save())
+			
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+*/
 		$this->render('create',array(
 			'model'=>$model,
+			'godparent'=>$godparent,
 		));
 	}
 
