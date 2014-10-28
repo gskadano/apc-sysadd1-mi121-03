@@ -20,15 +20,17 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'baptismal_id'); ?>
+		<!--<?php echo $form->labelEx($model,'baptismal_id'); ?>-->
 		<!--<?php echo $form->textField($model,'baptismal_id'); ?>-->
 		
-		<?php echo $form->dropDownList($model, 'baptismal_id', CHtml::listData(
+		<!--<?php echo $form->dropDownList($model, 'baptismal_id', CHtml::listData(
 			Baptismal::model()->findAll(), 'id', 'id'),//dapat name ng bibinyagan
 			array('prompt' => 'Select baptismal')
-			); ?>
+			); ?>-->
 		
-		<?php echo $form->error($model,'baptismal_id'); ?>
+		<?php echo $form->hiddenField($model,'baptismal_id'); ?>
+		
+		<!--<?php echo $form->error($model,'baptismal_id'); ?>-->
 	</div>
 
 	<div class="row">

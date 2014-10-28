@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Update Baptismal', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Baptismal', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),
+	array('label'=>'Create Godparent', 'url'=>array('bapGodparent/create', 'baptismal_id'=>$model->id)),
 );
 ?>
 
