@@ -22,8 +22,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'afpServiceNum'); ?>
-		<?php echo $form->textField($model,'afpServiceNum'); ?>
+		<?php echo $form->label($model,'afpSerialNum'); ?>
+		<?php echo $form->textField($model,'afpSerialNum',array('size'=>50,'maxlength'=>50)); ?>
 	</div>
 
 	<div class="row">
@@ -34,11 +34,6 @@
 	<div class="row">
 		<?php echo $form->label($model,'unitAddress'); ?>
 		<?php echo $form->textField($model,'unitAddress',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'positioncol'); ?>
-		<?php echo $form->textField($model,'positioncol',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">

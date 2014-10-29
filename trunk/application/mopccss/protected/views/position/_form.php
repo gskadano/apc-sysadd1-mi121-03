@@ -26,9 +26,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'afpServiceNum'); ?>
-		<?php echo $form->textField($model,'afpServiceNum'); ?>
-		<?php echo $form->error($model,'afpServiceNum'); ?>
+		<?php echo $form->labelEx($model,'afpSerialNum'); ?>
+		<?php echo $form->textField($model,'afpSerialNum',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'afpSerialNum'); ?>
 	</div>
 
 	<div class="row">
@@ -41,12 +41,6 @@
 		<?php echo $form->labelEx($model,'unitAddress'); ?>
 		<?php echo $form->textField($model,'unitAddress',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'unitAddress'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'positioncol'); ?>
-		<?php echo $form->textField($model,'positioncol',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'positioncol'); ?>
 	</div>
 
 	<div class="row">

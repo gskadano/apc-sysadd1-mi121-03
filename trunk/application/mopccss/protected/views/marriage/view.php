@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Update Marriage', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Marriage', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Marriage', 'url'=>array('admin')),
+	array('label'=>'Create Godparent', 'url'=>array('marGodparent/create', 'marriage_id'=>$model->id)),
 );
 ?>
 
@@ -72,12 +73,12 @@ $this->menu=array(
 <h4>Marriage Godparent</h4>
 <?php foreach ($en as $row) { ?>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
-array('MarGodparent/update', 'id'=>$row->id)); ?>
+array('marGodparent/update', 'id'=>$row->id)); ?>
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(
             array('label'=>'Godparent', 'value'=>$row->person->FullName),
         ),
 ));
-?><br>
+?>
 <?php }} ?>

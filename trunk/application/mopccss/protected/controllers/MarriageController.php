@@ -63,23 +63,42 @@ class MarriageController extends Controller
 	public function actionCreate()
 	{
 		$model=new Marriage;
-
+		$godparent=new MarGodparent;
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Marriage']))
 		{
-			$model->attributes=$_POST['Marriage'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+				$model->attributes=$_POST['Marriage'];
+              if($model->save()){
+				if(isset($_POST['MarGodparent']))
+						{
+                        $godparent->attributes=$_POST['MarGodparent'];
+						$godparent->marriage_id=$model->id;
+					}
+	
+				if($godparent->save())
+					{
+						$this->redirect(array('view','id'=>$model->id));
+					}
+				}
+			}
+				if(isset($_POST['MarGodparent']))
+				{
+				
+					$model->attributes=$_POST['Marriage'];
+					if($model->save())
+					
+					$this->redirect(array('view','id'=>$model->id));
+				}
+				$this->render('create',array(
+					'model'=>$model,
+					'godparent'=>$godparent,
+			));
 	}
-
-	/**
+					
+	/*
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated

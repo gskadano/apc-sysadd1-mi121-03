@@ -5,8 +5,8 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fullname')); ?>:</b>
+	<?php echo CHtml::link(CHtml::encode($data->FullName), array('view', 'id'=>$data->id)); ?>
 	<br />
 
 
@@ -14,13 +14,13 @@
 	<?php echo CHtml::encode($data->emp_usertype); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('emp_fname')); ?>:</b>
+	<!--<b><?php echo CHtml::encode($data->getAttributeLabel('emp_fname')); ?>:</b>
 	<?php echo CHtml::encode($data->emp_fname); ?>
-	<br />
+	<br />-->
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('emp_lname')); ?>:</b>
+	<!--<b><?php echo CHtml::encode($data->getAttributeLabel('emp_lname')); ?>:</b>
 	<?php echo CHtml::encode($data->emp_lname); ?>
-	<br />
+	<br />-->
 
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('emp_retireDate')); ?>:</b>

@@ -90,6 +90,7 @@ class Employee extends CActiveRecord
 			'emp_retireDate' => 'Retire Date',
 			'emp_chapAssign' => 'Assigned Chapter',
 			'church_id' => 'Church',
+			'fullname' => 'Fullname',
 		);
 	}
 
