@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List Baptismal', 'url'=>array('index')),
 	array('label'=>'Create Baptismal', 'url'=>array('create')),
 	array('label'=>'Update Baptismal', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Baptismal', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	//array('label'=>'Delete Baptismal', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),
 	array('label'=>'Create Godparent', 'url'=>array('bapGodparent/create', 'baptismal_id'=>$model->id)),
 );
@@ -47,6 +47,11 @@ $this->menu=array(
 <?php foreach ($en as $row) { ?>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
 array('BapGodparent/update', 'id'=>$row->id)); ?>
+
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/delete.png" align="right"/>', 
+//array('BapGodparent/update', 'id'=>$row->id)); ; 
+//array('linkOptions'=>array('submit'=>array('delete','id'=>$row->id),'confirm'=>'Are you sure you want to delete this item?')));
+array('url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$row->id),'confirm'=>'Are you sure you want to delete this item?')));?>
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(
