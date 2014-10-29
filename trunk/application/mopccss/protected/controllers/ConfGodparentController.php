@@ -63,6 +63,7 @@ class ConfGodparentController extends Controller
 	public function actionCreate()
 	{
 		$model=new ConfGodparent;
+                $model->confirmation_id = Yii::app()->getRequest()->getParam('confirmation_id');//-----------------------------
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

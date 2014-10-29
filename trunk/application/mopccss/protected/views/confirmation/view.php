@@ -4,7 +4,9 @@
 
 $this->breadcrumbs=array(
 	'Confirmations'=>array('index'),
+        'Conf Godparents'=>array('index'),
 	$model->id,
+   
 );
 
 $this->menu=array(
@@ -13,8 +15,12 @@ $this->menu=array(
 	array('label'=>'Update Confirmation', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Confirmation', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Confirmation', 'url'=>array('admin')),
+	array('label'=>'Create ConfGodparent', 'url'=>array('confGodparent/create', 'confirmation_id'=>$model->id)),
+ 
 );
 ?>
+
+
 
 
 <h1>Confirmation Details of <b><?php echo $model->person->FullName; ?></b></h1>
@@ -70,5 +76,5 @@ array('ConfGodparent/update', 'id'=>$row->id)); ?>
 			array('label'=>'God Parent', 'value'=>$row->person->FullName),
         ),
 )); ?>
-<br>
+
 <?php }} ?>
