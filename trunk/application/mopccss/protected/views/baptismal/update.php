@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Update Baptismal <?php echo $model->id; ?></h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form1', array('model'=>$model)); ?>
