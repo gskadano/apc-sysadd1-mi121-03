@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'position':
  * @property integer $id
  * @property string $rank
- * @property integer $afpServiceNum
+ * @property integer $afpSerialNum
  * @property string $branchOfService
  * @property string $unitAddress
  * @property string $positioncol
@@ -34,11 +34,12 @@ class Position extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('client_id', 'required'),
-			array('afpServiceNum, client_id', 'numerical', 'integerOnly'=>true),
-			array('rank, branchOfService, unitAddress, positioncol', 'length', 'max'=>45),
+			array('client_id', 'numerical', 'integerOnly'=>true),
+			array('rank, branchOfService, unitAddress', 'length', 'max'=>45),
+			array('afpSerialNum', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, rank, afpServiceNum, branchOfService, unitAddress, positioncol, client_id', 'safe', 'on'=>'search'),
+			array('id, rank, afpSerialNum, branchOfService, unitAddress, client_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,10 +63,9 @@ class Position extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'rank' => 'Rank',
-			'afpServiceNum' => 'AFP Service Number',
+			'afpSerialNum' => 'Afp Serial Num',
 			'branchOfService' => 'Branch Of Service',
 			'unitAddress' => 'Unit Address',
-			'positioncol' => 'Positioncol',
 			'client_id' => 'Client',
 		);
 	}
@@ -90,7 +90,7 @@ class Position extends CActiveRecord
 
 		//$criteria->compare('id',$this->id);
 		$criteria->compare('rank',$this->rank,true);
-		$criteria->compare('afpServiceNum',$this->afpServiceNum);
+		$criteria->compare('afpSerialNum',$this->afpSerialNum,true);
 		$criteria->compare('branchOfService',$this->branchOfService,true);
 		$criteria->compare('unitAddress',$this->unitAddress,true);
 		$criteria->compare('positioncol',$this->positioncol,true);

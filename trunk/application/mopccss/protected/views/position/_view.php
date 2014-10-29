@@ -25,10 +25,10 @@
 	<?php echo CHtml::encode($data->unitAddress); ?>
 	<br />
 
-<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('client_id')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('client_id')); ?>:</b>
 	<?php //echo CHtml::encode($data->client_id); 
             echo CHtml::encode($data->client->FullName); ?>
-	<br />-->
+	<br />
 
 
 </div>

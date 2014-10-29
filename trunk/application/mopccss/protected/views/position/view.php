@@ -27,7 +27,6 @@ $this->menu=array(
 		'afpSerialNum',
 		'branchOfService',
 		'unitAddress',
-		'positioncol',
 		//'client_id',
        
 	),
