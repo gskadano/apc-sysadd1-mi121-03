@@ -17,27 +17,30 @@
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
-
 	<div class="row">
-		<?php echo $form->labelEx($model,'marriage_id'); ?>
-		<!--<?php echo $form->textField($model,'marriage_id'); ?> -->
-                 <?php echo $form->dropDownList($model, 'marriage_id', CHtml::listData(
-			marriage::model()->findAll(), 'id', 'id'),
-			array('prompt' => 'Select a marriage')
-			); ?>
-		<?php echo $form->error($model,'marriage_id'); ?>
+		<!--<?php echo $form->labelEx($model,'marriage_id'); ?>-->
+		<!--<?php echo $form->textField($model,'marriage_id'); ?>-->
+		
+		<!--<?php echo $form->dropDownList($model, 'marriage_id', CHtml::listData(
+			Baptismal::model()->findAll(), 'id', 'id'),//dapat name ng bibinyagan
+			array('prompt' => 'Select baptismal')
+			); ?>-->
+		
+		<?php echo $form->hiddenField($model,'marriage_id'); ?>
+		
+		<!--<?php echo $form->error($model,'marriage_id'); ?>-->
 	</div>
-
-	<div class="row">
+	
+		<div class="row">
 		<?php echo $form->labelEx($model,'person_id'); ?>
-		<!--<?php echo $form->textField($model,'person_id'); ?>-->
-                  <?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+			<!--<?php echo $form->textField($model,'person_id'); ?>-->
+		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
-			array('prompt' => 'Select a person')
-			); ?>
-                  <?php echo $form->error($model,'person_id'); ?>
+			array('prompt' => 'Select Godparents')
+				); ?>
+		<?php echo $form->error($model,'person_id'); ?>
 	</div>
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

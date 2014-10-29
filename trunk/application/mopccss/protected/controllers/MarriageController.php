@@ -64,6 +64,7 @@ class MarriageController extends Controller
 	{
 		$model=new Marriage;
 		$godparent=new MarGodparent;
+		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
