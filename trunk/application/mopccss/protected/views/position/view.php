@@ -24,7 +24,7 @@ $this->menu=array(
 		'id',
                 array('label'=>'Client', 'value'=>$model->client->FullName),
 		'rank',
-		'afpServiceNum',
+		'afpSerialNum',
 		'branchOfService',
 		'unitAddress',
 		'positioncol',
