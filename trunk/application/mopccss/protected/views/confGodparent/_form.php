@@ -20,12 +20,17 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'confirmation_id'); ?>
-		<?php echo $form->dropDownList($model, 'confirmation_id', CHtml::listData(
-				Confirmation::model()->findAll(), 'id', 'id'),//dapat full name
-				array('prompt' => 'Select a Confirmation')
-				); ?>
-		<?php echo $form->error($model,'confirmation_id'); ?>
+		<!--<?php echo $form->labelEx($model,'confirmation_id'); ?>-->
+		<!--<?php echo $form->textField($model,'confirmation_id'); ?>-->
+		
+		<!--<?php echo $form->dropDownList($model, 'confirmation_id', CHtml::listData(
+			Confirmation::model()->findAll(), 'id', 'id'),//dapat name ng bibinyagan
+			array('prompt' => 'Select baptismal')
+			); ?>-->
+		
+		<?php echo $form->hiddenField($model,'confirmation_id'); ?>
+		
+		<!--<?php echo $form->error($model,'confirmation_id'); ?>-->
 	</div>
 
 	<div class="row">

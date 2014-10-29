@@ -32,12 +32,17 @@ class ConfirmationController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->type) && 
+					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('create','update','admin'),
+				/*'user'=>array('admin'),*/
+				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->type) && 
+					((Yii::app()->user->type==="Regular"))'		//------------------------------------
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -63,19 +68,40 @@ class ConfirmationController extends Controller
 	public function actionCreate()
 	{
 		$model=new Confirmation;
+                $confgodparent=new ConfGodparent;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Confirmation']))
+                if(isset($_POST['Confirmation']))
 		{
 			$model->attributes=$_POST['Confirmation'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+              if($model->save()){
+				if(isset($_POST['ConfGodparent']))
+					{
+                        $confgodparent->attributes=$_POST['ConfGodparent'];
+						$confgodparent->confirmation_id=$model->id;
+					}
+								
+				if($confgodparent->save())
+				{
+					$this->redirect(array('view','id'=>$model->id));
+				}
+			}
 		}
+                
+                
+                
+//		if(isset($_POST['Confirmation']))
+//		{
+//			$model->attributes=$_POST['Confirmation'];
+//			if($model->save())
+//				$this->redirect(array('view','id'=>$model->id));
+//		}
 
 		$this->render('create',array(
 			'model'=>$model,
+                     'confgodparent'=>$confgodparent,
 		));
 	}
 
@@ -100,6 +126,7 @@ class ConfirmationController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+                       
 		));
 	}
 

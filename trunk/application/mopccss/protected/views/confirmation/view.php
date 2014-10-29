@@ -54,22 +54,21 @@ $this->menu=array(
 //	),
 //)); ?>
 
-<?php $confirmation_id= $model->id;?>
 
-<?php $conf= ConfGodparent::model()->findAll('confirmation_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
+
+<?php $en=ConfGodparent::model()->findAll('confirmation_id = :a', array(':a'=>$model->id));?>
+<?php if (count($en) !== 0){?>
 <br>
 <h2><b>God Parent</b></h2>
-<?php foreach ($conf as $row) { ?>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php foreach ($en as $row) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
+array('ConfGodparent/update', 'id'=>$row->id)); ?>
+<?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
-        'attributes'=>array(//'id',
-		//array('label'=>'Confirmation id', 'value'=>$model->confirmation->id),
-		//'confirmation_id',
-		array('label'=>'God Parent', 'value'=>$row->person->FullName),
-		//'person_id',
-	),
+        'attributes'=>array(
+			array('label'=>'God Parent', 'value'=>$row->person->FullName),
+        ),
 )); ?>
 <br>
 <?php }} ?>
