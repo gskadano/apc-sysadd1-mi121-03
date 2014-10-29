@@ -11,7 +11,7 @@ $this->menu=array(
 	array('label'=>'List Marriage', 'url'=>array('index')),
 	array('label'=>'Create Marriage', 'url'=>array('create')),
 	array('label'=>'Update Marriage', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Marriage', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	//array('label'=>'Delete Marriage', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Marriage', 'url'=>array('admin')),
 	array('label'=>'Create Godparent', 'url'=>array('marGodparent/create', 'marriage_id'=>$model->id)),
 );
