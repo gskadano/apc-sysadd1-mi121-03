@@ -25,8 +25,8 @@
 	<div id="header">
             <img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" align="left" height="75px" >
 		<div id="logo">
-                   
-                    <p align="right">     <?php echo CHtml::encode(Yii::app()->name); ?></p></div>
+         <p align="right">     
+		 <?php echo CHtml::encode(Yii::app()->name); ?></p></div>
 	</div><!-- header -->
 
 	<div id="mainmenu">
@@ -40,6 +40,7 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
+	
 	<!-- Submenu -->
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
@@ -57,6 +58,7 @@
 				array('label'=>'Priest', 'url'=>array('/priest/index'),'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
+		
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
