@@ -100,7 +100,7 @@ class MarGodparentController extends Controller
 		{
 			$model->attributes=$_POST['MarGodparent'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('marriage/view','id'=>$model->marriage_id));
 		}
 
 		$this->render('update',array(

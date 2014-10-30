@@ -104,7 +104,7 @@ class BapGodparentController extends Controller
 		{
 			$model->attributes=$_POST['BapGodparent'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('baptismal/view','id'=>$model->baptismal_id));
 		}
 
 		$this->render('update',array(

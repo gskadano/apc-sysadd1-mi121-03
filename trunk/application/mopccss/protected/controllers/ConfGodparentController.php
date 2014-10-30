@@ -72,7 +72,7 @@ class ConfGodparentController extends Controller
 		{
 			$model->attributes=$_POST['ConfGodparent'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('confirmation/view','id'=>$model->confirmation_id));
 		}
 
 		$this->render('create',array(
@@ -96,7 +96,7 @@ class ConfGodparentController extends Controller
 		{
 			$model->attributes=$_POST['ConfGodparent'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('confirmation/view','id'=>$model->confirmation_id));
 		}
 
 		$this->render('update',array(
