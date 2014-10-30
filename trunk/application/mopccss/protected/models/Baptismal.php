@@ -129,12 +129,4 @@ class Baptismal extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	
-	public function getFullNameBap(){
-		//require_once Yii::app()->basePath . '/models/Person.php';
-		//include 'Person.php';
-		//return getFullName();
-		//------------------
-		//return Person::getFullName();
-	}
 }

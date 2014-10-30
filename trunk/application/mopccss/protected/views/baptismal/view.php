@@ -48,10 +48,9 @@ $this->menu=array(
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
 array('BapGodparent/update', 'id'=>$row->id)); ?>
 
-<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/delete.png" align="right"/>', 
-//array('BapGodparent/update', 'id'=>$row->id)); ; 
-//array('linkOptions'=>array('submit'=>array('delete','id'=>$row->id),'confirm'=>'Are you sure you want to delete this item?')));
-array('url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$row->id),'confirm'=>'Are you sure you want to delete this item?')));?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/delete.png" align="right"/>',
+	'#',array('submit'=>array('bapGodparent/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?')); ?>  
+
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(
