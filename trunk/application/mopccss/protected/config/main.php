@@ -11,8 +11,11 @@ return array(
 	'name'=>'MOP Chancery Certificate Storage System',
 
 	// preloading 'log' component
+	//'theme'=>'new',
 	'preload'=>array('log'),
-	'theme'=>'new',
+
+	
+	
 
 	// autoloading model and component classes
 	'import'=>array(
@@ -43,6 +46,7 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+	'onBeginRequest'=>array('Controller', 'BeginRequest'),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
@@ -89,7 +93,7 @@ return array(
 			),
 		),
 	),
-
+		
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
