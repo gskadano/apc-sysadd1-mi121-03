@@ -15,7 +15,7 @@ $this->menu=array(
 	array('label'=>'Update Confirmation', 'url'=>array('update', 'id'=>$model->id)),
 	//array('label'=>'Delete Confirmation', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Confirmation', 'url'=>array('admin')),
-	array('label'=>'Create ConfGodparent', 'url'=>array('confGodparent/create', 'confirmation_id'=>$model->id)),
+	array('label'=>'Create Godparent', 'url'=>array('confGodparent/create', 'confirmation_id'=>$model->id)),
  
 );
 ?>

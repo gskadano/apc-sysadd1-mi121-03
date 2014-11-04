@@ -35,15 +35,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'bap_priest'); ?>
-		<?php echo $form->dropDownList($model, 'bap_priest', CHtml::listData(
-			Priest::model()->findAll(), 'pfname', 'PFullName'),
-			array('prompt' => 'Select a Priest')
-			); ?>
-		<?php echo $form->error($model,'bap_priest'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'bap_church'); ?>
 		<!--<?php echo $form->textField($model,'bap_church',array('size'=>45,'maxlength'=>45)); ?>-->
 		<?php echo $form->dropDownList($model, 'bap_church', CHtml::listData(
@@ -61,6 +52,15 @@
 			array('prompt' => 'Select a Church Address')
 			); ?>
 		<?php echo $form->error($model,'bap_churchAdd'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'bap_priest'); ?>
+		<?php echo $form->dropDownList($model, 'bap_priest', CHtml::listData(
+			Priest::model()->findAll(), 'PFullName', 'PFullName'),
+			array('prompt' => 'Select a Priest')
+			); ?>
+		<?php echo $form->error($model,'bap_priest'); ?>
 	</div>
 
 	<div class="row">

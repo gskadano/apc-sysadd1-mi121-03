@@ -71,6 +71,7 @@ class Employee extends CActiveRecord
 			'confirmations' => array(self::HAS_MANY, 'Confirmation', 'Employee_id'),
 			'church' => array(self::BELONGS_TO, 'Church', 'church_id'),
 			'marriages' => array(self::HAS_MANY, 'Marriage', 'Employee_id'),
+			'logs' => array(self::HAS_MANY, 'Logs', 'employee_id'),
 		);
 	}
 

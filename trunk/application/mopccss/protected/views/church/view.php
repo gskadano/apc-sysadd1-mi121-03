@@ -20,46 +20,46 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	//'data'=>$modelID,
 	'attributes'=>array(
 		'id',
 		'ch_name',
 		'ch_address',
 	),
 )); ?>
-
-<?php $conf= Employee::model()->findAll('church_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h1>Employee's Information</h1>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-                'data'=>$row,
-                'attributes'=>array(   
-                                'emp_username',
-								'emp_password',
-								'emp_usertype',
-								'emp_fname',
-								'emp_lname',
-								'emp_hireDate',
-								'emp_retireDate',
-								'emp_chapAssign',
-            ),
-        )); ?>
-<br><?php }} ?>
-
-<?php $conf= Priest::model()->findAll('church_id = :a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
-<br>
-<h1>Priest's Information</h1>
-<?php foreach ($conf as $row) { ?>
-<?php $this->widget('zii.widgets.CDetailView', array(
-                'data'=>$row,
-                'attributes'=>array(   
-                                'pfname',
-								'plname',
-								'church.ch_name',
-            ),
-        )); ?>
-<br><?php }} ?>
-
-
+<?php
+  /*$this->widget('CMultiFileUpload', array(
+     'model'=>$model,
+     'attribute'=>'files',
+     'accept'=>'jpg|gif',
+     'options'=>array(
+        'onFileSelect'=>'function(e, v, m){ alert("onFileSelect - "+v) }',
+        'afterFileSelect'=>'function(e, v, m){ alert("afterFileSelect - "+v) }',
+        'onFileAppend'=>'function(e, v, m){ alert("onFileAppend - "+v) }',
+        'afterFileAppend'=>'function(e, v, m){ alert("afterFileAppend - "+v) }',
+        'onFileRemove'=>'function(e, v, m){ alert("onFileRemove - "+v) }',
+        'afterFileRemove'=>'function(e, v, m){ alert("afterFileRemove - "+v) }',
+     ),
+  ));*/
+?>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<br/><h2>Other Information</h2>
+<?php
+$this->widget('zii.widgets.jui.CJuiTabs',array(
+    'tabs'=>array(
+        'Employees'=>array('content'=>$this->renderPartial('_employee',
+                                        array('modelID'=>$model->id),TRUE
+                                        )),        
+        'Priests'=>array('content'=>$this->renderPartial('_priest',
+                                        array('modelID'=>$model->id),TRUE
+                                        )),
+		//'Dynamic Tab'=>array('ajax'=>$this->createAbsoluteUrl('baptismal/index')),
+    ),
+    // additional javascript options for the tabs plugin
+    'options'=>array(
+        //'collapsible'=>true,
+		'event'=>'mouseover',
+    ),
+    'id'=>'MyTab-Menu',
+));
+?>

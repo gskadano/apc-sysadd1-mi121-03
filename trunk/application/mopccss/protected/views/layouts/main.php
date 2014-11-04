@@ -55,7 +55,8 @@
 				array('label'=>'Marriage', 'url'=>array('/marriage/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Person', 'url'=>array('/person/index'),'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Position', 'url'=>array('/position/index'),'visible'=>!Yii::app()->user->isGuest),
-				array('label'=>'Priest', 'url'=>array('/priest/index'),'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Priest', 'url'=>array('/priest/index'),'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Logs', 'url'=>array('/logs/index'),'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
 		
