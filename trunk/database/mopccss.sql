@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2014 at 08:57 PM
+-- Generation Time: Nov 04, 2014 at 08:33 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -37,14 +37,16 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
   PRIMARY KEY (`id`),
   KEY `fk_baptismal_Employee1_idx` (`Employee_id`),
   KEY `fk_baptismal_client1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `baptismal`
 --
 
 INSERT INTO `baptismal` (`id`, `bap_bapDate`, `bap_priest`, `bap_church`, `bap_churchAdd`, `Employee_id`, `person_id`) VALUES
-(8, '2014-10-31', 'Harley', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon city', 1, 31);
+(8, '2014-10-31', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 25),
+(9, '2014-10-31', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 27),
+(10, '2014-10-31', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 27);
 
 -- --------------------------------------------------------
 
@@ -66,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `bap_godparent` (
 --
 
 INSERT INTO `bap_godparent` (`id`, `baptismal_id`, `person_id`) VALUES
-(11, 8, 25);
+(11, 10, 25);
 
 -- --------------------------------------------------------
 
@@ -79,15 +81,14 @@ CREATE TABLE IF NOT EXISTS `church` (
   `ch_name` varchar(45) DEFAULT NULL,
   `ch_address` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `church`
 --
 
 INSERT INTO `church` (`id`, `ch_name`, `ch_address`) VALUES
-(1, 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon city'),
-(6, 'Shrine of Saint Therese of the Child Jesus', 'Pasay City');
+(1, 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City');
 
 -- --------------------------------------------------------
 
@@ -107,14 +108,7 @@ CREATE TABLE IF NOT EXISTS `confirmation` (
   PRIMARY KEY (`id`),
   KEY `fk_confirmation_Employee1_idx` (`Employee_id`),
   KEY `fk_confirmation_person1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `confirmation`
---
-
-INSERT INTO `confirmation` (`id`, `conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`) VALUES
-(1, '2014-10-31', 'Saint Francis Cathedral', 'Cubao, Quezon City', 'Shrine of Saint Therese of the Child Jesus', 'Harley', 1, 26);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -150,14 +144,61 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `church_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Employee_church1_idx` (`church_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`id`, `emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `church_id`) VALUES
-(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', '2014-09-01', NULL, 'MOP ', 1);
+(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', '2012-01-01', NULL, 'MOP Chancery', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logs`
+--
+
+CREATE TABLE IF NOT EXISTS `logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `employee_id` int(11) NOT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  `dateTime` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_logs_employee1_idx` (`employee_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`id`, `employee_id`, `description`, `dateTime`) VALUES
+(1, 1, 'Created baptismal certificate:', '2014-10-31 20:34:42'),
+(2, 1, 'Viewed baptismal certificate #', '2014-10-31 20:40:24'),
+(3, 1, 'Viewed baptismal certificate #8', '2014-10-31 20:41:08'),
+(4, 1, 'Viewed baptismal certificate #8', '2014-10-31 20:41:10'),
+(5, 1, 'Viewed baptismal certificate #9', '2014-10-31 20:41:37'),
+(6, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:15:18'),
+(7, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:16:41'),
+(8, 1, 'Updated baptismal certificate # <a href=/mopccss/index.php?r=baptismal/view&id=9>9</a>', '2014-10-31 21:17:23'),
+(9, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:17:31'),
+(10, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:18:51'),
+(11, 1, 'Updated baptismal certificate # ''<a href=/mopccss/index.php?r=baptismal/view&id=''9''>''9''</a>''', '2014-10-31 21:18:55'),
+(12, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:18:59'),
+(13, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:19:27'),
+(14, 1, 'Viewed baptismal certificate #10', '2014-10-31 21:19:32'),
+(15, 1, 'Updated baptismal certificate # ''<a href=/mopccss/index.php?r=baptismal/view&id=''10''>''10''</a>''', '2014-10-31 21:19:35'),
+(16, 1, 'Viewed baptismal certificate #10', '2014-10-31 21:19:40'),
+(17, 1, 'Viewed baptismal certificate #8', '2014-10-31 21:20:33'),
+(18, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:20:39'),
+(19, 1, 'Updated baptismal certificate # ''<a href=/mopccss/index.php?r=baptismal/view&id=''9''>''9''</a>''', '2014-10-31 21:20:41'),
+(20, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:20:49'),
+(21, 1, 'Viewed baptismal certificate #10', '2014-10-31 21:30:46'),
+(22, 1, 'Updated baptismal certificate of 26', '2014-10-31 21:30:50'),
+(23, 1, 'Viewed baptismal certificate #10', '2014-10-31 21:30:51'),
+(24, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:31:31'),
+(25, 1, 'Updated baptismal certificate of Montalban, Adrianne Joseph', '2014-10-31 21:31:38'),
+(26, 1, 'Viewed baptismal certificate #9', '2014-10-31 21:31:39');
 
 -- --------------------------------------------------------
 
@@ -176,14 +217,7 @@ CREATE TABLE IF NOT EXISTS `marriage` (
   KEY `fk_marriage_Employee1_idx` (`Employee_id`),
   KEY `fk_marriage_person1_idx` (`bride_id`),
   KEY `fk_marriage_person2_idx` (`groom_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `marriage`
---
-
-INSERT INTO `marriage` (`id`, `mar_marDate`, `mar_priest`, `Employee_id`, `bride_id`, `groom_id`) VALUES
-(2, '2014-10-31', 'Harley', 1, 29, 27);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -198,15 +232,7 @@ CREATE TABLE IF NOT EXISTS `mar_godparent` (
   PRIMARY KEY (`id`),
   KEY `fk_marGodParent_marriage1_idx` (`marriage_id`),
   KEY `fk_marGodParent_person1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `mar_godparent`
---
-
-INSERT INTO `mar_godparent` (`id`, `marriage_id`, `person_id`) VALUES
-(2, 2, 28),
-(3, 2, 26);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -227,20 +253,16 @@ CREATE TABLE IF NOT EXISTS `person` (
   `p_father` varchar(100) NOT NULL,
   `p_mother` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `person`
 --
 
 INSERT INTO `person` (`id`, `p_fname`, `p_middlename`, `p_lname`, `p_dateOfBirth`, `p_placeOfBirth`, `p_address`, `p_dateOfDeath`, `p_gender`, `p_father`, `p_mother`) VALUES
-(25, 'Gene Anthony', 'Sabiniano', 'Kadano', '1996-01-20', 'Quezon City', 'Camp Aguinaldo, Quezon City', '0000-00-00', 'Male', 'Eugenio Kadano', 'Roselilie kadano'),
-(26, 'John Emmanuel', 'J', 'Tero', '1996-04-16', 'Paranaque City', 'Paranaque City', '0000-00-00', 'Male', 'Blast Tero', 'Josie Tero'),
-(27, 'Mark Anthony', 'Suezo', 'Andes', '1995-10-20', 'Taguig City', 'Taguig City', '0000-00-00', 'Male', 'Antonio Andes Sr.', 'Miriam Andes'),
-(28, 'John Michael', 'Santo', 'Santos', '1996-08-13', 'Baclaran', 'Baclaran', '0000-00-00', 'Male', 'Isagani Santo', 'Ceferina Santos'),
-(29, 'Christine Joy', 'Aggabao', 'Ferrer', '1995-11-18', 'Laguna City', 'Laguna City', '0000-00-00', 'Female', 'Joel Ferrer', 'Ernestine Ferrer'),
-(30, 'Adrianne', 'Joseph', 'Montalban', '1995-06-09', 'Pasay City', 'Pasay City', '0000-00-00', 'Female', 'Arnulfo Montalban', 'Ping Montalban'),
-(31, 'Jerica', '', 'Flores', '1996-12-18', 'Makati City', 'Makati City', '0000-00-00', 'Female', 'Roel Flores', 'Emily Flores');
+(25, 'Mark Anthony', 'Suezo', 'Andes', '1995-10-20', 'Taguig City', 'Taguig City', '0000-00-00', 'Male', 'Antonio Andes Sr.', 'Miriam Andes'),
+(26, 'Adrianne', 'Joseph', 'Montalban', '1995-06-09', '', '', '0000-00-00', 'Female', 'Arnulfo Montalban', 'Ping Montalban'),
+(27, 'Christine Joy', 'Aggabao', 'Ferrer', '1996-11-18', '', '', '0000-00-00', 'Female', 'Willie Ferrer', 'Ernestine Ferrer');
 
 -- --------------------------------------------------------
 
@@ -257,14 +279,7 @@ CREATE TABLE IF NOT EXISTS `position` (
   `client_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_position_client_idx` (`client_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `position`
---
-
-INSERT INTO `position` (`id`, `rank`, `afpSerialNum`, `branchOfService`, `unitAddress`, `client_id`) VALUES
-(1, 'Technical Sergeant', '673400871', 'Air Force', 'Villamore Air Base', 26);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -296,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `priest` (
 --
 
 INSERT INTO `priest` (`id`, `pfname`, `plname`, `pmname`, `dateOfBirth`, `placeOfBirth`, `crasm_no`, `exp_date`, `pr_father`, `pr_mother`, `ordainedAsPriest`, `placeOfOrdination`, `ordainingBishop`, `church_id`) VALUES
-(6, 'Harley', 'Flores', 'B', '1994-01-27', 'Quezon City', '2014-asfgbfvNYVBNIIdfdf-2016', '2016-07-13', '', '', '1994-10-19', 'Saint Ignatious Cathedral', 'Bishop Leopordo Tumulak', 1);
+(6, 'Harley', 'Flores', 'Miriam', '1994-12-01', '', '2014-asfgbfvNYVBNIIdfdf-2016', '2016-01-07', '', '', '0000-00-00', '', '', 1);
 
 --
 -- Constraints for dumped tables
@@ -335,6 +350,12 @@ ALTER TABLE `conf_godparent`
 --
 ALTER TABLE `employee`
   ADD CONSTRAINT `fk_Employee_church1` FOREIGN KEY (`church_id`) REFERENCES `church` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `logs`
+--
+ALTER TABLE `logs`
+  ADD CONSTRAINT `fk_logs_employee1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `marriage`

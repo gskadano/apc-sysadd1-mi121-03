@@ -57,9 +57,18 @@ class BaptismalController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model=$this->loadModel($id);
+		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
+		
+		//logs
+		/*$logV=new Logs;
+		$logV->employee_id= Yii::app()->user->id;
+		$logV->description= "Viewed baptismal certificate #". $model->id;
+		$logV->dateTime= date('Y-m-d H:i:s');
+		$logV->save();*/
 	}
 
 	/**
@@ -83,8 +92,14 @@ class BaptismalController extends Controller
                         $godparent->attributes=$_POST['BapGodparent'];
 						$godparent->baptismal_id=$model->id;
 					}
+					
+					//logs
+					$logC=new Logs;
+					$logC->employee_id= Yii::app()->user->id;
+					$logC->description= "Created baptismal certificate". $container->code;
+					$logC->dateTime= date('Y-m-d H:i:s');
 								
-				if($godparent->save())
+				if($godparent->save() && $logC->save())
 				{
 					$this->redirect(array('view','id'=>$model->id));
 				}
@@ -116,13 +131,19 @@ class BaptismalController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
+		//logs
+		$logU=new Logs;
+		$logU->employee_id= Yii::app()->user->id;
+		$logU->description= "Updated baptismal certificate of ".$model->person->FullName;
+		$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Baptismal']))
 		{
 			$model->attributes=$_POST['Baptismal'];
-			if($model->save())
+			if($model->save() && $logU->save())
 				$this->redirect(array('view','id'=>$model->id));
-		}
+		}		
 
 		$this->render('update',array(
 			'model'=>$model,
