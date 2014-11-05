@@ -1,5 +1,80 @@
 <?php /* @var $this Controller */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+		require_once 'Mobile_Detect.php';
+		
+		
+		
+		$detect = new Mobile_Detect;
+		
+		if ($detect->isMobile() ) {
+                    echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+        <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+        ul#menu li {
+        display:inline;
+         background-color: Orange;
+        }
+</style>
+</head>
+
+<body bgcolor="#2EFEF7">';
+ 
+		echo '<div class="container" id="page">
+
+	<div id="header">
+        <center>
+            <img src="http://directory.ucanews.com/uploads/images/1357896339.jpg"  height="450px" >
+            </center>
+           <!-- <h1 style="font-size:52px; " > MOP Chancery Certificate Storage System </h1>--!>
+		<div id="logo">
+       </div>
+	</div><!-- header -->';
+
+	//echo'<div id="mainmenu">';
+              echo' <center><ul id="menu" >';
+              echo '<h1 style="font-size:80px;>';
+                $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Search', 'url'=>array('/site/search')),
+				
+			),
+		));
+                echo '</h1>';
+                echo '</ul></center>';
+                //Mobile
+               // echo '</div><!-- mainmenu -->';
+                ?>
+
+    <?php if(isset($this->breadcrumbs)):?>
+		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+			'links'=>$this->breadcrumbs,
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+
+	<center><h1 style="font-size:32px"><?php echo $content; ?></h1></center>
+
+	<div class="clear"></div>
+        </br>
+        </br>
+                <?php
+              echo'  <div id="footer">
+                  <center>
+		<h1>Copyright &copy;';  echo date('Y'); echo' by AKT Solutions..<br/>
+		All Rights Reserved.<br/>
+                Powered by: Online Production</h1>
+		</center>
+	</div><!-- footer -->';
+                
+		}  else {
+                    
+
+		?>
+    
+    
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,7 +93,7 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<body>
+    <body>
 
 <div class="container" id="page">
 
@@ -77,8 +152,10 @@
                 Powered by: Online Production
 		
 	</div><!-- footer -->
-
+        
 </div><!-- page -->
 
 </body>
 </html>
+<?php }?>
+
