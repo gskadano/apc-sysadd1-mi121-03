@@ -39,7 +39,7 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Search', 'url'=>array('/site/search')),
+				array('label'=>'Search', 'url'=>array('/site/page','view'=>'search')),
 				
 			),
 		));

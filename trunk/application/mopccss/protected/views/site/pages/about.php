@@ -11,7 +11,7 @@
 <b><h1 style="font-size: 100px">About</h1></b>
 
 <img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="mop logo" width="250" height="250">
-<b><h1>Military Ordinariate of the Philippines Profile</h1>
+<b><h1>Military Ordinariate of the Philippines Profile</h1></b>
 
 <p>The Military Ordinariate of the Philippines or MOP is a personal
     diocese of men and women in uniform or for the different branch of service.
