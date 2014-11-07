@@ -39,6 +39,7 @@ class Baptismal extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('person_id', 'validatePerson'),
 			array('bap_bapDate, Employee_id, person_id', 'required'),
 			array('Employee_id, person_id', 'numerical', 'integerOnly'=>true),
 			array('bap_priest, bap_church', 'length', 'max'=>45),
@@ -48,6 +49,13 @@ class Baptismal extends CActiveRecord
 			array('id, bap_bapDate, bap_priest, bap_church, bap_churchAdd, Employee_id, person_id', 'safe', 'on'=>'search'),
 		);
 	}
+	
+	public function validatePerson($attribute,$params)
+    {  
+		if(Baptismal::model()->exists('person_id=:person',array(':person'=>$this->person_id))){
+            $this->addError('person_id','The person already exists. Cannot create another baptismal record!');
+		}
+    }
 
 	/**
 	 * @return array relational rules.
