@@ -40,6 +40,7 @@ class Confirmation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+                        array('person_id', 'validatePerson'),
 			array('conf_confDate, Employee_id, person_id', 'required'),
 			array('Employee_id, person_id', 'numerical', 'integerOnly'=>true),
 			array('conf_bapChurch, conf_church, conf_priest', 'length', 'max'=>45),
@@ -50,6 +51,12 @@ class Confirmation extends CActiveRecord
 		);
 	}
 
+        public function validatePerson($attribute,$params)
+    {  
+		if(Confirmation::model()->exists('person_id=:person',array(':person'=>$this->person_id))){
+            $this->addError('person_id','The person already exists. Cannot create another confirmation record!');
+		}
+    }
 	/**
 	 * @return array relational rules.
 	 */
