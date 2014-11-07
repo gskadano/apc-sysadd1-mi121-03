@@ -40,15 +40,17 @@ class Employee extends CActiveRecord
 	{
 		return 'employee';
 	}
-
+	
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+	
 	public function rules()
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('emp_username', 'validateUsername'),
 			array('emp_username, emp_password, emp_usertype, emp_fname, emp_lname, church_id', 'required'),
 			array('church_id', 'numerical', 'integerOnly'=>true),
 			array('emp_username, emp_password, emp_usertype, emp_fname, emp_lname, emp_chapAssign', 'length', 'max'=>45),
@@ -58,6 +60,13 @@ class Employee extends CActiveRecord
 			array('id, emp_username, emp_password, emp_usertype, emp_fname, emp_lname, emp_hireDate, emp_retireDate, emp_chapAssign, church_id', 'safe', 'on'=>'search'),
 		);
 	}
+	
+	public function validateUsername($attribute,$params)
+    {  
+		if(Employee::model()->exists('emp_username=:username',array(':username'=>$this->emp_username))){
+            $this->addError('emp_username','Username already exists.');
+		}
+    }
 
 	/**
 	 * @return array relational rules.
@@ -153,7 +162,7 @@ class Employee extends CActiveRecord
 	
 	public function beforeSave(){
 		$this->emp_password = hash_hmac('sha256', $this->emp_password, 
-		Yii::app()->params['encryptionKey']); 
+		Yii::app()->params['encryptionKey']);		
 		return parent::beforeSave();
 	}
 }
