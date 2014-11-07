@@ -1,10 +1,35 @@
+
+
+a:link, a:visited
+{
+  color: #388806;
+  text-decoration: none;
+}
+
+a:hover, a:active
+{
+  color: #990099;
+}
+
+textarea,
+input[type="text"],
+input[type="password"] {
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: 2px solid #000000;
+}
+
+::-moz-selection { background: #6eca34; color: #fff; text-shadow: none; }
+::selection { background: #6eca34; color: #fff; text-shadow: none; }
 body
 {
 	margin: 0;
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #9AFEFF;
+	background: #CC66FF;
 }
 
 #page
@@ -17,9 +42,15 @@ body
 
 #header
 {
+  background: #FFFFFF
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  height: 84px;
+  line-height: 84px;
 	margin: 0;
+  overflow: hidden;
 	padding: 0;
-	border-top: 3px solid #C9E0ED;
+  position: relative;
 }
 
 #content
@@ -34,22 +65,48 @@ body
 
 #footer
 {
-	padding: 10px;
-	margin: 10px 20px;
-	font-size: 0.8em;
-	text-align: center;
-	border-top: 1px solid #C9E0ED;
+  background: #000000;
+  clear: both;
+  color: #FFFFFF;
+  overflow: hidden;
+  padding: 0 40px 20px;
+  position: relative;
+}
+
+#footer a:link, #footer a:visited
+{
+  color: #949494;
+}
+
+#footer a:hover, #footer a:active, #footer .active a
+{
+  color: #000000;
+}
+
+#footer .content
+{
+  float: left;
+  padding-top: 34px;
+  text-align: left;
+}
+/**
+ * Menus
+ */
+ #mainmenu
+{
+  float: center;
 }
 
 #logo
 {
 	padding: 10px 20px;
-	font-size: 200%;
+	font-size: 350%;
+	margin: 0;
 }
 
 #mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
+	background:white url(blue.jpg) repeat-x left top;
 }
 
 #mainmenu ul
@@ -65,8 +122,8 @@ body
 
 #mainmenu ul li a
 {
-	color:#ffffff;
-	background-color:transparent;
+	color:#black;
+	background-color:white;
 	font-size:12px;
 	font-weight:bold;
 	text-decoration:none;
@@ -76,7 +133,7 @@ body
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
 	color: #6399cd;
-	background-color:#EFF4FA;
+	background-color:yellow;
 	text-decoration:none;
 }
 

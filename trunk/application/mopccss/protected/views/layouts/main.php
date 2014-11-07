@@ -19,7 +19,7 @@
 </style>
 </head>
 
-<body bgcolor="#2EFEF7">';
+<body background="blue.jpg">';
  
 		echo '<div class="container" id="page">
 
@@ -63,9 +63,9 @@
                 <?php
               echo'  <div id="footer">
                   <center>
-		<h1>Copyright &copy;';  echo date('Y'); echo' by AKT Solutions..<br/>
+		<h1>Copyright &copy;';  echo date('Y'); echo' by Chancery Solutions<br/>
 		All Rights Reserved.<br/>
-                Powered by: Online Production</h1>
+                Powered by: Online Productions</h1>
 		</center>
 	</div><!-- footer -->';
                 
@@ -148,12 +148,10 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by AKT Solutions..<br/>
+		<center>Copyright &copy; <?php echo date('Y'); ?> by Chancery Solutions<br/>
 		All Rights Reserved.<br/>
-                Powered by: Online Production</br>
-		<?php echo Yii::getVersion(); ?>
-		
-	</div><!-- footer -->
+                Powered by: Online Productions
+		</center>
         
 </div><!-- page -->
 
