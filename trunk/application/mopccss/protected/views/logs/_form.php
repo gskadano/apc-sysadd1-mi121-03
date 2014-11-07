@@ -36,7 +36,7 @@
 		<?php echo $form->textField($model,'dateTime'); ?>
 		<?php echo $form->error($model,'dateTime'); ?>
 	</div>
-
+	
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
