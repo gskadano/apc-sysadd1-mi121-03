@@ -6,6 +6,7 @@ $this->breadcrumbs=array(
 	'Logs'=>array('index'),
 	$model->id,
 );
+/*
 
 $this->menu=array(
 	array('label'=>'List Logs', 'url'=>array('index')),
@@ -15,7 +16,7 @@ $this->menu=array(
 	array('label'=>'Manage Logs', 'url'=>array('admin')),
 );
 ?>
-
+*/
 <h1>View Logs #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
