@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Confirmations'=>array('index'),
-        'Conf Godparents'=>array('index'),
+       // 'Conf Godparents'=>array('index'),
 	$model->id,
    
 );
