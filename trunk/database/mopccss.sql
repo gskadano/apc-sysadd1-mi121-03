@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2014 at 08:30 PM
+-- Generation Time: Nov 11, 2014 at 05:03 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -37,7 +37,14 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
   PRIMARY KEY (`id`),
   KEY `fk_baptismal_Employee1_idx` (`Employee_id`),
   KEY `fk_baptismal_client1_idx` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `baptismal`
+--
+
+INSERT INTO `baptismal` (`id`, `bap_bapDate`, `bap_priest`, `bap_church`, `bap_churchAdd`, `Employee_id`, `person_id`) VALUES
+(1, '2014-11-12', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -52,7 +59,14 @@ CREATE TABLE IF NOT EXISTS `bap_godparent` (
   PRIMARY KEY (`id`),
   KEY `fk_bapGodParent_baptismal1_idx` (`baptismal_id`),
   KEY `fk_bapGodParent_person1_idx` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `bap_godparent`
+--
+
+INSERT INTO `bap_godparent` (`id`, `baptismal_id`, `person_id`) VALUES
+(1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -92,7 +106,14 @@ CREATE TABLE IF NOT EXISTS `confirmation` (
   PRIMARY KEY (`id`),
   KEY `fk_confirmation_Employee1_idx` (`Employee_id`),
   KEY `fk_confirmation_person1_idx` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `confirmation`
+--
+
+INSERT INTO `confirmation` (`id`, `conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`) VALUES
+(1, '2014-11-12', 'sample', 'sample1', 'Saint Ignatious Cathedral', 'Harley', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -107,7 +128,14 @@ CREATE TABLE IF NOT EXISTS `conf_godparent` (
   PRIMARY KEY (`id`),
   KEY `fk_confGodParent_confirmation1_idx` (`confirmation_id`),
   KEY `fk_confGodParent_person1_idx` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `conf_godparent`
+--
+
+INSERT INTO `conf_godparent` (`id`, `confirmation_id`, `person_id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -125,19 +153,20 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `emp_hireDate` date DEFAULT NULL,
   `emp_retireDate` date DEFAULT NULL,
   `emp_chapAssign` varchar(45) DEFAULT NULL,
+  `emp_email` varchar(50) NOT NULL,
   `church_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Employee_church1_idx` (`church_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`id`, `emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `church_id`) VALUES
-(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', '2014-07-09', NULL, 'MOP Chancery', 1),
-(2, 'hssantos', 'a4c6b15502f68768488cd48f496a1ac24e69a11b2786f556e0da023059d7f9bb', 'Regular', 'John Michael', 'Santos', '2014-05-01', '0000-00-00', 'MOP Chancery', 1),
-(3, 'mdronquillo', '75f3735825c0b6565a8afa3252277e3de30093611a2254e2efa8d2ad5be366ad', 'Regular', 'Mark Joshua', 'Ronquillo', '2013-01-31', '0000-00-00', 'MOP Chancery', 1);
+INSERT INTO `employee` (`id`, `emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `emp_email`, `church_id`) VALUES
+(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', '2014-07-09', '0000-00-00', 'MOP Chancery', 'gskadano@gmail.com', 1),
+(2, 'hssantos', 'a4c6b15502f68768488cd48f496a1ac24e69a11b2786f556e0da023059d7f9bb', 'Regular', 'John Michael', 'Santos', '2014-05-01', '0000-00-00', 'MOP Chancery', 'hssantos@yahoo.com.ph', 1),
+(3, 'mdronquillo', '75f3735825c0b6565a8afa3252277e3de30093611a2254e2efa8d2ad5be366ad', 'Regular', 'Mark Joshua', 'Ronquillo', '2013-01-31', '0000-00-00', 'MOP Chancery', 'mdronquillo@yahoo.com', 1);
 
 -- --------------------------------------------------------
 
@@ -180,7 +209,14 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `dateTime` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_logs_employee1_idx` (`employee_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`id`, `employee_id`, `description`, `dateTime`) VALUES
+(1, 1, 'Created baptismal certificate', '2014-11-11 01:57:04');
 
 -- --------------------------------------------------------
 
@@ -199,7 +235,14 @@ CREATE TABLE IF NOT EXISTS `marriage` (
   KEY `fk_marriage_Employee1_idx` (`Employee_id`),
   KEY `fk_marriage_person1_idx` (`bride_id`),
   KEY `fk_marriage_person2_idx` (`groom_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `marriage`
+--
+
+INSERT INTO `marriage` (`id`, `mar_marDate`, `mar_priest`, `Employee_id`, `bride_id`, `groom_id`) VALUES
+(1, '2014-11-12', 'Harley', 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -214,7 +257,14 @@ CREATE TABLE IF NOT EXISTS `mar_godparent` (
   PRIMARY KEY (`id`),
   KEY `fk_marGodParent_marriage1_idx` (`marriage_id`),
   KEY `fk_marGodParent_person1_idx` (`person_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `mar_godparent`
+--
+
+INSERT INTO `mar_godparent` (`id`, `marriage_id`, `person_id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -235,7 +285,15 @@ CREATE TABLE IF NOT EXISTS `person` (
   `p_father` varchar(100) NOT NULL,
   `p_mother` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `person`
+--
+
+INSERT INTO `person` (`id`, `p_fname`, `p_middlename`, `p_lname`, `p_dateOfBirth`, `p_placeOfBirth`, `p_address`, `p_dateOfDeath`, `p_gender`, `p_father`, `p_mother`) VALUES
+(1, 'Mark Anthony', 'Suezo', 'Andes', '1995-10-20', 'Bicol', '331 Abram St. Armor Vill. Brgy. SouthSide', '0000-00-00', 'Male', 'Antonio Andes Sr.', 'Myriam Andes'),
+(2, 'Christine Joy', 'Agabao', 'Ferrer', '1995-11-18', 'Laguna', 'Laguna', '0000-00-00', 'Female', 'Willy A. Ferrer', 'Ernestine A. Ferrer ');
 
 -- --------------------------------------------------------
 
