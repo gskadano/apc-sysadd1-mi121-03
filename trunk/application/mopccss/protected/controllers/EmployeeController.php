@@ -73,20 +73,27 @@ class EmployeeController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		
 		if(isset($_POST['Employee']))
 		{
+			//logs
+			$logC=new Logs;
+			$logC->employee_id= Yii::app()->user->id;
+			$logC->description= "Created an employee.". $container->code;
+			$logC->dateTime= date('Y-m-d H:i:s');
+			
 			$model->attributes=$_POST['Employee'];
-			if($model->save()){
+			if($model->save() && $logC->save()){
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 
+		
 		$this->render('create',array(
 			'model'=>$model,
 		));
 	}
-
+	
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -98,11 +105,17 @@ class EmployeeController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
+			//logs
+					$logU=new Logs;
+					$logU->employee_id= Yii::app()->user->id;
+					$logU->description= "Updated ". $model->FullName ." information.";
+					$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Employee']))
 		{
 			$model->attributes=$_POST['Employee'];
-			if($model->save())
+			if($model->save() && $logU->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 

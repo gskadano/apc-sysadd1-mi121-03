@@ -5,12 +5,14 @@
 $this->breadcrumbs=array(
 	'Logs',
 );
-
+/*
 $this->menu=array(
 	array('label'=>'Create Logs', 'url'=>array('create')),
 	array('label'=>'Manage Logs', 'url'=>array('admin')),
 );
+*/
 ?>
+
 
 <h1>Logs</h1>
 
