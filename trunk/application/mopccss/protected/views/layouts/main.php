@@ -65,6 +65,8 @@
                   <center>
 		<h1>Copyright &copy;';  echo date('Y'); echo' by Chancery Solutions<br/>
 		All Rights Reserved.<br/>
+		
+		
                 Powered by: Online Productions</h1>
 		</center>
 	</div><!-- footer -->';
@@ -98,7 +100,7 @@
 <div class="container" id="page">
 
 	<div id="header">
-            <img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" align="left" height="75px" >
+            <img src="https://lh3.googleusercontent.com/-E1_8yurOKgU/VGLlYOERueI/AAAAAAAAAEk/5A734tQ47as/s250-no/logo.png" align="left" height="75px" >
 		<div id="logo">
          <p align="right">     
 		 <?php echo CHtml::encode(Yii::app()->name); ?></p></div>
