@@ -122,10 +122,14 @@ class LogsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Logs');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		if(Yii::app()->user->isGuest){ 
+			$this->redirect(array('/site/login'));
+		}else{
+			$dataProvider=new CActiveDataProvider('Logs');
+			$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+			));
+		}
 	}
 
 	/**

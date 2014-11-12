@@ -67,9 +67,7 @@
 		<?php echo $form->labelEx($model,'Employee_id'); ?>
 		<!--<?php echo $form->textField($model,'Employee_id'); ?>-->
 		<?php echo $form->dropDownList($model, 'Employee_id', CHtml::listData(
-			Employee::model()->findAll(), 'id', 'FullName'),
-			array('prompt' => 'Select an Employee')
-			); ?>
+			Employee::model()->findAll('emp_username = :a', array(':a'=>Yii::app()->user->name)), 'id', 'FullName')); ?>
 		<?php echo $form->error($model,'Employee_id'); ?>
 	</div>
 

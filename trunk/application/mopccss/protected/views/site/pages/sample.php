@@ -20,7 +20,7 @@
     <script src="src/Plugins/jquery.ifrmdailog.js" defer="defer" type="text/javascript"></script>
     <script src="src/Plugins/wdCalendar_lang_US.js" type="text/javascript"></script>    
     <script src="src/Plugins/jquery.calendar.js" type="text/javascript"></script>   
-    
+	
     <script type="text/javascript">
         $(document).ready(function() {     
            var view="week";          
@@ -39,7 +39,9 @@
                 onRequestDataError: cal_onerror, 
                 autoload:true,
                 url: DATA_FEED_URL + "?method=list",  
+				<?php if(isset(Yii::app()->user->type) && ((Yii::app()->user->type==="Admin"))){ ?>
                 quickAddUrl: DATA_FEED_URL + "?method=add", 
+				<?php } //------------------------------ temporary only!! find bubble function for full control --------------------?>
                 quickUpdateUrl: DATA_FEED_URL + "?method=update",
                 quickDeleteUrl: DATA_FEED_URL + "?method=remove"        
             };
@@ -48,13 +50,14 @@
             var dvH = $dv.height() + 2;
             op.height = _MH - dvH;
             op.eventItems =[];
-
+			
             var p = $("#gridcontainer").bcalendar(op).BcalGetOp();
             if (p && p.datestrshow) {
                 $("#txtdatetimeshow").text(p.datestrshow);
             }
+			<?php if(isset(Yii::app()->user->type) && ((Yii::app()->user->type==="Admin"))){ ?>
             $("#caltoolbar").noSelect();
-            
+			<?php } ?>
             $("#hdtxtshow").datepicker({ picker: "#txtdatetimeshow", showtarget: $("#txtdatetimeshow"),
             onReturn:function(r){                          
                             var p = $("#gridcontainer").gotoDate(r).BcalGetOp();
@@ -180,8 +183,14 @@
             
             //Add a new event
             $("#faddbtn").click(function(e) {
-                var url ="edit.php";
-                OpenModelWindow(url,{ width: 500, height: 400, caption: "Create New Calendar"});
+				<?php if(Yii::app()->user->isGuest){ 
+							$this->redirect(array('/site/login'));?>
+				<?php }else{ 
+						if(isset(Yii::app()->user->type) && ((Yii::app()->user->type==="Admin"))){ ?>
+							var url ="edit.php";
+							OpenModelWindow(url,{ width: 500, height: 400, caption: "Create New Calendar"});
+					<?php }else{ ?> window.alert("Administrator only are allowed to add events!"); <?php } ?>
+				<?php } ?>
             });
             //go to today
             $("#showtodaybtn").click(function(e) {
