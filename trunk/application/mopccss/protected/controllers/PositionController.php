@@ -33,17 +33,18 @@ class PositionController extends Controller
 			),
 			
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->type) && 
+					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
-			/*
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('create','update','admin'),
-				/*'user'=>array('admin'),
+				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Regular"))'		//------------------------------------
-			),*/
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),

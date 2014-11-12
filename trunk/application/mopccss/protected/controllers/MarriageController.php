@@ -125,7 +125,7 @@ class MarriageController extends Controller
 			//logs
 					$logU=new Logs;
 					$logU->employee_id= Yii::app()->user->id;
-					$logU->description= "Created marriage certificate". $model->person->FullName;
+					$logU->description= "Updated marriage certificate of ". $model->bride->FullName . " and ". $model->groom->FullName;
 					$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Marriage']))

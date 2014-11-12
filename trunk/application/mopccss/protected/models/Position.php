@@ -93,7 +93,7 @@ class Position extends CActiveRecord
 		$criteria->compare('afpSerialNum',$this->afpSerialNum,true);
 		$criteria->compare('branchOfService',$this->branchOfService,true);
 		$criteria->compare('unitAddress',$this->unitAddress,true);
-		$criteria->compare('positioncol',$this->positioncol,true);
+		//$criteria->compare('positioncol',$this->positioncol,true);
 		//$criteria->compare('client_id',$this->client_id,true);
 		
 		//add the magic letter 't' to refer to the 'main' (not the related) table:

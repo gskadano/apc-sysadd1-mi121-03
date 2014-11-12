@@ -48,7 +48,15 @@ class Marriage extends CActiveRecord
 			array('id, mar_marDate, mar_priest, Employee_id, bride_id, groom_id', 'safe', 'on'=>'search'),
 		);
 	}
-
+	
+	public function validatePerson($attribute,$params)
+    {  
+		if($this->isNewRecord){//verify username in creating records
+			if(Marriage::model()->exists('person_id=:person',array(':person'=>$this->person_id))){
+				$this->addError('person_id','The person already exists. Cannot create another confirmation record!');
+			}
+		}
+	}
 	/**
 	 * @return array relational rules.
 	 */

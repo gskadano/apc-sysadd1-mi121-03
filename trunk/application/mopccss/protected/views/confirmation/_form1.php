@@ -60,7 +60,7 @@
 		<?php echo $form->labelEx($model,'conf_priest'); ?>
 		<!--<?php echo $form->textField($model,'conf_priest',array('size'=>45,'maxlength'=>45)); ?>-->
 		<?php echo $form->dropDownList($model, 'conf_priest', CHtml::listData(
-			Priest::model()->findAll(), 'pfname', 'PFullName'),
+			Priest::model()->findAll(), 'PFullName', 'PFullName'),
 			array('prompt' => 'Select a priest')
 			); ?>
 		<?php echo $form->error($model,'conf_priest'); ?>
