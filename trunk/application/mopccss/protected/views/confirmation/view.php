@@ -23,7 +23,7 @@ $this->menu=array(
 
 
 
-<h1>Confirmation Details of <b><?php echo $model->person->FullName; ?></b></h1>
+<h1>Confirmation details of <?php echo $model->person->FullName; ?></h1>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array('id',

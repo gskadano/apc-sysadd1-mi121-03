@@ -25,7 +25,7 @@
 
 	<div id="header">
         <center>
-            <img src="http://directory.ucanews.com/uploads/images/1357896339.jpg"  height="450px" >
+            <img src="https://lh3.googleusercontent.com/-E1_8yurOKgU/VGLlYOERueI/AAAAAAAAAEk/5A734tQ47as/s250-no/logo.png"  height="450px" >
             </center>
            <!-- <h1 style="font-size:52px; " > MOP Chancery Certificate Storage System </h1>--!>
 		<div id="logo">
