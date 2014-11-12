@@ -72,7 +72,7 @@ class MarriageController extends Controller
 		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+					
 		if(isset($_POST['Marriage']))
 		{
 				$model->attributes=$_POST['Marriage'];
@@ -82,14 +82,20 @@ class MarriageController extends Controller
                         $godparent->attributes=$_POST['MarGodparent'];
 						$godparent->marriage_id=$model->id;
 					}
+					
+		//logs
+					$logC=new Logs;
+					$logC->employee_id= Yii::app()->user->id;
+					$logC->description= "Created marriage certificate". $container->code;
+					$logC->dateTime= date('Y-m-d H:i:s');
 	
-				if($godparent->save())
+				if($godparent->save() && $logC ->save())
 					{
 						$this->redirect(array('view','id'=>$model->id));
 					}
 				}
 			}
-				if(isset($_POST['MarGodparent']))
+				/*if(isset($_POST['MarGodparent']))
 				{
 				
 					$model->attributes=$_POST['Marriage'];
@@ -97,6 +103,7 @@ class MarriageController extends Controller
 					
 					$this->redirect(array('view','id'=>$model->id));
 				}
+				*/
 				$this->render('create',array(
 					'model'=>$model,
 					'godparent'=>$godparent,
@@ -114,13 +121,20 @@ class MarriageController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
+			//logs
+					$logU=new Logs;
+					$logU->employee_id= Yii::app()->user->id;
+					$logU->description= "Created marriage certificate". $model->person->FullName;
+					$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Marriage']))
 		{
 			$model->attributes=$_POST['Marriage'];
-			if($model->save())
+			if($model->save() && $logU->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+		
 
 		$this->render('update',array(
 			'model'=>$model,

@@ -56,6 +56,8 @@ class ConfirmationController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model=$this->loadModel($id);
+	
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -83,7 +85,13 @@ class ConfirmationController extends Controller
 						$confgodparent->confirmation_id=$model->id;
 					}
 								
-				if($confgodparent->save())
+				//logs
+						$logC=new Logs;
+						$logC->employee_id= Yii::app()->user->id;
+						$logC->description= "Created Confirmation certificate". $container->code;
+						$logC->dateTime= date('Y-m-d H:i:s');
+	
+					if($confgodparent->save() && $logC->save())
 				{
 					$this->redirect(array('view','id'=>$model->id));
 				}
@@ -116,11 +124,18 @@ class ConfirmationController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
+		//logs
+			$logU=new Logs;
+		$logU->employee_id= Yii::app()->user->id;
+		$logU->description= "Updated Confirmation certificate of ".$model->person->FullName;
+		$logU->dateTime= date('Y-m-d H:i:s');
+
 
 		if(isset($_POST['Confirmation']))
 		{
 			$model->attributes=$_POST['Confirmation'];
-			if($model->save())
+			if($model->save() && $logU->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 

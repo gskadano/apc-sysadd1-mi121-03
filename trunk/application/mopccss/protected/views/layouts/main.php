@@ -19,7 +19,7 @@
 </style>
 </head>
 
-<body bgcolor="#2EFEF7">';
+<body background="blue.jpg">';
  
 		echo '<div class="container" id="page">
 
@@ -63,9 +63,9 @@
                 <?php
               echo'  <div id="footer">
                   <center>
-		<h1>Copyright &copy;';  echo date('Y'); echo' by AKT Solutions..<br/>
+		<h1>Copyright &copy;';  echo date('Y'); echo' by Chancery Solutions<br/>
 		All Rights Reserved.<br/>
-                Powered by: Online Production</h1>
+                Powered by: Online Productions</h1>
 		</center>
 	</div><!-- footer -->';
                 
@@ -148,6 +148,7 @@
 	<div class="clear"></div>
 	
 	<div id="footer">
+<!--<<<<<<< HEAD -->
 	<!-- Facebook plugin -->
 	<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -167,6 +168,12 @@
 		<?php echo Yii::getVersion(); ?>
 		</center>
 	</div><!-- footer -->
+<!--=======-->
+		<!--<center>Copyright &copy; <?php echo date('Y'); ?> by Chancery Solutions<br/>
+		All Rights Reserved.<br/>
+                Powered by: Online Productions
+		</center>
+>>>>>>> fd3c4627078be718498c6265a163c2d6e451dbb2-->
         
 </div><!-- page -->
 

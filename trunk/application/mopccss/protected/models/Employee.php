@@ -13,6 +13,7 @@
  * @property string $emp_hireDate
  * @property string $emp_retireDate
  * @property string $emp_chapAssign
+ * @property string $emp_email
  * @property integer $church_id
  *
  * The followings are the available model relations:
@@ -51,9 +52,10 @@ class Employee extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('emp_username', 'validateUsername'),
-			array('emp_username, emp_password, emp_usertype, emp_fname, emp_lname, church_id', 'required'),
+			array('emp_username, emp_password, emp_usertype, emp_fname, emp_lname,emp_email,church_id', 'required'),
 			array('church_id', 'numerical', 'integerOnly'=>true),
 			array('emp_username, emp_password, emp_usertype, emp_fname, emp_lname, emp_chapAssign', 'length', 'max'=>45),
+			array('emp_email', 'length', 'max'=>50),
 			array('emp_hireDate, emp_retireDate', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -63,8 +65,10 @@ class Employee extends CActiveRecord
 	
 	public function validateUsername($attribute,$params)
     {  
-		if(Employee::model()->exists('emp_username=:username',array(':username'=>$this->emp_username))){
-            $this->addError('emp_username','Username already exists.');
+		if($this->isNewRecord){//verify username in creating records
+			if(Employee::model()->exists('emp_username=:username',array(':username'=>$this->emp_username))){
+				$this->addError('emp_username','Username already exists.');
+			}
 		}
     }
 
@@ -99,6 +103,7 @@ class Employee extends CActiveRecord
 			'emp_hireDate' => 'Hire Date',
 			'emp_retireDate' => 'Retire Date',
 			'emp_chapAssign' => 'Assigned Chapter',
+			'emp_email' => 'Email',
 			'church_id' => 'Church',
 			'fullname' => 'Fullname',
 		);

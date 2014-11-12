@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Confirmations'=>array('index'),
-        'Conf Godparents'=>array('index'),
+       // 'Conf Godparents'=>array('index'),
 	$model->id,
    
 );
@@ -70,6 +70,12 @@ $this->menu=array(
 <?php foreach ($en as $row) { ?>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
 array('ConfGodparent/update', 'id'=>$row->id)); ?>
+
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/delete.png" align="right"/>',
+	'#',array('submit'=>array('ConfGodparent/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?')); ?>  
+
+
+
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(

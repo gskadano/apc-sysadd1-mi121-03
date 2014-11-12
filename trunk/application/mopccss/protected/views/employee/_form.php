@@ -26,7 +26,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'emp_password'); ?>
-		<?php echo $form->textField($model,'emp_password',array('size'=>45,'maxlength'=>45, 'beforeSave')); ?>
+		<?php echo $form->passwordField($model,'emp_password',array('size'=>45,'maxlength'=>45, 'beforeSave')); ?>
 		<?php echo $form->error($model,'emp_password'); ?>
 	</div>
 
@@ -86,6 +86,13 @@
 		<?php echo $form->error($model,'emp_chapAssign'); ?>
 	</div>
 
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'emp_email'); ?>
+		<?php echo $form->textField($model,'emp_email',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'emp_email'); ?>
+	</div>
+	
 	<div class="row">
 		<?php echo $form->labelEx($model,'church_id'); ?>
 		<!--<?php echo $form->textField($model,'church_id'); ?>-->

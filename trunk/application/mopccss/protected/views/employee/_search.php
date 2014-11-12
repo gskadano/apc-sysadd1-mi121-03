@@ -52,6 +52,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'emp_email'); ?>
+		<?php echo $form->textField($model,'emp_email',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
+	
+	<div class="row">
 		<?php echo $form->label($model,'church_id'); ?>
 		<?php echo $form->textField($model,'church_id'); ?>
 	</div>
