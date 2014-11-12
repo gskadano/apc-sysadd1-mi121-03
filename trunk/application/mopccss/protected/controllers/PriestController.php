@@ -78,7 +78,12 @@ class PriestController extends Controller
 		if(isset($_POST['Priest']))
 		{
 			$model->attributes=$_POST['Priest'];
-			if($model->save())
+				//logs
+				$logC=new Logs;
+				$logC->employee_id= Yii::app()->user->id;
+				$logC->description= "Added ".$model->PFullName." on the priest list". $container->code;
+				$logC->dateTime= date('Y-m-d H:i:s');
+			if($model->save() && $logC->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -98,11 +103,17 @@ class PriestController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		
+		//logs
+		$logU=new Logs;
+		$logU->employee_id= Yii::app()->user->id;
+		$logU->description= "Updated ".$model->PFullName." information";
+		$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Priest']))
 		{
 			$model->attributes=$_POST['Priest'];
-			if($model->save())
+			if($model->save() && $logU->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -130,10 +141,14 @@ class PriestController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Priest');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		if(Yii::app()->user->isGuest){ 
+			$this->redirect(array('/site/login'));
+		}else{
+			$dataProvider=new CActiveDataProvider('Priest');
+			$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+			));
+		}
 	}
 
 	/**

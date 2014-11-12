@@ -148,12 +148,34 @@
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
-
+	
 	<div id="footer">
-		<center>Copyright &copy; <?php echo date('Y'); ?> by Chancery Solutions<br/>
+<!--<<<<<<< HEAD -->
+	<!-- Facebook plugin -->
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script> 
+		<div class="fb-like" data-href="https://www.facebook.com/pages/Military-Ordinariate-of-the-Philippines/216457348378194?fref=ts" 
+			data-width="100px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" style="float:left"></div><!---->
+		<br/><br/><br/><br/>
+		<center>
+		Copyright &copy; <?php echo date('Y'); ?> by AKT Solutions..<br/>
+		All Rights Reserved.<br/>
+                Powered by: Online Production</br>
+		<?php echo Yii::getVersion(); ?>
+		</center>
+	</div><!-- footer -->
+<!--=======-->
+		<!--<center>Copyright &copy; <?php echo date('Y'); ?> by Chancery Solutions<br/>
 		All Rights Reserved.<br/>
                 Powered by: Online Productions
 		</center>
+>>>>>>> fd3c4627078be718498c6265a163c2d6e451dbb2-->
         
 </div><!-- page -->
 

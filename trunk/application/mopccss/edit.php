@@ -191,11 +191,11 @@ if($_GET["id"]){
   </head>
   <body>    
     <div>      
-      <div class="toolBotton">           
-        <a id="Savebtn" class="imgbtn" href="javascript:void(0);">                
+      <div class="toolBotton">    
+		<a id="Savebtn" class="imgbtn" href="javascript:void(0);">                
           <span class="Save"  title="Save the calendar">Save(<u>S</u>)
           </span>          
-        </a>                           
+        </a>  
         <?php if(isset($event)){ ?>
         <a id="Deletebtn" class="imgbtn" href="javascript:void(0);">                    
           <span class="Delete" title="Cancel the calendar">Delete(<u>D</u>)
@@ -242,7 +242,7 @@ if($_GET["id"]){
             <input MaxLength="200" id="Location" name="Location" style="width:95%;" type="text" value="<?php echo isset($event)?$event->Location:""; ?>" />                 
           </label>                 
           <label>                    
-            <span>                        Remark:
+            <span>                        Remarks:
             </span>                    
 <textarea cols="20" id="Description" name="Description" rows="2" style="width:95%; height:70px">
 <?php echo isset($event)?$event->Description:""; ?>
