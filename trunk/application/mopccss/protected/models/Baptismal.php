@@ -52,8 +52,10 @@ class Baptismal extends CActiveRecord
 	
 	public function validatePerson($attribute,$params)
     {  
-		if(Baptismal::model()->exists('person_id=:person',array(':person'=>$this->person_id))){
-            $this->addError('person_id','The person already exists. Cannot create another baptismal record!');
+		if($this->isNewRecord){//verify username in creating records
+			if(Baptismal::model()->exists('person_id=:person',array(':person'=>$this->person_id))){
+				$this->addError('person_id','The person already exists. Cannot create another baptismal record!');
+				}
 		}
     }
 

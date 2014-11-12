@@ -17,11 +17,12 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Baptismal #<?php echo $model->id; ?></h1>
+<h1>Baptismal details of <?php echo $model->person->FullName; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
+		'id',
 		array('label'=>'Name', 'value'=>$model->person->FullName),
         array('label'=>'Date Of Birth', 'value'=>$model->person->p_dateOfBirth),
         array('label'=>'Place Of Birth', 'value'=>$model->person->p_placeOfBirth),

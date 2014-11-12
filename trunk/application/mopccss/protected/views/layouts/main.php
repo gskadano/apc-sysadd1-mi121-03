@@ -158,7 +158,7 @@
 			js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
 			fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script> 
-		<div class="fb-like" data-href="https://www.facebook.com/pages/Military-Ordinariate-of-the-Philippines/216457348378194?fref=ts" 
+		<div style="color:yellow" class="fb-like" data-href="https://www.facebook.com/pages/Military-Ordinariate-of-the-Philippines/216457348378194?fref=ts" 
 			data-width="100px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" style="float:left"></div><!---->
 		<br/><br/><br/><br/>
 		<center>
