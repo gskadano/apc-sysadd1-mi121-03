@@ -113,11 +113,11 @@ class PersonController extends Controller
 			if($model->save())
 			{
 				if($model->ccertificate == 'Baptismal'){
-					$this->redirect(array('baptismal/index'));
+					$this->redirect(array('person/view', 'id'=>$model->id));
 				}else if($model->ccertificate == 'Confirmation'){
-					$this->redirect(array('confirmation/index'));
+					$this->redirect(array('person/view', 'id'=>$model->id));
 				}else if($model->ccertificate == 'Marriage'){
-					$this->redirect(array('marriage/index'));
+					$this->redirect(array('person/view', 'id'=>$model->id));
 				}
 			}
 		}
