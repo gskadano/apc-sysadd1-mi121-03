@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Baptismal', 'url'=>array('person/create')),
+	//array('label'=>'Create Baptismal', 'url'=>array('create')),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),
 );
 ?>

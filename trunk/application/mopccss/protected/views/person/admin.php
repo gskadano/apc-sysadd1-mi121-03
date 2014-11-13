@@ -57,6 +57,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'p_gender',
 		'p_father',
 		'p_mother',
+		'ccertificate',
 		*/
 		array(
 			'class'=>'CButtonColumn',

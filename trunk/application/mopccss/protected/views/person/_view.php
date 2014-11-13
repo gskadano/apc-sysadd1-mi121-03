@@ -51,6 +51,10 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('p_mother')); ?>:</b>
 	<?php echo CHtml::encode($data->p_mother); ?>
 	<br />
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('ccertificate')); ?>:</b>
+	<?php echo CHtml::encode($data->ccertificate); ?>
+	<br />
 
 	*/ ?>
 

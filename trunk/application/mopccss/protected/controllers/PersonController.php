@@ -76,7 +76,13 @@ class PersonController extends Controller
 		{
 			$model->attributes=$_POST['Person'];
 			if($model->save())
-				$this->redirect(array('baptismal/create','person_id'=>$model->id));
+				if($model->ccertificate == 'Baptismal'){
+					$this->redirect(array('baptismal/create','person_id'=>$model->id));
+				}else if($model->ccertificate == 'Confirmation'){
+					$this->redirect(array('confirmation/create','person_id'=>$model->id));
+				}else if($model->ccertificate == 'Marriage'){
+					$this->redirect(array('marriage/create','person_id'=>$model->id));
+				}
 		}
 
 		$this->render('create',array(

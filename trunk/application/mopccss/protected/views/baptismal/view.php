@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Baptismal', 'url'=>array('index')),
-	array('label'=>'Create Baptismal', 'url'=>array('person/create')),
+	//array('label'=>'Create Baptismal', 'url'=>array('create')),
 	array('label'=>'Update Baptismal', 'url'=>array('person/update', 'id'=>$model->id)),
 	//array('label'=>'Delete Baptismal', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),

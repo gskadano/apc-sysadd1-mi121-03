@@ -65,6 +65,11 @@
 		<?php echo $form->label($model,'p_mother'); ?>
 		<?php echo $form->textField($model,'p_mother',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->label($model,'ccertificate'); ?>
+		<?php echo $form->textField($model,'ccertificate',array('size'=>45,'maxlength'=>45)); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>

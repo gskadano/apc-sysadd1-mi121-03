@@ -105,6 +105,13 @@
 		<?php echo $form->textField($model,'p_mother',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'p_mother'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'ccertificate'); ?>
+		<?php echo $form->dropDownList($model,'ccertificate',array("Baptismal"=>"Baptismal", "Confirmation"=>"Confirmation", "Marriage"=>"Marriage")
+			,array('empty'=>'Select Certificate Type')); ?>
+		<?php echo $form->error($model,'ccertificate'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Next>>' : 'Next>>'); ?>

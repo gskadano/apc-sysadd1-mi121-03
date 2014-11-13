@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Baptismal', 'url'=>array('index')),
-	array('label'=>'Create Baptismal', 'url'=>array('person/create')),
+	//array('label'=>'Create Baptismal', 'url'=>array('create')),
 	array('label'=>'View Baptismal', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),
 );

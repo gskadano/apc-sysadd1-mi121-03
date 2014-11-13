@@ -33,6 +33,7 @@ $this->menu=array(
 		'p_gender',
 		'p_father',
 		'p_mother',
+		'ccertificate',
 	),
 )); ?>
 
