@@ -114,7 +114,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Next>>' : 'Next>>'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Next>>' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

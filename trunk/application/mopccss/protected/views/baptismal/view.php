@@ -10,7 +10,8 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Baptismal', 'url'=>array('index')),
 	//array('label'=>'Create Baptismal', 'url'=>array('create')),
-	array('label'=>'Update Baptismal', 'url'=>array('person/update', 'id'=>$model->id)),
+	array('label'=>'Update Personal Info', 'url'=>array('person/update', 'id'=>$model->person_id)),
+	array('label'=>'Update Baptismal Info', 'url'=>array('update', 'id'=>$model->id)),
 	//array('label'=>'Delete Baptismal', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),
 	array('label'=>'Create Godparent', 'url'=>array('bapGodparent/create', 'baptismal_id'=>$model->id)),
@@ -30,7 +31,7 @@ $this->menu=array(
         array('label'=>'Gender', 'value'=>$model->person->p_gender),
         array('label'=>'Father', 'value'=>$model->person->p_father),
         array('label'=>'Mother', 'value'=>$model->person->p_mother),
-		//'id',
+		array('label'=>'Certificate type', 'value'=>$model->person->ccertificate),
 		'bap_bapDate',
 		'bap_priest',
 		'bap_church',
@@ -50,7 +51,7 @@ $this->menu=array(
 array('BapGodparent/update', 'id'=>$row->id)); ?>
 
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/delete.png" align="right"/>',
-	'#',array('submit'=>array('bapGodparent/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?')); ?>  
+	'#', array('submit'=>array('bapGodparent/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?')); ?>  
 
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,

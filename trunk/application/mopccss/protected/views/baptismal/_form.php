@@ -64,12 +64,6 @@
 	</div>
 
 	<div class="row">
-		<?php 
-		$criteria = new CDbCriteria();
-		$criteria->select = 'id';
-		$criteria->condition = 'emp_username=:name';
-		$criteria->params = array(':name'=>Yii::app()->user->name);
-		?>
 		<?php echo $form->labelEx($model,'Employee_id'); ?>
 		<!--<?php echo $form->textField($model,'Employee_id'); ?>-->
 		<?php echo $form->dropDownList($model, 'Employee_id', CHtml::listData(

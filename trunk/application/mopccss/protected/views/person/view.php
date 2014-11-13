@@ -37,28 +37,25 @@ $this->menu=array(
 	),
 )); ?>
 
-<?php $client_id= $model->id;?>
+<?php $en=Position::model()->findAll('client_id=:a', array(':a'=>$model->id)); ?>
 
-
-<?php $conf=Position::model()->findAll('client_id=:a', array(':a'=>$model->id));?>
-<?php if (count($conf) !== 0){?>
+<?php if (count($en) !== 0){?>
 <br>
-<h1> <b>Position</b></h1>
-<?php foreach ($conf as $row) { ?>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<h1>Position</h1>
+<?php foreach ($en as $row) { ?>
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
+array('BapGodparent/update', 'id'=>$row->id)); ?>
+
+<?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(
-             //  'id',
-		'rank',
-		'afpServiceNum',
-		'branchOfService',
-		'unitAddress',
-		'positioncol',
-		//'person.FullName',
-        //array('label'=>'Client', 'value'=>$model->FullName),
-	),
-)); ?>
-
-<br>
+			//'id',
+			'rank',
+			'afpSerialNum',
+			'branchOfService',
+			'unitAddress',
+        ),
+));
+?>
 <?php }} ?>

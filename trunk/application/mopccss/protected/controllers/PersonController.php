@@ -101,12 +101,25 @@ class PersonController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		$criteria = new CDbCriteria();
+		$criteria->select='id';
+		$criteria->condition='person_id=:a';
+		$criteria->params=array(':a'=>$model->id);
+		$sql = Baptismal::model()->findAll($criteria);
+		
 		if(isset($_POST['Person']))
 		{
 			$model->attributes=$_POST['Person'];
 			if($model->save())
-				$this->redirect(array('baptismal/update','id'=>$model->id));
+			{
+				if($model->ccertificate == 'Baptismal'){
+					$this->redirect(array('baptismal/index'));
+				}else if($model->ccertificate == 'Confirmation'){
+					$this->redirect(array('confirmation/index'));
+				}else if($model->ccertificate == 'Marriage'){
+					$this->redirect(array('marriage/index'));
+				}
+			}
 		}
 
 		$this->render('update',array(
