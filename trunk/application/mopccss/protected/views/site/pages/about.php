@@ -59,7 +59,7 @@ Confirmation and Wedding Certificates which are all important files.</p>
 </br>
 </br>
 
-<img src="https://lh4.googleusercontent.com/-CzpDKCdcBJ0/TrjtsqxZcFI/AAAAAAAAAKc/SSWFcxGcLZQ/s400/bfp%252520logo.jpg" alt="bjmp logo" width="250" height="250">
+<img src="https://lh4.googleusercontent.com/-CzpDKCdcBJ0/TrjtsqxZcFI/AAAAAAAAAKc/SSWFcxGcLZQ/s400/bfp%252520logo.jpg" alt="bfp logo" width="250" height="250">
 <h1>Bureau Fire Protection</h1> 
 <p>Is an agency of the Department of Interior and Local Government (DILG) 
 responsible for implementing national policies related to Firefighting 
@@ -70,6 +70,12 @@ of the administration and management of municipal and city fire and emergency se
 </br>
 </br>
 
+<img src="<img src="https://lh4.googleusercontent.com/-CzpDKCdcBJ0/TrjtsqxZcFI/AAAAAAAAAKc/SSWFcxGcLZQ/s400/bfp%252520logo.jpg" alt="bjmp logo" width="250" height="250">
+<h1>Bureau of Jail and Management Penology</h1> 
+<p>is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to jail management and penology. 
+Formerly known as the Constabulary Jail Bureau, the BJMP is in charge of prisoner handling and management of municipal and city jails all over the country.</p>
+</br>
+</br>
 
 
 <?php }else { ?>
@@ -108,6 +114,11 @@ This government organization provides armed and uniformed service and also enfor
 <h3>Bureau Fire Protection</h3> </br>
 Is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to Firefighting and Protection as well as implementation of the Philippine Fire Code (PD 1185), which was repealed and replaced by the New Fire Code of the Philippines (RA 9514). Formerly known as the Constabulary Fire Protection Bureau, the BFP is in charge of the administration and management of municipal and city fire and emergency services all over the country.
 </p>
+
+<p><img src="http://rbjmp8.com/images/bjmp-logo.png" alt="bjmp logo" width="100" height="100">
+<h3>Bureau of Jail and Management Penology</h3> </br>
+Is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to jail management and penology. 
+Formerly known as the Constabulary Jail Bureau, the BJMP is in charge of prisoner handling and management of municipal and city jails all over the country.</p>
 
 <?php } ?>
 
