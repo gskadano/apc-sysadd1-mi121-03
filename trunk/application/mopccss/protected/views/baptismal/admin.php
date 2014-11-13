@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Baptismal', 'url'=>array('index')),
-	array('label'=>'Create Baptismal', 'url'=>array('create')),
+	array('label'=>'Create Baptismal', 'url'=>array('person/create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

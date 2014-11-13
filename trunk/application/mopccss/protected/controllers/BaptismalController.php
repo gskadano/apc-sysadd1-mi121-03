@@ -88,10 +88,10 @@ class BaptismalController extends Controller
 			$model->attributes=$_POST['Baptismal'];
               if($model->save()){
 				if(isset($_POST['BapGodparent']))
-					{
-                        $godparent->attributes=$_POST['BapGodparent'];
-						$godparent->baptismal_id=$model->id;
-					}
+				{
+                    $godparent->attributes=$_POST['BapGodparent'];
+					$godparent->baptismal_id=$model->id;
+				}
 					
 					//logs
 					$logC=new Logs;

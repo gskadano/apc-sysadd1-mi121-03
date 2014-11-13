@@ -78,13 +78,14 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'person_id'); ?>
+		<!--<?php echo $form->labelEx($model,'person_id'); ?>-->
 		<!--<?php echo $form->textField($model,'person_id'); ?>-->
-		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+		<!--<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select a person')
-			); ?>
-		<?php echo $form->error($model,'person_id'); ?>
+			); ?>-->
+		<?php echo $form->hiddenField($model,'person_id'); ?>
+		<!--<?php echo $form->error($model,'person_id'); ?>-->
 	</div>
 	
 	<H2>God Parent</H2>

@@ -76,7 +76,7 @@ class PersonController extends Controller
 		{
 			$model->attributes=$_POST['Person'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('baptismal/create','person_id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -100,7 +100,7 @@ class PersonController extends Controller
 		{
 			$model->attributes=$_POST['Person'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('baptismal/update','id'=>$model->id));
 		}
 
 		$this->render('update',array(
