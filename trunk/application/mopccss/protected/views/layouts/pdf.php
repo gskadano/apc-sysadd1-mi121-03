@@ -8,7 +8,7 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-    <body>
+    <body Style="background-image: url(bg.png); background-size: 500px 500px; background-repeat: no-repeat;">
 
 
 	<div style="font-size:28px;color:#000000;font-family:Calibri, Serif; text-align:center;">
@@ -35,9 +35,6 @@ Tel No.911566 <br>
     <br>
     
         
-        
-	
-
 </body>
 </html>
 
