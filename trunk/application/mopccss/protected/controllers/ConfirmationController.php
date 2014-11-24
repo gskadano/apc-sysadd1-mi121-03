@@ -32,13 +32,13 @@ class ConfirmationController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete','pdf','pdfconfirmationamop'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','admin'),
+				'actions'=>array('create','update','admin','pdf'),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
@@ -62,7 +62,28 @@ class ConfirmationController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+	
+	public function actionpdfconfirmationamop($id)
+	{
+		$model=$this->loadModel($id);
+	
+		$this->render('pdfconfirmationamop',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
 
+	public function actionPdf($id)
+	
+	{
+	$this->layout="//layouts/pdf";
+		 $mPDF1 = Yii::app()->ePdf->mpdf();
+		  $mPDF1->WriteHTML($this->render('pdfconfirmationamop',array(
+			'model'=>$this->loadModel($id),),true)
+		);
+		$mPDF1->Output();
+		 
+	
+	}
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
