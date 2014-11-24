@@ -109,7 +109,7 @@ class ConfirmationController extends Controller
 				//logs
 						$logC=new Logs;
 						$logC->employee_id= Yii::app()->user->id;
-						$logC->description= "Created Confirmation certificate". $container->code;
+						$logC->description= "Created confirmation certificate : Confirmation # <a href=/mopccss/index.php?r=confirmation/view&id=". $model->id . ">" . $model->id . "</a>";
 						$logC->dateTime= date('Y-m-d H:i:s');
 	
 					if($confgodparent->save() && $logC->save())
@@ -149,7 +149,7 @@ class ConfirmationController extends Controller
 		//logs
 			$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Updated Confirmation certificate of ".$model->person->FullName;
+		$logU->description= "Updated confirmation certificate : Confirmation # <a href=/mopccss/index.php?r=confirmation/view&id=". $model->id . ">" . $model->id . "</a>";
 		$logU->dateTime= date('Y-m-d H:i:s');
 
 
