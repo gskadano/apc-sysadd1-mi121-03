@@ -15,7 +15,8 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
-	<?php echo CHtml::encode($data->description); ?>
+	<?php //echo CHtml::link($data->description); ?>
+	<?php echo CHtml::link(CHtml::encode($data->description), array('marriage/view', 'id'=>$data->id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('dateTime')); ?>:</b>

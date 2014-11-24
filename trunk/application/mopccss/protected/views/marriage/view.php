@@ -74,6 +74,7 @@ $this->menu=array(
 <?php foreach ($en as $row) { ?>
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
 array('marGodparent/update', 'id'=>$row->id)); ?>
+
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(

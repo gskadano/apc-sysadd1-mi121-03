@@ -102,4 +102,5 @@ return array(
 		//'adminEmail'=>'webmaster@example.com',
 		'encryptionKey' => 'lvkj23mn5j25KJE5r',
 	),
+  
 );
