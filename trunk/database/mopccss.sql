@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2014 at 04:39 AM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Generation Time: Nov 25, 2014 at 05:45 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -232,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `dateTime` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_logs_employee1_idx` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Dumping data for table `logs`
@@ -258,7 +258,8 @@ INSERT INTO `logs` (`id`, `employee_id`, `description`, `dateTime`) VALUES
 (17, 1, 'Updated baptismal certificate of Tero, John Emmanuel ', '2014-11-13 03:06:27'),
 (18, 1, 'Created baptismal certificate', '2014-11-13 03:32:14'),
 (19, 1, 'Created baptismal certificate', '2014-11-13 03:33:17'),
-(20, 1, 'Created baptismal certificate', '2014-11-13 04:24:08');
+(20, 1, 'Created baptismal certificate', '2014-11-13 04:24:08'),
+(21, 1, 'Created marriage certificate : Marriage # <a href=/mopccss/index.php?r=marriage/view&id=2>2</a>', '2014-11-25 05:23:53');
 
 -- --------------------------------------------------------
 
@@ -273,18 +274,23 @@ CREATE TABLE IF NOT EXISTS `marriage` (
   `Employee_id` int(11) NOT NULL,
   `bride_id` int(11) NOT NULL,
   `groom_id` int(11) NOT NULL,
+  `mar_bkno` varchar(45) NOT NULL,
+  `mar_series` varchar(45) NOT NULL,
+  `mar_pageno` varchar(45) NOT NULL,
+  `mar_lineno` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_marriage_Employee1_idx` (`Employee_id`),
   KEY `fk_marriage_person1_idx` (`bride_id`),
   KEY `fk_marriage_person2_idx` (`groom_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `marriage`
 --
 
-INSERT INTO `marriage` (`id`, `mar_marDate`, `mar_priest`, `Employee_id`, `bride_id`, `groom_id`) VALUES
-(1, '2014-11-07', 'Harley', 1, 4, 3);
+INSERT INTO `marriage` (`id`, `mar_marDate`, `mar_priest`, `Employee_id`, `bride_id`, `groom_id`, `mar_bkno`, `mar_series`, `mar_pageno`, `mar_lineno`) VALUES
+(1, '2014-11-07', 'Harley', 1, 4, 3, '', '', '', ''),
+(2, '2014-11-10', 'Fr. Jose Rizal', 1, 5, 3, '001', '1999', '126', '002');
 
 -- --------------------------------------------------------
 
@@ -299,14 +305,15 @@ CREATE TABLE IF NOT EXISTS `mar_godparent` (
   PRIMARY KEY (`id`),
   KEY `fk_marGodParent_marriage1_idx` (`marriage_id`),
   KEY `fk_marGodParent_person1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `mar_godparent`
 --
 
 INSERT INTO `mar_godparent` (`id`, `marriage_id`, `person_id`) VALUES
-(1, 1, 5);
+(1, 1, 5),
+(2, 2, 11);
 
 -- --------------------------------------------------------
 
