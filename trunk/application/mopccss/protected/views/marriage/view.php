@@ -64,6 +64,10 @@ $this->menu=array(
 		///*'groom_id',*/array('label'=>'Groom Name', 'value'=>$model->groom->FullName),
 		///*'father_id',*/array('label'=>'Father', 'value'=>$model->father->FullName),
 		///*'mother_id',*/array('label'=>'Mother', 'value'=>$model->mother->FullName),
+		'mar_bkno',
+		'mar_series',
+		'mar_pageno',
+		'mar_lineno'
 	),
 )); ?>
 

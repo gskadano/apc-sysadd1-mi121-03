@@ -1,4 +1,4 @@
-0<?php
+<?php
 /* @var $this MarriageController */
 /* @var $data Marriage */
 ?>

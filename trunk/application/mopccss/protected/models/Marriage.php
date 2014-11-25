@@ -10,16 +10,16 @@
  * @property integer $Employee_id
  * @property integer $bride_id
  * @property integer $groom_id
- * @property integer $father_id
+ * @property string $mar_bkno
  * @property integer $mother_id
  *
  * The followings are the available model relations:
  * @property MarGodparent[] $marGodparents
  * @property Employee $employee
  * @property Person $bride
- * @property Person $groom
- * @property Person $father
- * @property Person $mother
+ * @property Person string $mar_series
+ * @property Person string $mar_pageno
+ * @property Person string $mar_lineno
  */
 class Marriage extends CActiveRecord
 {
@@ -39,13 +39,13 @@ class Marriage extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Employee_id, bride_id, groom_id', 'required'),
+			array('Employee_id, bride_id, groom_id, mar_bkno, mar_series, mar_pageno, mar_lineno', 'required'),
 			array('Employee_id, bride_id, groom_id', 'numerical', 'integerOnly'=>true),
 			array('mar_priest', 'length', 'max'=>45),
 			array('mar_marDate', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, mar_marDate, mar_priest, Employee_id, bride_id, groom_id', 'safe', 'on'=>'search'),
+			array('id, mar_marDate, mar_priest, Employee_id, bride_id, groom_id, mar_bkno, mar_series, mar_pageno, mar_lineno', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -80,10 +80,14 @@ class Marriage extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'mar_marDate' => 'Marriage Date',
-			'mar_priest' => 'Priest',
+			'mar_priest' => 'Marriage Priest',
 			'Employee_id' => 'Employee',
 			'bride_id' => 'Bride',
 			'groom_id' => 'Groom',
+			'mar_bkno' => 'Book No.',
+			'mar_series' => 'Series of',
+			'mar_pageno' => 'Page No.',
+			'mar_lineno' => 'Line No.',
 		);
 	}
 
@@ -117,6 +121,14 @@ class Marriage extends CActiveRecord
 		$criteria->compare('employee.emp_lname',$this->Employee_id, true);
 		$criteria->compare('bride.p_lname',$this->bride_id, true);
 		$criteria->compare('groom.p_lname',$this->groom_id, true);
+		$criteria->compare('Employee_id',$this->Employee_id);
+		$criteria->compare('bride_id',$this->bride_id);
+		$criteria->compare('groom_id',$this->groom_id);
+		$criteria->compare('mar_bkno',$this->mar_bkno,true);
+		$criteria->compare('mar_series',$this->mar_series,true);
+		$criteria->compare('mar_pageno',$this->mar_pageno,true);
+		$criteria->compare('mar_lineno',$this->mar_lineno,true);
+
 		
 
 //load the related table at the same time:

@@ -73,6 +73,31 @@
 	</div>
 	
 	
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'mar_bkno'); ?>
+		<?php echo $form->textField($model,'mar_bkno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'mar_bkno'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'mar_series'); ?>
+		<?php echo $form->textField($model,'mar_series',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'mar_series'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'mar_pageno'); ?>
+		<?php echo $form->textField($model,'mar_pageno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'mar_pageno'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'mar_lineno'); ?>
+		<?php echo $form->textField($model,'mar_lineno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'mar_lineno'); ?>
+	</div>
+	
 		<H2>Godparent</H2>
 	
 	<div class="row">
