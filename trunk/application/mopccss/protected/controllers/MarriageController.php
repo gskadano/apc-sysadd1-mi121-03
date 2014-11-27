@@ -37,6 +37,7 @@ class MarriageController extends Controller
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
+			
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('create','update','admin'),
 				/*'user'=>array('admin'),*/
@@ -90,7 +91,7 @@ class MarriageController extends Controller
 		//logs
 					$logC=new Logs;
 					$logC->employee_id= Yii::app()->user->id;
-					$logC->description= "Created marriage certificate". $container->code;
+					$logC->description= "Created marriage certificate : Marriage # <a href=/mopccss/index.php?r=marriage/view&id=". $model->id . ">" . $model->id . "</a>";
 					$logC->dateTime= date('Y-m-d H:i:s');
 	
 				if($godparent->save() && $logC ->save())
@@ -129,7 +130,7 @@ class MarriageController extends Controller
 			//logs
 					$logU=new Logs;
 					$logU->employee_id= Yii::app()->user->id;
-					$logU->description= "Updated marriage certificate of ". $model->bride->FullName . " and ". $model->groom->FullName;
+					$logU->description= "Updated marriage certificate : Marriage # <a href=/mopccss/index.php?r=marriage/view&id=". $model->id . ">" . $model->id . "</a>";
 					$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Marriage']))
@@ -153,6 +154,12 @@ class MarriageController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
+		
+		    $logD=new logs;
+           $logD->employee_id= Yii::app()->user->id;
+	            $logD->date= date('Y-m-d H:i:s');
+			$logD->description= "Employee with ID#" . $id . " has been deleted";
+				$logD->save();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))

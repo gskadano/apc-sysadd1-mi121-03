@@ -33,13 +33,13 @@ class BaptismalController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','Church','Ajax'),
+				'actions'=>array('create','update','admin','delete','Church','Ajax','pdf2','pdfbaptismalmop'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','admin','Church','Ajax'),
+				'actions'=>array('create','update','admin','Church','Ajax','pdf2','pdfbaptismalmop'),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
@@ -67,13 +67,40 @@ class BaptismalController extends Controller
 			));
 		}
 		
+        } 
+        
+          public function actionPdf2($id)
+	{
+           
+	$this->layout="//layouts/pdf2";
+       
+		 $mPDF1 = Yii::app()->ePdf->mpdf();
+		  $mPDF1->WriteHTML($this->render('pdfbaptismalmop',array(
+			'model'=>$this->loadModel($id),),true)
+		);
+		$mPDF1->Output();
+		 
+	
+	}
+        
+        public function actionpdfbaptismalamop($id)
+	{
+		$model=$this->loadModel($id);
+	
+		$this->render('pdfbaptismal',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+                
+                
+                
 		//logs
 		/*$logV=new Logs;
 		$logV->employee_id= Yii::app()->user->id;
 		$logV->description= "Viewed baptismal certificate #". $model->id;
 		$logV->dateTime= date('Y-m-d H:i:s');
 		$logV->save();*/
-	}
+	
 
 	/**
 	 * Creates a new model.
@@ -101,7 +128,11 @@ class BaptismalController extends Controller
 					//logs
 					$logC=new Logs;
 					$logC->employee_id= Yii::app()->user->id;
+<<<<<<< HEAD
 					$logC->description= "Created baptismal certificate";
+=======
+					$logC->description= "Created baptismal certificate : Baptismal # <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->id . "</a>";
+>>>>>>> 1908a07690a7054624829320f8e3c0b97ad701b5
 					$logC->dateTime= date('Y-m-d H:i:s');
 								
 				if($godparent->save() && $logC->save())
@@ -140,7 +171,7 @@ class BaptismalController extends Controller
 		//logs
 		$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Updated baptismal certificate of ".$model->person->FullName;
+		$logU->description= "Updated baptismal certificate : Baptismal # <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->id . "</a>";
 		$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Baptismal']))

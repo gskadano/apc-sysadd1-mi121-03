@@ -32,7 +32,7 @@ class ChurchController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete','loadImage'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
@@ -78,6 +78,17 @@ class ChurchController extends Controller
 		if(isset($_POST['Church']))
 		{
 			$model->attributes=$_POST['Church'];
+                        
+                        if(!empty($_FILES['Church']['tmp_name']['ch_pic']))
+	            {
+	                $file = CUploadedFile::getInstance($model,'ch_pic');
+                //$model->med_descxray = $file->name;
+	                $model->fileType = $file->type;
+	                $fp = fopen($file->tempName, 'r');
+	                $content = fread($fp, filesize($file->tempName));
+	                fclose($fp);
+	                $model->ch_pic = $content;
+	            }
 				//logs
 				$logC=new Logs;
 				$logC->employee_id= Yii::app()->user->id;
@@ -94,6 +105,15 @@ class ChurchController extends Controller
 		));
 	}
 
+        Public function actionloadImage($id)
+	    {
+	        $model=$this->loadModel($id);
+	
+	        header('Content-Type: ' . $model->fileType);
+	        print $model->ch_pic;
+	
+	    }
+        
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
@@ -105,7 +125,9 @@ class ChurchController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
+	
+	
+                
 		//logs
 		$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
@@ -114,7 +136,19 @@ class ChurchController extends Controller
 
 		if(isset($_POST['Church']))
 		{
+                    
 			$model->attributes=$_POST['Church'];
+                        
+                          if(!empty($_FILES['Church']['tmp_name']['ch_pic']))
+	            {
+	                $file = CUploadedFile::getInstance($model,'ch_pic');
+                //$model->med_descxray = $file->name;
+	                $model->fileType = $file->type;
+	                $fp = fopen($file->tempName, 'r');
+	                $content = fread($fp, filesize($file->tempName));
+	                fclose($fp);
+	                $model->ch_pic = $content;
+	            }
 			if($model->save() && $logU->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

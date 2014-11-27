@@ -10,6 +10,7 @@ $this->menu=array(
 	array('label'=>'Create Employee', 'url'=>array('create')),
 	array('label'=>'Manage Employee', 'url'=>array('admin')),
 );
+
 ?>
 
 <h1>Employees</h1>

@@ -15,6 +15,7 @@ $this->menu=array(
 	//array('label'=>'Delete Baptismal', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),
 	array('label'=>'Create Godparent', 'url'=>array('bapGodparent/create', 'baptismal_id'=>$model->id)),
+     array('label'=>'Generate Report', 'url'=>array('pdf2', 'id'=>$model->id)),
 );
 ?>
 
@@ -31,6 +32,10 @@ $this->menu=array(
         array('label'=>'Gender', 'value'=>$model->person->p_gender),
         array('label'=>'Father', 'value'=>$model->person->p_father),
         array('label'=>'Mother', 'value'=>$model->person->p_mother),
+<<<<<<< HEAD
+=======
+		array('label'=>'Certificate type', 'value'=>$model->person->certificate),
+>>>>>>> 1908a07690a7054624829320f8e3c0b97ad701b5
 		'bap_bapDate',
 		'bap_priest',
 		'bap_church',

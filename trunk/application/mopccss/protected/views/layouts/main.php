@@ -14,12 +14,12 @@
 	<style>
         ul#menu li {
         display:inline;
-         background-color: Orange;
+         background-color: #625D5D;
         }
 </style>
 </head>
 
-<body background="blue.jpg">';
+<body bgcolor="#625D5D">';
  
 		echo '<div class="container" id="page">
 

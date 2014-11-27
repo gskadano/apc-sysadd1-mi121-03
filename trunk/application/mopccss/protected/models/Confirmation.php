@@ -87,6 +87,7 @@ class Confirmation extends CActiveRecord
 			'conf_priest' => 'Priest',
 			'Employee_id' => 'Employee',
 			'person_id' => 'Person',
+                  
 		);
 	}
 

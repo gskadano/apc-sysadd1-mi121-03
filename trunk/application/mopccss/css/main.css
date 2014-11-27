@@ -29,14 +29,14 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #CC66FF;
+	background: #625D5D;
 }
 
 #page
 {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	background: #FFE87C;
+	background: #F3E5AB;
 	border: 1px solid #C9E0ED;
 }
 
@@ -65,9 +65,9 @@ body
 
 #footer
 {
-  background: #B0C4DE;
+  background: #99C68E;
   clear: both;
-  color: #FFFFFF;
+  color: #000000;
   overflow: hidden;
   padding: 0 40px 20px;
   position: relative;
@@ -106,7 +106,7 @@ body
 
 #mainmenu
 {
-	background: #B0C4DE;
+	background: #FFFFFF;
 }
 
 #mainmenu ul

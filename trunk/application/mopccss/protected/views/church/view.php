@@ -25,6 +25,14 @@ $this->menu=array(
 		'id',
 		'ch_name',
 		'ch_address',
+             array(
+	                'name'=>'PictureChurch',
+	                'type'=>'raw',
+	                'value'=>html_entity_decode(CHtml::image(Yii::app()->controller->createUrl('church/loadImage', array('id'=>$model->id))
+	                                                                                ,'alt'
+	                                                                                ,array('width'=>300)
+	                                                                                )),
+	                ),
 	),
 )); ?>
 <?php

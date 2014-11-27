@@ -45,6 +45,9 @@ class Employee extends CActiveRecord
 	/**
 	 * @return array validation rules for model attributes.
 	 */
+	 
+	 //Behaviors
+	 
 	
 	public function rules()
 	{
