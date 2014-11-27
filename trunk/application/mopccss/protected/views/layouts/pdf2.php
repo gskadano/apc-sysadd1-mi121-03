@@ -24,7 +24,7 @@ Tel No.911566 <br>
 </div>
 
 <div style="font-size:45px;color:#663300;font-family:'Old English Text MT'; text-align:center;" >
-<img src="confirmations.png" width="1000px">
+<img src="baptism.png" width="1000px">
 </div>
 <div style="font-size:30px;color:#000000;font-family:'Old English Text MT'; text-align:center; ">
 <img src="thisistocertifythat.png" >

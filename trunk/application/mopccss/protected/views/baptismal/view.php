@@ -15,6 +15,7 @@ $this->menu=array(
 	//array('label'=>'Delete Baptismal', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Baptismal', 'url'=>array('admin')),
 	array('label'=>'Create Godparent', 'url'=>array('bapGodparent/create', 'baptismal_id'=>$model->id)),
+     array('label'=>'Generate Report', 'url'=>array('pdf2', 'id'=>$model->id)),
 );
 ?>
 

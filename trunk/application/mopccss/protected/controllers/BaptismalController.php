@@ -33,7 +33,7 @@ class BaptismalController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete','pdf2','pdfbaptismalmop'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
@@ -63,13 +63,40 @@ class BaptismalController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 		
+        } 
+        
+          public function actionPdf2($id)
+	{
+           
+	$this->layout="//layouts/pdf2";
+       
+		 $mPDF1 = Yii::app()->ePdf->mpdf();
+		  $mPDF1->WriteHTML($this->render('pdfbaptismalmop',array(
+			'model'=>$this->loadModel($id),),true)
+		);
+		$mPDF1->Output();
+		 
+	
+	}
+        
+        public function actionpdfbaptismalamop($id)
+	{
+		$model=$this->loadModel($id);
+	
+		$this->render('pdfbaptismal',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+                
+                
+                
 		//logs
 		/*$logV=new Logs;
 		$logV->employee_id= Yii::app()->user->id;
 		$logV->description= "Viewed baptismal certificate #". $model->id;
 		$logV->dateTime= date('Y-m-d H:i:s');
 		$logV->save();*/
-	}
+	
 
 	/**
 	 * Creates a new model.

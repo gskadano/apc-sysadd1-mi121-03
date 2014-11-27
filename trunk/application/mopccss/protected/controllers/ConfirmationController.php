@@ -63,19 +63,23 @@ class ConfirmationController extends Controller
 		));
 	}
 	
-	public function actionpdfconfirmationamop($id)
-	{
-		$model=$this->loadModel($id);
-	
-		$this->render('pdfconfirmationamop',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
-
+//	public function actionconfpdf($id)
+//	{
+//		$model=$this->loadModel($id);
+//	
+//		$this->render('pdfconfirmationamop',array(
+//			'model'=>$this->loadModel($id),
+//		));
+//	}
+ 
+        
+        
+        
 	public function actionPdf($id)
-	
 	{
+           
 	$this->layout="//layouts/pdf";
+       
 		 $mPDF1 = Yii::app()->ePdf->mpdf();
 		  $mPDF1->WriteHTML($this->render('pdfconfirmationamop',array(
 			'model'=>$this->loadModel($id),),true)
@@ -83,6 +87,15 @@ class ConfirmationController extends Controller
 		$mPDF1->Output();
 		 
 	
+	}
+        
+        public function actionpdfconfirmationamop($id)
+	{
+		$model=$this->loadModel($id);
+	
+		$this->render('pdfconfirmationamop',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 	/**
 	 * Creates a new model.
