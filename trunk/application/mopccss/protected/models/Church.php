@@ -7,6 +7,8 @@
  * @property integer $id
  * @property string $ch_name
  * @property string $ch_address
+ * @property string $ch_pic
+ * @property string $fileType
  */
 class Church extends CActiveRecord
 {
@@ -26,11 +28,19 @@ class Church extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ch_name', 'length', 'max'=>45),
+                        array('ch_pic', 'required'),
+			array('ch_name , fileType', 'length', 'max'=>45),
 			array('ch_address', 'length', 'max'=>100),
+                    
+                    array('ch_pic', 'file',
+					'types'=>'jpg, gif, png, bmp, jpeg',
+						'maxSize'=>1024 * 1024 * 10, // 10MB
+							'tooLarge'=>'The file was larger than 10MB. Please upload a smaller file.',
+						'allowEmpty' => true
+	         ),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, ch_name, ch_address', 'safe', 'on'=>'search'),
+			array('id, ch_name, ch_address, ch_pic, fileType', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +66,8 @@ class Church extends CActiveRecord
 			'id' => 'ID',
 			'ch_name' => 'Church Name',
 			'ch_address' => 'Church Address',
+                        'ch_pic' => 'Church Picture',
+			'fileType' => 'File Type',
 		);
 	}
 
@@ -80,6 +92,8 @@ class Church extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('ch_name',$this->ch_name,true);
 		$criteria->compare('ch_address',$this->ch_address,true);
+                $criteria->compare('ch_pic',$this->ch_pic,true);
+		$criteria->compare('fileType',$this->fileType,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
