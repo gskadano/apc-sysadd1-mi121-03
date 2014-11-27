@@ -128,11 +128,7 @@ class BaptismalController extends Controller
 					//logs
 					$logC=new Logs;
 					$logC->employee_id= Yii::app()->user->id;
-<<<<<<< HEAD
-					$logC->description= "Created baptismal certificate";
-=======
 					$logC->description= "Created baptismal certificate : Baptismal # <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->id . "</a>";
->>>>>>> 1908a07690a7054624829320f8e3c0b97ad701b5
 					$logC->dateTime= date('Y-m-d H:i:s');
 								
 				if($godparent->save() && $logC->save())
