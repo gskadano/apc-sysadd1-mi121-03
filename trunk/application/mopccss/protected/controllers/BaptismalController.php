@@ -124,7 +124,7 @@ class BaptismalController extends Controller
 					//logs
 					$logC=new Logs;
 					$logC->employee_id= Yii::app()->user->id;
-					$logC->description= "Created baptismal certificate". $container->code;
+					$logC->description= "Created baptismal certificate : Baptismal # <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->id . "</a>";
 					$logC->dateTime= date('Y-m-d H:i:s');
 								
 				if($godparent->save() && $logC->save())
@@ -163,7 +163,7 @@ class BaptismalController extends Controller
 		//logs
 		$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Updated baptismal certificate of ".$model->person->FullName;
+		$logU->description= "Updated baptismal certificate : Baptismal # <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->id . "</a>";
 		$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Baptismal']))
