@@ -33,9 +33,6 @@ $this->menu=array(
         array('label'=>'Father', 'value'=>$model->person->p_father),
         array('label'=>'Mother', 'value'=>$model->person->p_mother),
 
-
-	
-
 		'bap_bapDate',
 		'bap_priest',
 		'bap_church',
