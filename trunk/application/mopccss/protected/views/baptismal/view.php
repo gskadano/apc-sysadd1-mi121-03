@@ -32,7 +32,10 @@ $this->menu=array(
         array('label'=>'Gender', 'value'=>$model->person->p_gender),
         array('label'=>'Father', 'value'=>$model->person->p_father),
         array('label'=>'Mother', 'value'=>$model->person->p_mother),
+<<<<<<< HEAD
+=======
 		array('label'=>'Certificate type', 'value'=>$model->person->certificate),
+>>>>>>> 1908a07690a7054624829320f8e3c0b97ad701b5
 		'bap_bapDate',
 		'bap_priest',
 		'bap_church',

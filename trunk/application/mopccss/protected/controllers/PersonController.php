@@ -56,9 +56,13 @@ class PersonController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		if(Yii::app()->user->isGuest){ 
+			$this->redirect(array('/site/login'));
+		}else{
+			$this->render('view',array(
+				'model'=>$this->loadModel($id),
+			));
+		}
 	}
 
 	/**
@@ -76,13 +80,9 @@ class PersonController extends Controller
 		{
 			$model->attributes=$_POST['Person'];
 			if($model->save())
-				if($model->ccertificate == 'Baptismal'){
-					$this->redirect(array('baptismal/create','person_id'=>$model->id));
-				}else if($model->ccertificate == 'Confirmation'){
-					$this->redirect(array('confirmation/create','person_id'=>$model->id));
-				}else if($model->ccertificate == 'Marriage'){
-					$this->redirect(array('marriage/create','person_id'=>$model->id));
-				}
+			{
+				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
@@ -112,13 +112,7 @@ class PersonController extends Controller
 			$model->attributes=$_POST['Person'];
 			if($model->save())
 			{
-				if($model->ccertificate == 'Baptismal'){
-					$this->redirect(array('person/view', 'id'=>$model->id));
-				}else if($model->ccertificate == 'Confirmation'){
-					$this->redirect(array('person/view', 'id'=>$model->id));
-				}else if($model->ccertificate == 'Marriage'){
-					$this->redirect(array('person/view', 'id'=>$model->id));
-				}
+				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
 

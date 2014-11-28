@@ -58,9 +58,13 @@ class EmployeeController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		if(Yii::app()->user->isGuest){ 
+			$this->redirect(array('/site/login'));
+		}else{
+			$this->render('view',array(
+				'model'=>$this->loadModel($id),
+			));
+		}
 	}
 
 	/**
