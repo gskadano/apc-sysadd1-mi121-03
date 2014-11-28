@@ -38,7 +38,7 @@ class EmployeeController extends Controller
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','admin'),
+				'actions'=>array('admin'),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
@@ -83,7 +83,7 @@ class EmployeeController extends Controller
 			//logs
 			$logC=new Logs;
 			$logC->employee_id= Yii::app()->user->id;
-			$logC->description= "Created an employee.". $container->code;
+			$logC->description= "Created an employee.";
 			$logC->dateTime= date('Y-m-d H:i:s');
 			
 			$model->attributes=$_POST['Employee'];
