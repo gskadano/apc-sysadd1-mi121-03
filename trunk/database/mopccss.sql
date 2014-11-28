@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2014 at 05:33 AM
+-- Generation Time: Nov 28, 2014 at 04:51 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -172,6 +172,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `emp_usertype` varchar(45) NOT NULL,
   `emp_fname` varchar(45) NOT NULL,
   `emp_lname` varchar(45) NOT NULL,
+  `emp_email` varchar(45) NOT NULL,
   `emp_hireDate` date DEFAULT NULL,
   `emp_retireDate` date DEFAULT NULL,
   `emp_chapAssign` varchar(45) DEFAULT NULL,
@@ -184,10 +185,10 @@ CREATE TABLE IF NOT EXISTS `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`id`, `emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `church_id`) VALUES
-(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', '2014-07-09', NULL, 'MOP Chancery', 1),
-(2, 'hssantos', 'a4c6b15502f68768488cd48f496a1ac24e69a11b2786f556e0da023059d7f9bb', 'Doctor', 'John Michael', 'Santos', '2014-05-01', '0000-00-00', 'MOP Chancery', 1),
-(3, 'mdronquillo', '75f3735825c0b6565a8afa3252277e3de30093611a2254e2efa8d2ad5be366ad', 'Regular', 'Mark Joshua', 'Ronquillo', '2013-01-31', '0000-00-00', 'MOP Chancery', 1);
+INSERT INTO `employee` (`id`, `emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_email`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `church_id`) VALUES
+(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', 'gskadano@gmail.com', '2014-07-09', '0000-00-00', 'MOP Chancery', 1),
+(2, 'hssantos', 'a4c6b15502f68768488cd48f496a1ac24e69a11b2786f556e0da023059d7f9bb', 'Doctor', 'John Michael', 'Santos', '', '2014-05-01', '0000-00-00', 'MOP Chancery', 1),
+(3, 'mdronquillo', '75f3735825c0b6565a8afa3252277e3de30093611a2254e2efa8d2ad5be366ad', 'Regular', 'Mark Joshua', 'Ronquillo', '', '2013-01-31', '0000-00-00', 'MOP Chancery', 1);
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `dateTime` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_logs_employee1_idx` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `logs`
@@ -263,7 +264,8 @@ INSERT INTO `logs` (`id`, `employee_id`, `description`, `dateTime`) VALUES
 (19, 1, 'Created baptismal certificate', '2014-11-13 03:33:17'),
 (20, 1, 'Created baptismal certificate', '2014-11-13 04:24:08'),
 (21, 1, 'Created marriage certificate : Marriage # <a href=/mopccss/index.php?r=marriage/view&id=2>2</a>', '2014-11-25 05:23:53'),
-(22, 1, 'Updated Saint Ignatious Cathedral information', '2014-11-27 05:30:00');
+(22, 1, 'Updated Saint Ignatious Cathedral information', '2014-11-27 05:30:00'),
+(23, 1, 'Updated Kadano, Gene Anthony information.', '2014-11-27 16:43:44');
 
 -- --------------------------------------------------------
 
