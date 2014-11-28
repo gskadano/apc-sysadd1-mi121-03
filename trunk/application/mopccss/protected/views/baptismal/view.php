@@ -31,7 +31,6 @@ $this->menu=array(
         array('label'=>'Gender', 'value'=>$model->person->p_gender),
         array('label'=>'Father', 'value'=>$model->person->p_father),
         array('label'=>'Mother', 'value'=>$model->person->p_mother),
-		array('label'=>'Certificate type', 'value'=>$model->person->ccertificate),
 		'bap_bapDate',
 		'bap_priest',
 		'bap_church',

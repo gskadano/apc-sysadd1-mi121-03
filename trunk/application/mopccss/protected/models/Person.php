@@ -34,8 +34,8 @@ class Person extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('p_fname, p_lname, p_dateOfBirth, p_gender, p_father, p_mother, ccertificate', 'required'),
-			array('p_fname, p_middlename, p_lname, p_placeOfBirth, p_gender, ccertificate', 'length', 'max'=>45),
+			array('p_fname, p_lname, p_dateOfBirth, p_gender, p_father, p_mother', 'required'),
+			array('p_fname, p_middlename, p_lname, p_placeOfBirth, p_gender', 'length', 'max'=>45),
 			array('p_address, p_father, p_mother', 'length', 'max'=>100),
 			array('p_dateOfDeath', 'safe'),
 			// The following rule is used by search().
@@ -80,7 +80,6 @@ class Person extends CActiveRecord
 			'p_gender' => 'Gender',
 			'p_father' => 'Father',
 			'p_mother' => 'Mother',
-			'ccertificate' => 'Certificate Type',
 		);
 	}
 
@@ -113,7 +112,6 @@ class Person extends CActiveRecord
 		$criteria->compare('p_gender',$this->p_gender,true);
 		$criteria->compare('p_father',$this->p_father,true);
 		$criteria->compare('p_mother',$this->p_mother,true);
-		$criteria->compare('ccertificate',$this->ccertificate,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

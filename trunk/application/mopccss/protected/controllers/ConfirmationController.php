@@ -56,11 +56,15 @@ class ConfirmationController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$model=$this->loadModel($id);
+		if(Yii::app()->user->isGuest){ 
+			$this->redirect(array('/site/login'));
+		}else{
+			$model=$this->loadModel($id);
 	
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+			$this->render('view',array(
+				'model'=>$this->loadModel($id),
+			));
+		}
 	}
 
 	/**

@@ -33,13 +33,13 @@ class BaptismalController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete','Church','Ajax'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','admin'),
+				'actions'=>array('create','update','admin','Church','Ajax'),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
@@ -57,11 +57,15 @@ class BaptismalController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$model=$this->loadModel($id);
+		if(Yii::app()->user->isGuest){ 
+			$this->redirect(array('/site/login'));
+		}else{
+			$model=$this->loadModel($id);
 		
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+			$this->render('view',array(
+				'model'=>$this->loadModel($id),
+			));
+		}
 		
 		//logs
 		/*$logV=new Logs;
@@ -97,7 +101,7 @@ class BaptismalController extends Controller
 					//logs
 					$logC=new Logs;
 					$logC->employee_id= Yii::app()->user->id;
-					$logC->description= "Created baptismal certificate". $container->code;
+					$logC->description= "Created baptismal certificate";
 					$logC->dateTime= date('Y-m-d H:i:s');
 								
 				if($godparent->save() && $logC->save())
@@ -159,7 +163,7 @@ class BaptismalController extends Controller
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
-
+		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -221,6 +225,35 @@ class BaptismalController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionChurch()
+	{
+		
+		//$qwe = Yii::app()->getRequest()->getParam('bap_church');//-----------------------------
+		$sql=Church::model()->findAll('ch_name=:parent_id',array(':parent_id'=>(string)$_GET['bap_church']));
+		//print_r($sql);
+		//print_r((int)$_GET['bap_church']);
+		$data=CHtml::listData($sql,'ch_address','ch_address');
+		foreach($data as $value=>$name)
+		{
+			echo CHtml::tag('option',
+                   array('value'=>$value),CHtml::encode($name),true);
+		}
+	}
+	
+	public function actionAjax(){
+	    $request=trim($_GET['term']);
+	    if($request!=''){
+	        $model=Priest::model()->findAll(array("condition"=>"pfname like '$request%'"));
+	        $data=array();
+	        foreach($model as $get){
+	            $data[]=$get->PFullName;
+				//$data[]=$get->pfname;
+	        }
+	        $this->layout='empty';
+	        echo json_encode($data);
+	    }
 	}
 }
 ?>
