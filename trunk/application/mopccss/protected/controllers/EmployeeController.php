@@ -80,14 +80,17 @@ class EmployeeController extends Controller
 		
 		if(isset($_POST['Employee']))
 		{
-			//logs
+			$model->attributes=$_POST['Employee'];
+            $model->save();
+			
+		//logs
 			$logC=new Logs;
 			$logC->employee_id= Yii::app()->user->id;
-			$logC->description= "Created an employee.";
+			$logC->description= "Employee <a href=/mopccss/index.php?r=employee/view&id=". $model->id . ">" . $model->FullName . "</a> has been created ";
 			$logC->dateTime= date('Y-m-d H:i:s');
 			
-			$model->attributes=$_POST['Employee'];
-			if($model->save() && $logC->save()){
+
+			if($logC->save()){
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -113,7 +116,7 @@ class EmployeeController extends Controller
 			//logs
 					$logU=new Logs;
 					$logU->employee_id= Yii::app()->user->id;
-					$logU->description= "Updated ". $model->FullName ." information.";
+					$logU->description= "Created an employee: <a href=/mopccss/index.php?r=employee/view&id=". $model->id . ">" . $model->id . "</a>". $model->FullName ." information.";
 					$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Employee']))
