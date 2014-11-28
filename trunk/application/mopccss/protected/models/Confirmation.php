@@ -14,7 +14,10 @@
  * @property integer $person_id
  * @property integer $father_id
  * @property integer $mother_id
- *
+ * @property string $conf_bkno
+ * @property string $conf_series
+ * @property string $conf_pageno
+ * @property string $conf_lineno
  * The followings are the available model relations:
  * @property ConfGodparent[] $confGodparents
  * @property Employee $employee
@@ -41,13 +44,13 @@ class Confirmation extends CActiveRecord
 		// will receive user inputs.
 		return array(
                         array('person_id', 'validatePerson'),
-			array('conf_confDate, Employee_id, person_id', 'required'),
+			array('conf_confDate, Employee_id, person_id, conf_bkno, conf_series, conf_pageno, conf_lineno', 'required'),
 			array('Employee_id, person_id', 'numerical', 'integerOnly'=>true),
-			array('conf_bapChurch, conf_church, conf_priest', 'length', 'max'=>45),
+			array('conf_bapChurch, conf_church, conf_priest, conf_bkno, conf_series, conf_pageno, conf_lineno', 'length', 'max'=>45),
 			array('conf_bapAdd', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, conf_confDate, conf_bapChurch, conf_bapAdd, conf_church, conf_priest, Employee_id, person_id', 'safe', 'on'=>'search'),
+			array('id, conf_confDate, conf_bapChurch, conf_bapAdd, conf_church, conf_priest, Employee_id, person_id, conf_bkno, conf_series, conf_pageno, conf_lineno',  'safe', 'on'=>'search'),
 		);
 	}
 
@@ -87,6 +90,10 @@ class Confirmation extends CActiveRecord
 			'conf_priest' => 'Priest',
 			'Employee_id' => 'Employee',
 			'person_id' => 'Person',
+			'conf_bkno' => 'Book No.',
+			'conf_series' => 'Series of',
+			'conf_pageno' => 'Page No.',
+			'conf_lineno' => 'Line No.',
                   
 		);
 	}
@@ -115,6 +122,10 @@ class Confirmation extends CActiveRecord
 		$criteria->compare('conf_bapAdd',$this->conf_bapAdd,true);
 		$criteria->compare('conf_church',$this->conf_church,true);
 		$criteria->compare('conf_priest',$this->conf_priest,true);
+		$criteria->compare('conf_bkno',$this->conf_bkno,true);
+		$criteria->compare('conf_series',$this->conf_series,true);
+		$criteria->compare('conf_pageno',$this->conf_pageno,true);
+		$criteria->compare('conf_lineno',$this->conf_lineno,true);
 		/*$criteria->compare('Employee_id',$this->Employee_id);
 		$criteria->compare('person_id',$this->person_id);
 		$criteria->compare('father_id',$this->father_id);
