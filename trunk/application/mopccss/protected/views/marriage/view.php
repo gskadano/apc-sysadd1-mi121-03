@@ -14,6 +14,7 @@ $this->menu=array(
 	//array('label'=>'Delete Marriage', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Marriage', 'url'=>array('admin')),
 	array('label'=>'Create Godparent', 'url'=>array('marGodparent/create', 'marriage_id'=>$model->id)),
+     array('label'=>'Generate Report', 'url'=>array('pdf3', 'id'=>$model->id)),
 );
 ?>
 

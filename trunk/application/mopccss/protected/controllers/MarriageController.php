@@ -32,7 +32,7 @@ class MarriageController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete','pdf3','pdfmarriagemop'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
@@ -58,6 +58,30 @@ class MarriageController extends Controller
 	public function actionView($id)
 	{
 		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+        
+        
+        public function actionPdf3($id)
+	{
+           
+	$this->layout="//layouts/pdf3";
+       
+		 $mPDF1 = Yii::app()->ePdf->mpdf();
+		  $mPDF1->WriteHTML($this->render('pdfmarriagemop',array(
+			'model'=>$this->loadModel($id),),true)
+		);
+		$mPDF1->Output();
+		 
+	
+	}
+        
+        public function actionpdfmarriagemop($id)
+	{
+		$model=$this->loadModel($id);
+	
+		$this->render('pdfmarriagemop',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
