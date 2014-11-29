@@ -132,12 +132,25 @@ class LogsController extends Controller
 	 */
 	public function actionIndex()
 	{
+
 		if(Yii::app()->user->isGuest){ 
 			$this->redirect(array('/site/login'));
-		}else{
-			$dataProvider=new CActiveDataProvider('Logs');
+		}else{ 
+		$criteria=new CDbCriteria(array(
+		'order'=> 'dateTime DESC',
+		));
+		
+			$dataProvider=new CActiveDataProvider('Logs', array (
+			'pagination'=> array(
+				'pageSize'=>10,
+				),
+				'criteria'=>$criteria,
+				));
+				
+				
 			$this->render('index',array(
 				'dataProvider'=>$dataProvider,
+				
 			));
 		}
 	}

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2014 at 04:51 AM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Generation Time: Nov 28, 2014 at 05:57 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,6 +34,10 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
   `bap_churchAdd` varchar(100) DEFAULT NULL,
   `Employee_id` int(11) NOT NULL,
   `person_id` int(11) NOT NULL,
+  `bap_bkno` varchar(45) NOT NULL,
+  `bap_series` varchar(45) NOT NULL,
+  `bap_pageno` varchar(45) NOT NULL,
+  `bap_lineno` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_baptismal_Employee1_idx` (`Employee_id`),
   KEY `fk_baptismal_client1_idx` (`person_id`)
@@ -43,16 +47,16 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
 -- Dumping data for table `baptismal`
 --
 
-INSERT INTO `baptismal` (`id`, `bap_bapDate`, `bap_priest`, `bap_church`, `bap_churchAdd`, `Employee_id`, `person_id`) VALUES
-(1, '2014-11-14', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 3, 5),
-(2, '2014-11-14', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 2),
-(3, '2014-11-29', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 4),
-(4, '2014-11-19', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Camp Aguinaldo, Quezon City', 1, 1),
-(5, '2014-11-22', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Camp Aguinaldo, Quezon City', 3, 3),
-(6, '1999-11-02', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay city', 1, 9),
-(7, '2000-12-01', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay city', 1, 11),
-(8, '1997-08-21', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 12),
-(9, '2014-11-07', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay city', 1, 18);
+INSERT INTO `baptismal` (`id`, `bap_bapDate`, `bap_priest`, `bap_church`, `bap_churchAdd`, `Employee_id`, `person_id`, `bap_bkno`, `bap_series`, `bap_pageno`, `bap_lineno`) VALUES
+(1, '2014-11-14', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 3, 5, '', '', '', ''),
+(2, '2014-11-14', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 2, '', '', '', ''),
+(3, '2014-11-29', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 4, '', '', '', ''),
+(4, '2014-11-19', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Camp Aguinaldo, Quezon City', 1, 1, '', '', '', ''),
+(5, '2014-11-22', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Camp Aguinaldo, Quezon City', 3, 3, '', '', '', ''),
+(6, '1999-11-02', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay city', 1, 9, '', '', '', ''),
+(7, '2000-12-01', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay city', 1, 11, '', '', '', ''),
+(8, '1997-08-21', 'Fr. Harley Flores', 'Saint Ignatious Cathedral', 'Camp Aguinaldo, Quezon City', 1, 12, '', '', '', ''),
+(9, '2014-11-07', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay city', 1, 18, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -125,17 +129,24 @@ CREATE TABLE IF NOT EXISTS `confirmation` (
   `conf_priest` varchar(45) DEFAULT NULL,
   `Employee_id` int(11) NOT NULL,
   `person_id` int(11) NOT NULL,
+  `conf_bkno` varchar(45) NOT NULL,
+  `conf_series` varchar(45) NOT NULL,
+  `conf_lineno` varchar(45) NOT NULL,
+  `conf_pageno` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_confirmation_Employee1_idx` (`Employee_id`),
   KEY `fk_confirmation_person1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `confirmation`
 --
 
-INSERT INTO `confirmation` (`id`, `conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`) VALUES
-(1, '2014-11-21', '', '', 'Saint Ignatious Cathedral', 'Harley', 1, 2);
+INSERT INTO `confirmation` (`id`, `conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `conf_bkno`, `conf_series`, `conf_lineno`, `conf_pageno`) VALUES
+(1, '2014-11-21', '', '', 'Saint Ignatious Cathedral', 'Harley', 1, 2, '', '', '', ''),
+(2, '2014-11-05', 'Mary Immaculate Parish', 'Levitown Ave. Paranaque City', 'Shrine of Saint Therese of the Child Jesus', 'Harley', 1, 18, '008', '1962', '003', '002'),
+(3, '2014-11-05', 'Mary Immaculate Parish', 'Levitown Ave. Paranaque City', 'Shrine of Saint Therese of the Child Jesus', 'Harley', 1, 11, '008', '1962', '003', '002'),
+(4, '2014-11-05', 'Mary Immaculate Parish', 'Levitown Ave. Paranaque City', 'Shrine of Saint Therese of the Child Jesus', 'Harley', 1, 4, '008', '1962', '003', '002');
 
 -- --------------------------------------------------------
 
@@ -150,14 +161,15 @@ CREATE TABLE IF NOT EXISTS `conf_godparent` (
   PRIMARY KEY (`id`),
   KEY `fk_confGodParent_confirmation1_idx` (`confirmation_id`),
   KEY `fk_confGodParent_person1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `conf_godparent`
 --
 
 INSERT INTO `conf_godparent` (`id`, `confirmation_id`, `person_id`) VALUES
-(1, 1, 3);
+(1, 1, 3),
+(2, 4, 18);
 
 -- --------------------------------------------------------
 
@@ -236,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `dateTime` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_logs_employee1_idx` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `logs`
@@ -265,7 +277,8 @@ INSERT INTO `logs` (`id`, `employee_id`, `description`, `dateTime`) VALUES
 (20, 1, 'Created baptismal certificate', '2014-11-13 04:24:08'),
 (21, 1, 'Created marriage certificate : Marriage # <a href=/mopccss/index.php?r=marriage/view&id=2>2</a>', '2014-11-25 05:23:53'),
 (22, 1, 'Updated Saint Ignatious Cathedral information', '2014-11-27 05:30:00'),
-(23, 1, 'Updated Kadano, Gene Anthony information.', '2014-11-27 16:43:44');
+(23, 1, 'Updated Kadano, Gene Anthony information.', '2014-11-27 16:43:44'),
+(24, 1, 'Created confirmation certificate : Confirmation # <a href=/mopccss/index.php?r=confirmation/view&id=4>4</a>', '2014-11-28 05:48:25');
 
 -- --------------------------------------------------------
 

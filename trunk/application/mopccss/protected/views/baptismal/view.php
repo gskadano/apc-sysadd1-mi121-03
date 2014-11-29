@@ -32,12 +32,17 @@ $this->menu=array(
         array('label'=>'Gender', 'value'=>$model->person->p_gender),
         array('label'=>'Father', 'value'=>$model->person->p_father),
         array('label'=>'Mother', 'value'=>$model->person->p_mother),
+
 		'bap_bapDate',
 		'bap_priest',
 		'bap_church',
 		'bap_churchAdd',
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
 		///*'person_id',*/array('label'=>'Person', 'value'=>$model->person->FullName),
+		'bap_bkno',
+		'bap_series',
+		'bap_pageno',
+		'bap_lineno',
 	),
 )); ?>
 

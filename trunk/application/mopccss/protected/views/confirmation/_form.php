@@ -89,6 +89,30 @@
 			); ?>
 		<?php echo $form->error($model,'person_id'); ?>
 	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_bkno'); ?>
+		<?php echo $form->textField($model,'conf_bkno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_bkno'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_series'); ?>
+		<?php echo $form->textField($model,'conf_series',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_series'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_pageno'); ?>
+		<?php echo $form->textField($model,'conf_pageno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_pageno'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_lineno'); ?>
+		<?php echo $form->textField($model,'conf_lineno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_lineno'); ?>
+	</div>
         
         <H2>God Parent</H2>
 	<div class="row">

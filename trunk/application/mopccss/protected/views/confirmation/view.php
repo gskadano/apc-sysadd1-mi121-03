@@ -41,6 +41,10 @@ $this->menu=array(
 		'conf_church',
 		'conf_priest',
 		/*'Employee_id',*/array('label'=>'Employee', 'value'=>$model->employee->FullName),
+		'conf_bkno',
+		'conf_series',
+		'conf_pageno',
+		'conf_lineno',
 		
 	),
 )); ?>

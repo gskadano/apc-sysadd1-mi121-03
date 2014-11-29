@@ -13,6 +13,10 @@
  * @property integer $person_id
  * @property integer $father_id
  * @property integer $mother_id
+ * @property string $bap_bkno
+ * @property string $bap_series
+ * @property string $bap_pageno
+ * @property string $bap_lineno
  *
  * The followings are the available model relations:
  * @property BapGodparent[] $bapGodparents
@@ -40,13 +44,13 @@ class Baptismal extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('person_id', 'validatePerson'),
-			array('bap_bapDate, Employee_id, person_id', 'required'),
+			array('bap_bapDate, Employee_id, person_id, bap_bkno, bap_series, bap_pageno, bap_lineno', 'required'),
 			array('Employee_id, person_id', 'numerical', 'integerOnly'=>true),
-			array('bap_priest, bap_church', 'length', 'max'=>45),
+			array('bap_priest, bap_church, bap_bkno, bap_series, bap_pageno, bap_lineno', 'length', 'max'=>45),
 			array('bap_churchAdd', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, bap_bapDate, bap_priest, bap_church, bap_churchAdd, Employee_id, person_id', 'safe', 'on'=>'search'),
+			array('id, bap_bapDate, bap_priest, bap_church, bap_churchAdd, Employee_id, person_id, bap_bkno, bap_series, bap_pageno, bap_lineno', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -86,6 +90,10 @@ class Baptismal extends CActiveRecord
 			'bap_churchAdd' => 'Church Address',
 			'Employee_id' => 'Employee',
 			'person_id' => 'Person',
+			'bap_bkno' => 'Book No.',
+			'bap_series' => 'Series of ',
+			'bap_pageno' => 'Page No.',
+			'bap_lineno' => 'Line No.',
 		);
 	}
 
@@ -113,6 +121,10 @@ class Baptismal extends CActiveRecord
 		$criteria->compare('bap_priest',$this->bap_priest,true);
 		$criteria->compare('bap_church',$this->bap_church,true);
 		$criteria->compare('bap_churchAdd',$this->bap_churchAdd,true);
+		$criteria->compare('bap_bkno',$this->bap_bkno,true);
+		$criteria->compare('bap_series',$this->bap_series,true);
+		$criteria->compare('bap_pageno',$this->bap_pageno,true);
+		$criteria->compare('bap_lineno',$this->bap_lineno,true);
 		/*$criteria->compare('Employee_id',$this->Employee_id);
 		$criteria->compare('person_id',$this->person_id);*/
 		

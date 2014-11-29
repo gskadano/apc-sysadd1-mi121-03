@@ -135,6 +135,32 @@
 		<?php echo $form->error($model,'person_id'); ?>
 	</div>
 	
+	<div class="row">
+		<?php echo $form->labelEx($model,'bap_bkno'); ?>
+		<?php echo $form->textField($model,'bap_bkno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'bap_bkno'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'bap_series'); ?>
+		<?php echo $form->textField($model,'bap_series',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'bap_series'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'bap_pageno'); ?>
+		<?php echo $form->textField($model,'bap_pageno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'bap_pageno'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'bap_lineno'); ?>
+		<?php echo $form->textField($model,'bap_lineno',array('size'=>20'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'bap_lineno'); ?>
+	</div>
+
+	
+	
 	<H2>God Parent</H2>
 	
 	<div class="row">
