@@ -92,7 +92,7 @@ class ChurchController extends Controller
 				//logs
 				$logC=new Logs;
 				$logC->employee_id= Yii::app()->user->id;
-				$logC->description= "Added ".$model->ch_name." on the church list". $container->code;
+				$logC->description= "Church added successfully: Church Name: <a href=/mopccss/index.php?r=church/view&id=". $model->ch_name . ">" . $model->ch_name . "</a>";
 				$logC->dateTime= date('Y-m-d H:i:s');
 				
 			if($model->save() && $logC->save())
@@ -131,7 +131,8 @@ class ChurchController extends Controller
 		//logs
 		$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Updated ".$model->ch_name." information";
+		$logU->description= "Church updated successfully: Church Name: <a href=/mopccss/index.php?r=church/view&id=". $model->ch_name . ">" . $model->ch_name . "</a>";
+		//$logU->description= "Updated ".$model->ch_name." information";
 		$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Church']))
