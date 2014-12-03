@@ -9,7 +9,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Confirmation', 'url'=>array('index')),
-	array('label'=>'Create Confirmation', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

@@ -137,14 +137,40 @@ class EmployeeController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+	/*
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 			$this->redirect(array('index'));
+		*/
+		try {
+			$this->loadModel($id)->delete();
+			$this->redirect(array('employee/index'));
+		} catch (CDbException $e) {
+			if($e->errorInfo[1] == 1451) {
+				header("HTTP/1.0 400 Relation Restriction");
+				//echo "Cannot delete employee! Refer to date of retirement.\n";
+				if($this->loadModel($id)->emp_retireDate != 0000-00-00){
+					$this->redirect(array('employee/view','id'=>$id,
+						'error'=>'Cannot delete employee! It has created a record already. Refer to date of retirement.'));
+				}else{
+					$this->redirect(array('employee/update','id'=>$id,
+						'error'=>'Cannot delete employee! It has created a record already. Update date of retirement.'));
+				}
+			} else {
+				//throw new CHttpException(400, Yii::t('err', 'bad request'));
+				throw $e . 'wqerty';
+			}
+		}
 	}
-
+	/*
+	function actionretireDate() {
+		$model->emp_retireDate = date('Y-m-d'); // default to today
+		$this->render('update',array('value'=>$model->emp_retireDate));
+	}
+	*/
 	/**
 	 * Lists all models.
 	 */

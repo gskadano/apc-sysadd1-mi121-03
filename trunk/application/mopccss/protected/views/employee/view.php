@@ -15,7 +15,13 @@ $this->menu=array(
 	array('label'=>'Manage Employee', 'url'=>array('admin')),
 );
 ?>
-
+<?php 
+if(isset($_GET['error'])){
+	echo '<span style="color:red;text-align:center;font-weight:bold">' .$_GET['error']. '</span><br>';
+}else{
+	echo '';
+}
+?>
 <h1>View Employee #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(

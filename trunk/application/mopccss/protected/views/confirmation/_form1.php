@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'conf_confDate'); ?>
-		<!--<?php //echo $form->textField($model,'conf_confDate'); ?>-->
+		<!--<?php echo $form->textField($model,'conf_confDate'); ?>-->
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
         'model'=>$model, 'attribute'=>'conf_confDate',
         'options'=>array(
@@ -49,44 +49,99 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'conf_church'); ?>
 		<!--<?php echo $form->textField($model,'conf_church',array('size'=>45,'maxlength'=>45)); ?>-->
-		<?php echo $form->dropDownList($model, 'conf_church', CHtml::listData(
-			Church::model()->findAll(), 'ch_name', 'ch_name'),
-			array('prompt' => 'Select a church')
-			); ?>
+		<?php echo $form->dropDownList($model,'conf_church',CHtml::listData(Church::model()->findAll(), 'ch_name', 'ch_name'),
+                        array('empty' => 'Select Church',
+                        'ajax'=>array('size'=>50,
+                        //'type='=>'POST',
+                        'type='=>'GET',
+                        'url'=>CController::createUrl('Baptismal/Church'),
+                        //'update'=>'#'.CHtml::activeId($model, 'bap_churchAdd'),
+						//'update'=>'#bap_churchAdd',
+                        'data'=>array('bap_church'=>'js:this.value'),
+						//'success'=>'function(data){ $("#.CHtml::activeId($model, bap_churchAdd)").attr("value",data); }'
+						//-->'success'=>'function(data){ $("#bap_churchAdd").attr("value",data); }'
+                ))); ?>
+				
+		<!--<?php $this->widget('ext.select2.ESelect2',array(
+			'model'=>$model,
+			'attribute'=>'conf_church',
+			'data'=>CHtml::listData(Church::model()->findAll(), 'ch_name', 'ch_name'),
+		)); ?>-->
 		<?php echo $form->error($model,'conf_church'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'conf_priest'); ?>
 		<!--<?php echo $form->textField($model,'conf_priest',array('size'=>45,'maxlength'=>45)); ?>-->
-		<?php echo $form->dropDownList($model, 'conf_priest', CHtml::listData(
-			Priest::model()->findAll(), 'PFullName', 'PFullName'),
+		<!--<?php echo $form->dropDownList($model, 'conf_priest', CHtml::listData(
+			Priest::model()->findAll(), 'pfname', 'PFullName'),
 			array('prompt' => 'Select a priest')
-			); ?>
+			); ?>-->
+		<?php $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
+			'model'=>$model,
+			'attribute'=>'conf_priest',
+			'name'=>'ajaxrequest',
+			// additional javascript options for the autocomplete plugin
+			'options'=>array(
+				'minLength'=>'1',
+			),
+			'source'=>$this->createUrl("Confirmation/ajax"),
+			'htmlOptions'=>array(
+				'style'=>'height:20px;',
+			),
+		));
+		?>
 		<?php echo $form->error($model,'conf_priest'); ?>
 	</div>
 
 	<div class="row">
+	<?php 
+		$criteria = new CDbCriteria();
+		$criteria->select = 'id';
+		$criteria->condition = 'emp_username=:name';
+		$criteria->params = array(':name'=>Yii::app()->user->name);
+		?>
 		<?php echo $form->labelEx($model,'Employee_id'); ?>
 		<!--<?php echo $form->textField($model,'Employee_id'); ?>-->
 		<?php echo $form->dropDownList($model, 'Employee_id', CHtml::listData(
-			Employee::model()->findAll(), 'id', 'FullName'),
-			array('prompt' => 'Select an Employee')
-			); ?>
+			Employee::model()->findAll('emp_username = :a', array(':a'=>Yii::app()->user->name)), 'id', 'FullName')); ?>
 		<?php echo $form->error($model,'Employee_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'person_id'); ?>
+		<!--<?php echo $form->labelEx($model,'person_id'); ?>-->
 		<!--<?php echo $form->textField($model,'person_id'); ?>-->
-		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+		<!--<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select a person')
-			); ?>
-		<?php echo $form->error($model,'person_id'); ?>
+			); ?>-->
+		<?php echo $form->hiddenField($model, 'person_id'); ?>
+		<!--<?php echo $form->error($model,'person_id'); ?>-->
 	</div>
-        
-      
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_bkno'); ?>
+		<?php echo $form->textField($model,'conf_bkno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_bkno'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_series'); ?>
+		<?php echo $form->textField($model,'conf_series',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_series'); ?>
+	</div>
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_pageno'); ?>
+		<?php echo $form->textField($model,'conf_pageno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_pageno'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'conf_lineno'); ?>
+		<?php echo $form->textField($model,'conf_lineno',array('size'=>20,'maxlength'=>5)); ?>
+		<?php echo $form->error($model,'conf_lineno'); ?>
+	</div>
 
         
 	<div class="row buttons">

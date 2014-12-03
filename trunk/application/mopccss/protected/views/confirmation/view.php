@@ -11,10 +11,11 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Confirmation', 'url'=>array('index')),
-	array('label'=>'Create Confirmation', 'url'=>array('create')),
-	array('label'=>'Update Confirmation', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Update Personal Info', 'url'=>array('person/update', 'id'=>$model->person_id)),
+	array('label'=>'Update Confirmation Info', 'url'=>array('update', 'id'=>$model->id)),
 	//array('label'=>'Delete Confirmation', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Confirmation', 'url'=>array('admin')),
+	array('label'=>'Manage Confirmation', 'url'=>array('admin'),
+		'linkOptions'=>array('onclick'=>"if('confirm'=>'Are you sure?')")),
 	array('label'=>'Create Godparent', 'url'=>array('confGodparent/create', 'confirmation_id'=>$model->id)),
        // array('label'=>'Generate Report', 'url'=>array('confpdf', 'id'=>$model->id)),
        array('label'=>'Generate Report', 'url'=>array('pdf', 'id'=>$model->id)),

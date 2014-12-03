@@ -10,7 +10,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Confirmation', 'url'=>array('index')),
-	array('label'=>'Create Confirmation', 'url'=>array('create')),
 	array('label'=>'View Confirmation', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Confirmation', 'url'=>array('admin')),
 );

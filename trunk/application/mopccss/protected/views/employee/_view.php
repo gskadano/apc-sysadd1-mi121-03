@@ -2,7 +2,6 @@
 /* @var $this EmployeeController */
 /* @var $data Employee */
 ?>
-
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fullname')); ?>:</b>

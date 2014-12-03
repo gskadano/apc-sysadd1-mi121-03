@@ -7,7 +7,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Confirmation', 'url'=>array('create')),
 	array('label'=>'Manage Confirmation', 'url'=>array('admin')),
 );
 ?>
@@ -17,4 +16,5 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'sortableAttributes'=>array('person_id', 'Employee_id', 'conf_church')
 )); ?>

@@ -32,13 +32,13 @@ class ConfirmationController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','pdf','pdfconfirmationamop'),
+				'actions'=>array('create','update','admin','delete','pdf','pdfconfirmationamop','Ajax'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','admin','pdf'),
+				'actions'=>array('create','update','admin','pdf','pdfconfirmationamop','Ajax'),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
@@ -108,7 +108,8 @@ class ConfirmationController extends Controller
 	public function actionCreate()
 	{
 		$model=new Confirmation;
-                $confgodparent=new ConfGodparent;
+        $confgodparent=new ConfGodparent;
+		$model->person_id = Yii::app()->getRequest()->getParam('person_id');//-----------------------------
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -253,5 +254,19 @@ class ConfirmationController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionAjax(){
+	    $request=trim($_GET['term']);
+	    if($request!=''){
+	        $model=Priest::model()->findAll(array("condition"=>"pfname like '$request%'"));
+	        $data=array();
+	        foreach($model as $get){
+	            $data[]=$get->PFullName;
+				//$data[]=$get->pfname;
+	        }
+	        $this->layout='empty';
+	        echo json_encode($data);
+	    }
 	}
 }

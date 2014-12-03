@@ -262,10 +262,15 @@ class BaptismalController extends Controller
 		//print_r($sql);
 		//print_r((int)$_GET['bap_church']);
 		$data=CHtml::listData($sql,'ch_address','ch_address');
+		//$data1=(string)$_GET['bap_church'];
+		//echo CHtml::tag('input', array( 'type'=>'text' , 'value' => $data1));
 		foreach($data as $value=>$name)
 		{
-			echo CHtml::tag('option',
-                   array('value'=>$value),CHtml::encode($name),true);
+			print_r($value);
+			/*echo CHtml::tag('option',
+                array('value'=>$value),CHtml::encode($name),true);*/
+			/*echo CHtml::tag('input',
+                array('type'=>'text','value'=>$value),CHtml::encode($name),true);*/
 		}
 	}
 	

@@ -38,45 +38,38 @@
 		<?php echo $form->labelEx($model,'bap_church'); ?>
 		<!--<?php echo $form->textField($model,'bap_church',array('size'=>45,'maxlength'=>45)); ?>-->
 		
-		<!--<?php echo $form->dropDownList($model,'bap_church',CHtml::listData(Church::model()->findAll(), 'ch_name', 'ch_name'),
+		<?php echo $form->dropDownList($model,'bap_church',CHtml::listData(Church::model()->findAll(), 'ch_name', 'ch_name'),
                         array('empty' => 'Select Church',
-                        'ajax'=>array(
+                        'ajax'=>array('size'=>50,
                         //'type='=>'POST',
                         'type='=>'GET',
                         'url'=>CController::createUrl('Baptismal/Church'),
                         'update'=>'#'.CHtml::activeId($model, 'bap_churchAdd'),
 						//'update'=>'#bap_churchAdd',
                         'data'=>array('bap_church'=>'js:this.value'),
-                ))); ?>-->
+						//'success'=>'function(data){ $("#.CHtml::activeId($model, bap_churchAdd)").attr("value",data); }'
+						'success'=>'function(data){ $("#bap_churchAdd").attr("value",data); }'
+                ))); ?>
 				
-		<?php $this->widget('ext.select2.ESelect2',array(
+		<!--<?php $this->widget('ext.select2.ESelect2',array(
 			'model'=>$model,
 			'attribute'=>'bap_church',
 			'data'=>CHtml::listData(Church::model()->findAll(), 'ch_name', 'ch_name'),
-		)); ?>
+		)); ?>-->
 		<?php echo $form->error($model,'bap_church'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'bap_churchAdd'); ?>
-		<!--<?php echo $form->textField($model,'bap_churchAdd',array('size'=>60,'maxlength'=>100)); ?>-->
+		<?php //echo CHtml::activeTextField($model,'bap_churchAdd',array('size'=>50,'disabled'=>'disabled')); ?>
+		<?php echo $form->textField($model,'bap_churchAdd',array('size'=>50,'id'=>'bap_churchAdd','name'=>'bap_churchAdd')); ?>
 		<!--<?php echo $form->dropDownList($model, 'bap_churchAdd', CHtml::listData(
 			Church::model()->findAll(), 'ch_address', 'ch_address'),
 			array('prompt' => 'Select a Church Address')
 			); ?>-->
-		<?php echo $form->dropDownList($model,'bap_churchAdd', array('prompt' => 'Select Address')); ?>
+		<?php //echo $form->dropDownList($model,'bap_churchAdd',array('prompt' => 'Select Address'),array('disabled'=>'disabled')); ?>
 		<?php echo $form->error($model,'bap_churchAdd'); ?>
 	</div>
-
-	<script type="text/javascript">
-    $(document).ready(function(){
-        $('input[type="checkbox"]').click(function(){
-            if($(this).attr("value")=="red"){
-                $(".red").toggle();
-            }
-        });
-    });
-	</script>
 	
 	<div class="row red">
 		<?php echo $form->labelEx($model,'bap_priest'); ?>
@@ -132,7 +125,7 @@
 			'data'=>CHtml::listData(Person::model()->findAll(), 'id', 'FullName'),
 		)); ?>-->
 		<?php echo $form->hiddenField($model, 'person_id'); ?>
-		<?php echo $form->error($model,'person_id'); ?>
+		<!--<?php echo $form->error($model,'person_id'); ?>-->
 	</div>
 	
 	<div class="row">
@@ -155,7 +148,7 @@
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'bap_lineno'); ?>
-		<?php echo $form->textField($model,'bap_lineno',array('size'=>20'maxlength'=>5)); ?>
+		<?php echo $form->textField($model,'bap_lineno',array('size'=>20,'maxlength'=>5)); ?>
 		<?php echo $form->error($model,'bap_lineno'); ?>
 	</div>
 

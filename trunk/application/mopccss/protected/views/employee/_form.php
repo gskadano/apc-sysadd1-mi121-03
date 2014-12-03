@@ -13,6 +13,13 @@
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
 )); ?>
+<?php 
+if(isset($_GET['error'])){
+	echo '<span style="color:red;text-align:center;font-weight:bold">' .$_GET['error']. '</span><br>';
+}else{
+	echo '';
+}
+?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
@@ -68,15 +75,28 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'emp_retireDate'); ?>
 		<!--<?php echo $form->textField($model,'emp_retireDate'); ?>-->
+		<?php if(isset($_GET['error'])){ ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 	        'model'=>$model, 'attribute'=>'emp_retireDate',
 	        'options'=>array(
-	            'dateFormat'=>'yy-mm-dd',
+	        'dateFormat'=>'yy-mm-dd',
+            'yearRange'=>'-20:+20',
+            'changeYear'=>'true',
+            'changeMonth'=>'true',
+	        ),'htmlOptions'=>array(
+            'value'=>date('Y-m-d'))
+		)); ?>
+		<?php }else{ ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+	        'model'=>$model, 'attribute'=>'emp_retireDate',
+	        'options'=>array(
+	        'dateFormat'=>'yy-mm-dd',
             'yearRange'=>'-20:+20',
             'changeYear'=>'true',
             'changeMonth'=>'true',
 	        ),
 		)); ?>
+		<?php } ?>
 		<?php echo $form->error($model,'emp_retireDate'); ?>
 	</div>
 
