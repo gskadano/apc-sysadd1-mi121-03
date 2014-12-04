@@ -90,7 +90,7 @@
 			'options'=>array(
 				'minLength'=>'1',
 			),
-			'source'=>$this->createUrl("Baptismal/ajax"),
+			'source'=>$this->createUrl("Baptismal/Ajax"),
 			'htmlOptions'=>array(
 				'style'=>'height:20px;',
 			),

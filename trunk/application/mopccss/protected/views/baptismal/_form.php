@@ -90,7 +90,7 @@
 			'options'=>array(
 				'minLength'=>'1',
 			),
-			'source'=>$this->createUrl("Baptismal/ajax"),
+			'source'=>$this->createUrl("Baptismal/Ajax"),
 			'htmlOptions'=>array(
 				'style'=>'height:20px;',
 			),
@@ -98,15 +98,6 @@
 		?>
 		<?php echo $form->error($model,'bap_priest'); ?>
 	</div>
-	<!-- alternate textfield for priest -->
-	<!--<div class="row red" style="display: none;">
-		<?php echo $form->labelEx($model,'bap_priest'); ?>
-		<?php echo $form->textField($model, 'bap_priest'); ?>
-		<?php echo $form->error($model,'bap_priest'); ?>
-	</div>
-	<div class="row">
-			<label><input type="checkbox" name="colorCheckbox" value="red"> Check if priest is not under MOP priests.</label>
-	</div>-->
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'Employee_id'); ?>

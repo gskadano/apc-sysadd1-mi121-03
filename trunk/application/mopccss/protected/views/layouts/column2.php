@@ -17,6 +17,17 @@
 		));
 		$this->endWidget();
 	?>
+	
+	<?php
+		$this->beginWidget('zii.widgets.CPortlet', array(
+			'title'=>'Certificate',
+		));
+		$this->widget('zii.widgets.CMenu', array(
+			'items'=>$this->cert,
+			'htmlOptions'=>array('class'=>'certificate'),
+		));
+		$this->endWidget();
+	?>
 	</div><!-- sidebar -->
 </div>
 <?php $this->endContent(); ?>

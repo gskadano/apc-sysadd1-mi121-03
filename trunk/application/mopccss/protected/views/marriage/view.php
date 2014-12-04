@@ -9,7 +9,8 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Marriage', 'url'=>array('index')),
-	array('label'=>'Create Marriage', 'url'=>array('create')),
+	array('label'=>'Update Groom Info', 'url'=>array('person/update', 'id'=>$model->groom_id)),
+	array('label'=>'Update Bride Info', 'url'=>array('person/update', 'id'=>$model->bride_id)),
 	array('label'=>'Update Marriage', 'url'=>array('update', 'id'=>$model->id)),
 	//array('label'=>'Delete Marriage', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Marriage', 'url'=>array('admin')),
@@ -17,7 +18,6 @@ $this->menu=array(
      array('label'=>'Generate Report', 'url'=>array('pdf3', 'id'=>$model->id)),
 );
 ?>
-
 
 <h1>View Marriage #<?php echo $model->id; ?></h1>
 <h4>Bride</h4>

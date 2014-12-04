@@ -85,7 +85,7 @@
 			'options'=>array(
 				'minLength'=>'1',
 			),
-			'source'=>$this->createUrl("Confirmation/ajax"),
+			'source'=>$this->createUrl("Confirmation/Ajax"),
 			'htmlOptions'=>array(
 				'style'=>'height:20px;',
 			),

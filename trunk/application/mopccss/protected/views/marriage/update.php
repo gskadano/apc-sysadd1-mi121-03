@@ -10,7 +10,6 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Marriage', 'url'=>array('index')),
-	array('label'=>'Create Marriage', 'url'=>array('create')),
 	array('label'=>'View Marriage', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Marriage', 'url'=>array('admin')),
 );
