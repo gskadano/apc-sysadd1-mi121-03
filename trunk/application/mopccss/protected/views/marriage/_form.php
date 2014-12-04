@@ -137,14 +137,14 @@
 		<!--<?php echo $form->error($godparent,'marriage_id'); ?>-->
 	</div>
 	
-		<div class="row">
-		<?php echo $form->labelEx($godparent,'person_id'); ?>
-			<!--<?php echo $form->textField($godparent,'person_id'); ?>-->
-		<?php echo $form->dropDownList($godparent, 'person_id', CHtml::listData(
+	<div class="row">
+		<?php echo $form->labelEx($godparent,'mar_godparentname'); ?>
+		<?php echo $form->textField($godparent,'mar_godparentname',array('size'=>50,'maxlength'=>100)); ?>
+		<!--<?php echo $form->dropDownList($godparent, 'mar_godparentname', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select Godparents')
-				); ?>
-		<?php echo $form->error($godparent,'person_id'); ?>
+				); ?> Use if foriegn key -->
+		<?php echo $form->error($godparent,'mar_godparentname'); ?>
 	</div>
 
 	<div class="row buttons">

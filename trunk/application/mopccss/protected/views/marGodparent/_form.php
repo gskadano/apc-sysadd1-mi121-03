@@ -31,14 +31,14 @@
 		<!--<?php echo $form->error($model,'marriage_id'); ?>-->
 	</div>
 	
-		<div class="row">
-		<?php echo $form->labelEx($model,'person_id'); ?>
-			<!--<?php echo $form->textField($model,'person_id'); ?>-->
-		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+	<div class="row">
+		<?php echo $form->labelEx($model,'mar_godparentname'); ?>
+		<?php echo $form->textField($model,'mar_godparentname',array('size'=>50,'maxlength'=>100)); ?>
+		<!--<?php echo $form->dropDownList($model, 'mar_godparentname', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select Godparents')
-				); ?>
-		<?php echo $form->error($model,'person_id'); ?>
+				); ?> Use if foriegn key -->
+		<?php echo $form->error($model,'mar_godparentname'); ?>
 	</div>
 
 

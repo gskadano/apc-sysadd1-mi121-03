@@ -49,7 +49,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'baptismal_id',
 		'person_id',*/
 		array('name'=>'baptismal_id', 'header'=>'Baptismal', 'value'=>'$data->baptismal->id'),
-		array('name'=>'person_id', 'header'=>'Godparent', 'value'=>'$data->person->FullName'),
+		array('name'=>'bap_godparentname', 'header'=>'Godparent', 'value'=>'$data->bap_godparentname'),
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -34,13 +34,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'person_id'); ?>
-		<!--<?php echo $form->textField($model,'person_id'); ?>-->
-		<?php echo $form->dropDownList($model, 'person_id', CHtml::listData(
+		<?php echo $form->labelEx($model,'bap_godparentname'); ?>
+		<?php echo $form->textField($model,'bap_godparentname', array('size'=>50,'maxlength'=>100)); ?>
+		<!--<?php echo $form->dropDownList($model, 'bap_godparentname', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select Godparents')
-			); ?>
-		<?php echo $form->error($model,'person_id'); ?>
+			); ?>use if foreign key -->
+		<?php echo $form->error($model,'bap_godparentname'); ?>
 	</div>
 
 	<div class="row buttons">

@@ -61,7 +61,7 @@ array('BapGodparent/update', 'id'=>$row->id)); ?>
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(
-			array('label'=>'God Parent', 'value'=>$row->person->FullName),
+			array('label'=>'God Parent', 'value'=>$row->bap_godparentname),
         ),
 ));
 ?>

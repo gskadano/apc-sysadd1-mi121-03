@@ -13,9 +13,9 @@
 	<?php echo CHtml::encode($data->marriage_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
-	<?php //echo CHtml::encode($data->person_id); 
-        echo CHtml::encode($data->person->FullName); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('mar_godparentname')); ?>:</b>
+	<?php //echo CHtml::encode($data->mar_godparentname); 
+        echo CHtml::encode($data->mar_godparentname); ?>
 	<br />
 
 

@@ -23,6 +23,6 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		/*'baptismal_id',*/array('label'=>'Baptismal', 'value'=>$model->baptismal->id),
-		/*'person_id',*/array('label'=>'Godparent', 'value'=>$model->person->FullName),
+		/*'person_id',*/array('label'=>'Godparent', 'value'=>$model->bap_godparentname),
 	),
 )); ?>

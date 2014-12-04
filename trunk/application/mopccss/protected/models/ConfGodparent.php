@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'conf_godparent':
  * @property integer $id
  * @property integer $confirmation_id
- * @property integer $person_id
+ * @property string $conf_godparentname
  *
  * The followings are the available model relations:
  * @property Confirmation $confirmation
@@ -31,11 +31,11 @@ class ConfGodparent extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('confirmation_id, person_id', 'required'),
-                        array('person_id', 'required'),
-			array('confirmation_id, person_id', 'numerical', 'integerOnly'=>true),
+			array('confirmation_id', 'numerical', 'integerOnly'=>true),
+			array('conf_godparentname', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, confirmation_id, person_id', 'safe', 'on'=>'search'),
+			array('id, confirmation_id, conf_godparentname', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,7 +48,6 @@ class ConfGodparent extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'confirmation' => array(self::BELONGS_TO, 'Confirmation', 'confirmation_id'),
-			'person' => array(self::BELONGS_TO, 'Person', 'person_id'),
 		);
 	}
 
@@ -60,7 +59,7 @@ class ConfGodparent extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'confirmation_id' => 'Confirmation',
-			'person_id' => 'Person',
+			'conf_godparentname' => 'Name of Godparent',
 		);
 	}
 
@@ -89,10 +88,10 @@ class ConfGodparent extends CActiveRecord
 		//add the magic letter 't' to refer to the 'main' (not the related) table:
 		$criteria->compare('t.id',$this->id);
 		$criteria->compare('confirmation.id',$this->confirmation_id, true);
-		$criteria->compare('person.p_lname',$this->person_id, true);
+		$criteria->compare('conf_godparentname',$this->conf_godparentname, true);
 
 		//load the related table at the same time:
-		$criteria->with=array('confirmation','person');
+		$criteria->with=array('confirmation');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

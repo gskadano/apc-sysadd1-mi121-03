@@ -14,9 +14,9 @@
 			/*echo CHtml::encode($data->baptismal->FullNameBap);*/ ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('person_id')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('bap_godparentname')); ?>:</b>
 	<?php //echo CHtml::encode($data->person_id); 
-			echo CHtml::encode($data->person->FullName); ?>
+			echo CHtml::encode($data->bap_godparentname); ?>
 	<br />
 
 

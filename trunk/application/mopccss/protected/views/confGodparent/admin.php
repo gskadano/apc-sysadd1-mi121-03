@@ -48,7 +48,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		
 		array('name'=>'confirmation_id', 'header'=>'Confirmation', 'value'=>'$data->confirmation->id'),
-		array('name'=>'person_id', 'header'=>'Godparent', 'value'=>'$data->person->FullName'),
+		array('name'=>'conf_godparentname', 'header'=>'Godparent', 'value'=>'$data->conf_godparentname'),
 		//'confirmation_id',
 		
 		//'person_id',

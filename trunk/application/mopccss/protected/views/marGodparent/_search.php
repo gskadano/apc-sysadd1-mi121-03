@@ -22,8 +22,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'person_id'); ?>
-		<?php echo $form->textField($model,'person_id'); ?>
+		<?php echo $form->label($model,'mar_godparentname'); ?>
+		<?php echo $form->textField($model,'mar_godparentname'); ?>
 	</div>
 
 	<div class="row buttons">

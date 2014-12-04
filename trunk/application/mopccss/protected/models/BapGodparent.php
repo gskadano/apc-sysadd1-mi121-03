@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'bap_godparent':
  * @property integer $id
  * @property integer $baptismal_id
- * @property integer $person_id
+ * @property string $bap_godparentname
  *
  * The followings are the available model relations:
  * @property Baptismal $baptismal
@@ -31,11 +31,11 @@ class BapGodparent extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('baptismal_id, person_id', 'required'),
-			array('person_id', 'required'),
-			array('baptismal_id, person_id', 'numerical', 'integerOnly'=>true),
+			array('baptismal_id', 'numerical', 'integerOnly'=>true),
+			array('bap_godparentname', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, baptismal_id, person_id', 'safe', 'on'=>'search'),
+			array('id, baptismal_id, bap_godparentname', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,7 +48,6 @@ class BapGodparent extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'baptismal' => array(self::BELONGS_TO, 'Baptismal', 'baptismal_id'),
-			'person' => array(self::BELONGS_TO, 'Person', 'person_id'),
 		);
 	}
 
@@ -60,7 +59,7 @@ class BapGodparent extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'baptismal_id' => 'Baptismal',
-			'person_id' => 'Person',
+			'bap_godparentname' => 'Name of Godparent',
 		);
 	}
 
@@ -89,10 +88,10 @@ class BapGodparent extends CActiveRecord
 		//add the magic letter 't' to refer to the 'main' (not the related) table:
 		$criteria->compare('t.id',$this->id);
 		$criteria->compare('baptismal.id',$this->baptismal_id, true);
-		$criteria->compare('person.p_lname',$this->person_id, true);
+		$criteria->compare('bap_godparentname',$this->bap_godparentname,true);
 		
 		//load the related table at the same time:
-		$criteria->with=array('baptismal','person');
+		$criteria->with=array('baptismal');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

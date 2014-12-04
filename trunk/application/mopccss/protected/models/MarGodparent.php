@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'mar_godparent':
  * @property integer $id
  * @property integer $marriage_id
- * @property integer $person_id
+ * @property string $mar_godparentname
  *
  * The followings are the available model relations:
  * @property Marriage $marriage
@@ -31,11 +31,11 @@ class MarGodparent extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('marriage_id, person_id', 'required'),
-			array('person_id', 'required'),
-			array('marriage_id, person_id', 'numerical', 'integerOnly'=>true),
+			array('marriage_id', 'numerical', 'integerOnly'=>true),
+			array('mar_godparentname', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, marriage_id, person_id', 'safe', 'on'=>'search'),
+			array('id, marriage_id, mar_godparentname', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,7 +48,6 @@ class MarGodparent extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'marriage' => array(self::BELONGS_TO, 'Marriage', 'marriage_id'),
-			'person' => array(self::BELONGS_TO, 'Person', 'person_id'),
 		);
 	}
 
@@ -60,7 +59,7 @@ class MarGodparent extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'marriage_id' => 'Marriage',
-			'person_id' => 'Person',
+			'mar_godparentname' => 'Name of Godparent',
 		);
 	}
 
@@ -84,13 +83,13 @@ class MarGodparent extends CActiveRecord
 
 		//$criteria->compare('id',$this->id);
 		$criteria->compare('marriage_id',$this->marriage_id);
-		//$criteria->compare('person_id',$this->person_id);
+		$criteria->compare('mar_godparentname',$this->mar_godparentname);
 
-                $criteria->compare('t.id',$this->id);
-		$criteria->compare('person.p_lname',$this->person_id, true);
+        //$criteria->compare('t.id',$this->id);
+		//$criteria->compare('person.p_lname',$this->person_id, true);
 		
 		//load the related table at the same time:
-		$criteria->with=array('person');
+		//$criteria->with=array('person');
                 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

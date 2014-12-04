@@ -26,7 +26,7 @@
         'model'=>$model, 'attribute'=>'conf_confDate',
         'options'=>array(
             'dateFormat'=>'yy-mm-dd',
-            'yearRange'=>'-10:+20',
+            'yearRange'=>'-20:+20',
             'changeYear'=>'true',
             'changeMonth'=>'true',
         ),
@@ -159,19 +159,17 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($confgodparent,'person_id'); ?>
-		<!--<?php echo $form->textField($confgodparent,'person_id'); ?>-->
-		<?php echo $form->dropDownList($confgodparent, 'person_id', CHtml::listData(
-			Person::model()->findAll(), 'id', 'FullName'),
-			array('prompt' => 'Select Godparents')
-			); ?>
-		<?php echo $form->error($confgodparent,'person_id'); ?>
+		<?php echo $form->labelEx($confgodparent,'conf_godparentname'); ?>
+		<?php echo $form->textField($confgodparent,'conf_godparentname', array('size'=>50,'maxlength'=>100)); ?>
+		<!--<?php echo $form->dropDownList($confgodparent, 'conf_godparentname', CHtml::listData(
+				Person::model()->findAll(), 'id', 'FullName'),
+				array('prompt' => 'Select a Person')
+				); ?> Use if foreign key  -->
+		<?php echo $form->error($confgodparent,'conf_godparentname'); ?>
 	</div>
 	
-
-        
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($confgodparent->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

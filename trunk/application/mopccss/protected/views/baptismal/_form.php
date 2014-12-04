@@ -162,13 +162,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($godparent,'person_id'); ?>
-		<!--<?php echo $form->textField($godparent,'person_id'); ?>-->
-		<?php echo $form->dropDownList($godparent, 'person_id', CHtml::listData(
+		<?php echo $form->labelEx($godparent,'bap_godparentname'); ?>
+		<?php echo $form->textField($godparent,'bap_godparentname', array('size'=>50,'maxlength'=>100)); ?>
+		<!--<?php echo $form->dropDownList($godparent, 'bap_godparentname', CHtml::listData(
 			Person::model()->findAll(), 'id', 'FullName'),
 			array('prompt' => 'Select Godparents')
-			); ?>
-		<?php echo $form->error($godparent,'person_id'); ?>
+			); ?>use if foreign key -->
+		<?php echo $form->error($godparent,'bap_godparentname'); ?>
 	</div>
 
 	<div class="row buttons">

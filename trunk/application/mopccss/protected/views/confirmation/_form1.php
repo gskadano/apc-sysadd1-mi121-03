@@ -26,7 +26,7 @@
         'model'=>$model, 'attribute'=>'conf_confDate',
         'options'=>array(
             'dateFormat'=>'yy-mm-dd',
-            'yearRange'=>'-10:+20',
+            'yearRange'=>'-20:+20',
             'changeYear'=>'true',
             'changeMonth'=>'true',
         ),
