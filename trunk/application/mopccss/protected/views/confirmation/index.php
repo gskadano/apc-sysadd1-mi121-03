@@ -11,7 +11,7 @@
 	'Confirmations',
 );
 $this->menu=array(
-	//array('label'=>'Manage Confirmation', 'url'=>array('admin')),
+	array('label'=>'Search', 'url'=>array('admin')),
 );
                     
                     ?>

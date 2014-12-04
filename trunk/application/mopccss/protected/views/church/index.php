@@ -12,7 +12,7 @@
 );
 $this->menu=array(
 	//array('label'=>'Create Baptismal', 'url'=>array('create')),
-	//array('label'=>'Manage Baptismal', 'url'=>array('admin')),
+	array('label'=>'Search', 'url'=>array('admin')),
 );
                     
                     ?>

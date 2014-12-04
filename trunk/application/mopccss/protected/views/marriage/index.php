@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 	'Marriages',
 );
 $this->menu=array(
-	//array('label'=>'Manage Marriage', 'url'=>array('admin')),
+	array('label'=>'Search', 'url'=>array('admin')),
 );
 ?>
 <h1 style="font-size: 45px">Marriages</h1>

@@ -10,15 +10,18 @@
                     $this->breadcrumbs=array(
 	'Baptismals',
 );
+?>
 
+    <?php
 $this->menu=array(
 	//array('label'=>'Create Baptismal', 'url'=>array('create')),
-	//array('label'=>'Manage Baptismal', 'url'=>array('admin')),
+	array('label'=>'Search', 'url'=>array('admin')),
 );
-                    
-                    ?>
-<h1 style="font-size: 45px">Baptismals</h1>
+?>         
 
+                    
+<h1 style="font-size: 45px">Baptismals</h1>
+<br><br><br><br><br>
 <h1><?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',

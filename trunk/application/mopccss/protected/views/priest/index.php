@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	//array('label'=>'Create Priest', 'url'=>array('create')),
-	//array('label'=>'Manage Priest', 'url'=>array('admin')),
+	array('label'=>'Search', 'url'=>array('admin')),
 );
 ?>
 <h1 style="font-size: 45px">Priests</h1>
