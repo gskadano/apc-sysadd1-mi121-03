@@ -87,7 +87,7 @@ class PriestController extends Controller
 				//logs
 				$logC=new Logs;
 				$logC->employee_id= Yii::app()->user->id;
-				$logC->description= "Create a priest: <a href=/mopccss/index.php?r=priest/view&id=". $model->id . ">" . $model->PFullName . "</a>";
+				$logC->description= "Priest info created successfully: <a href=/mopccss/index.php?r=priest/view&id=". $model->id . ">" . $model->PFullName . "</a>";
 				$logC->dateTime= date('Y-m-d H:i:s');
 				$logC->save();
 				
@@ -118,7 +118,7 @@ class PriestController extends Controller
 			//logs
 			$logU=new Logs;
 			$logU->employee_id= Yii::app()->user->id;
-			$logU->description= "Updated a priest: <a href=/mopccss/index.php?r=priest/view&id=". $model->id . ">" . $model->PFullName . "</a>";
+			$logU->description= "Priest info updated successfully: <a href=/mopccss/index.php?r=priest/view&id=". $model->id . ">" . $model->PFullName . "</a>";
 			$logU->dateTime= date('Y-m-d H:i:s');
 			
 			if($model->save() && $logU->save())
