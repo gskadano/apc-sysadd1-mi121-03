@@ -47,8 +47,8 @@
                         'update'=>'#'.CHtml::activeId($model, 'bap_churchAdd'),
 						//'update'=>'#bap_churchAdd',
                         'data'=>array('bap_church'=>'js:this.value'),
-						//'success'=>'function(data){ $("#.CHtml::activeId($model, bap_churchAdd)").attr("value",data); }'
-						'success'=>'function(data){ $("#bap_churchAdd").attr("value",data); }'
+						'success'=>'function(data){ $("#'.CHtml::activeId($model, 'bap_churchAdd').'").attr("value",data); }'
+						//'success'=>'function(data){ $("#bap_churchAdd").attr("value",data); }'
                 ))); ?>
 				
 		<!--<?php $this->widget('ext.select2.ESelect2',array(
@@ -62,7 +62,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'bap_churchAdd'); ?>
 		<?php //echo CHtml::activeTextField($model,'bap_churchAdd',array('size'=>50,'disabled'=>'disabled')); ?>
-		<?php echo $form->textField($model,'bap_churchAdd',array('size'=>50,'id'=>'bap_churchAdd','name'=>'bap_churchAdd')); ?>
+		<?php echo $form->textField($model,'bap_churchAdd',array('size'=>50)); ?>
 		<!--<?php echo $form->dropDownList($model, 'bap_churchAdd', CHtml::listData(
 			Church::model()->findAll(), 'ch_address', 'ch_address'),
 			array('prompt' => 'Select a Church Address')

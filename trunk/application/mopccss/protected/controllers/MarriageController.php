@@ -32,7 +32,7 @@ class MarriageController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','pdf3','pdfmarriagemop','Ajax'),
+				'actions'=>array('create','update','admin','pdf3','pdfmarriagemop','Ajax'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
@@ -117,7 +117,9 @@ class MarriageController extends Controller
 		//logs
 					$logC=new Logs;
 					$logC->employee_id= Yii::app()->user->id;
-					$logC->description= "Created marriage certificate : Marriage # <a href=/mopccss/index.php?r=marriage/view&id=". $model->id . ">" . $model->id . "</a>";
+					$logC->description= "Created marriage certificate : Marriage of <a href=/mopccss/index.php?r=marriage/view&id="
+						. $model->id . ">" . $model->bride->FullName . "</a> and <a href=/mopccss/index.php?r=marriage/view&id="
+						. $model->id . ">" . $model->groom->FullName . "</a>";
 					$logC->dateTime= date('Y-m-d H:i:s');
 	
 				if($godparent->save() && $logC ->save())
@@ -156,7 +158,9 @@ class MarriageController extends Controller
 			//logs
 					$logU=new Logs;
 					$logU->employee_id= Yii::app()->user->id;
-					$logU->description= "Updated marriage certificate : Marriage # <a href=/mopccss/index.php?r=marriage/view&id=". $model->id . ">" . $model->id . "</a>";
+					$logU->description= "Updated marriage certificate : Marriage of <a href=/mopccss/index.php?r=marriage/view&id="
+						. $model->id . ">" . $model->bride->FullName . "</a> and <a href=/mopccss/index.php?r=marriage/view&id="
+						. $model->id . ">" . $model->groom->FullName . "</a>";
 					$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Marriage']))

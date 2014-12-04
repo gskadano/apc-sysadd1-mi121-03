@@ -32,7 +32,7 @@ class ConfirmationController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','pdf','pdfconfirmationamop','Ajax'),
+				'actions'=>array('create','update','admin','pdf','pdfconfirmationamop','Ajax'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
@@ -127,7 +127,7 @@ class ConfirmationController extends Controller
 				//logs
 						$logC=new Logs;
 						$logC->employee_id= Yii::app()->user->id;
-						$logC->description= "Created confirmation certificate : Confirmation # <a href=/mopccss/index.php?r=confirmation/view&id=". $model->id . ">" . $model->id . "</a>";
+						$logC->description= "Created confirmation certificate : Confirmation of <a href=/mopccss/index.php?r=confirmation/view&id=". $model->id . ">" . $model->person->FullName . "</a>";
 						$logC->dateTime= date('Y-m-d H:i:s');
 	
 					if($confgodparent->save() && $logC->save())
@@ -167,7 +167,7 @@ class ConfirmationController extends Controller
 		//logs
 			$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Updated confirmation certificate : Confirmation # <a href=/mopccss/index.php?r=confirmation/view&id=". $model->id . ">" . $model->id . "</a>";
+		$logU->description= "Updated confirmation certificate : Confirmation of <a href=/mopccss/index.php?r=confirmation/view&id=". $model->id . ">" . $model->person->FullName . "</a>";
 		$logU->dateTime= date('Y-m-d H:i:s');
 
 

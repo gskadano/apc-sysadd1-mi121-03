@@ -32,13 +32,21 @@ class ConfGodparentController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->type) && 
+					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update','admin','delete'),
+				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->type) && 
+					((Yii::app()->user->type==="Regular"))'		//------------------------------------
+			),
+			/*array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
-			),
+			),*/
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -115,11 +123,17 @@ class ConfGodparentController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$sql=ConfGodparent::model()->findAll('id=:a', array(':a'=>$id));
+		$data=CHtml::listData($sql,'confirmation_id','confirmation_id');
+		foreach($data as $value=>$name)
+		{
+			$newID = $value;
+		}
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('confirmation/view','id'=>$newID));
 	}
 
 	/**

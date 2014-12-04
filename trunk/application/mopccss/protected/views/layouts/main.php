@@ -118,7 +118,6 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
-	
 	<!-- Submenu -->
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(

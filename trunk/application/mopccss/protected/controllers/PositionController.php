@@ -39,7 +39,7 @@ class PositionController extends Controller
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','admin'),
+				'actions'=>array('create','update','admin','delete'),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 

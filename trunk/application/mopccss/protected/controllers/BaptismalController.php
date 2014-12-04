@@ -33,7 +33,7 @@ class BaptismalController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete','Church','Ajax','pdf2','pdfbaptismalmop'),
+				'actions'=>array('create','update','admin','Church','Ajax','pdf2','pdfbaptismalmop'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
@@ -128,7 +128,7 @@ class BaptismalController extends Controller
 					//logs
 					$logC=new Logs;
 					$logC->employee_id= Yii::app()->user->id;
-					$logC->description= "Created baptismal certificate : Baptismal # <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->id . "</a>";
+					$logC->description= "Created baptismal certificate : Baptismal of <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->person->FullName . "</a>";
 					$logC->dateTime= date('Y-m-d H:i:s');
 								
 				if($godparent->save() && $logC->save())
@@ -167,7 +167,7 @@ class BaptismalController extends Controller
 		//logs
 		$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Updated baptismal certificate : Baptismal # <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->id . "</a>";
+		$logU->description= "Updated baptismal certificate : Baptismal of <a href=/mopccss/index.php?r=baptismal/view&id=". $model->id . ">" . $model->person->FullName . "</a>";
 		$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Baptismal']))
@@ -266,9 +266,11 @@ class BaptismalController extends Controller
 		//echo CHtml::tag('input', array( 'type'=>'text' , 'value' => $data1));
 		foreach($data as $value=>$name)
 		{
-			print_r($value);
+			//print_r($value);
 			/*echo CHtml::tag('option',
                 array('value'=>$value),CHtml::encode($name),true);*/
+				echo $value;
+				//echo $name;
 			/*echo CHtml::tag('input',
                 array('type'=>'text','value'=>$value),CHtml::encode($name),true);*/
 		}

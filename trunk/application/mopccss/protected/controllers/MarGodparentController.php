@@ -38,7 +38,7 @@ class MarGodparentController extends Controller
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('create','update','admin'),
+				'actions'=>array('create','update','admin','delete'),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
@@ -119,11 +119,18 @@ class MarGodparentController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$sql=MarGodparent::model()->findAll('id=:a', array(':a'=>$id));
+		$data=CHtml::listData($sql,'marriage_id','marriage_id');
+		foreach($data as $value=>$name)
+		{
+			$newID = $value;
+		}
+		
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('marriage/view','id'=>$newID));
 	}
 
 	/**

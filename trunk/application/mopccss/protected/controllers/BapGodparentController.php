@@ -42,7 +42,7 @@ class BapGodparentController extends Controller
 				'users'=>array('admin'),
 			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Regular"))'		//------------------------------------
@@ -123,12 +123,19 @@ class BapGodparentController extends Controller
 	 */
 	public function actionDelete($id)
 	{		
+		$sql=BapGodparent::model()->findAll('id=:a', array(':a'=>$id));
+		$data=CHtml::listData($sql,'baptismal_id','baptismal_id');
+		foreach($data as $value=>$name)
+		{
+			$newID = $value;
+		}
+		
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			//$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('baptismal/index'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('baptismal/view','id'=>$newID));print_r($newID);
 	}
 
 	/**

@@ -92,7 +92,7 @@ class ChurchController extends Controller
 				//logs
 				$logC=new Logs;
 				$logC->employee_id= Yii::app()->user->id;
-				$logC->description= "Church added successfully: Church Name: <a href=/mopccss/index.php?r=church/view&id=". $model->ch_name . ">" . $model->ch_name . "</a>";
+				$logC->description= "Church added successfully: Church Name: <a href=/mopccss/index.php?r=church/view&id=". $model->id . ">" . $model->ch_name . "</a>";
 				$logC->dateTime= date('Y-m-d H:i:s');
 				
 			if($model->save() && $logC->save())
@@ -131,7 +131,7 @@ class ChurchController extends Controller
 		//logs
 		$logU=new Logs;
 		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Church updated successfully: Church Name: <a href=/mopccss/index.php?r=church/view&id=". $model->ch_name . ">" . $model->ch_name . "</a>";
+		$logU->description= "Church updated successfully: Church Name: <a href=/mopccss/index.php?r=church/view&id=". $model->id . ">" . $model->ch_name . "</a>";
 		//$logU->description= "Updated ".$model->ch_name." information";
 		$logU->dateTime= date('Y-m-d H:i:s');
 
@@ -166,8 +166,15 @@ class ChurchController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		//logs
+		$logD=new Logs;
+		$logD->employee_id= Yii::app()->user->id;
+		$logD->description= "Church deleted successfully: Church Name: " . $this->loadModel($id)->ch_name;
+		$logD->dateTime= date('Y-m-d H:i:s');
+		$logD->save();
+		
 		$this->loadModel($id)->delete();
-
+		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

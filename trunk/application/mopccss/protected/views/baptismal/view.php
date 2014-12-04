@@ -56,7 +56,7 @@ $this->menu=array(
 array('BapGodparent/update', 'id'=>$row->id)); ?>
 
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/delete.png" align="right"/>',
-	'#', array('submit'=>array('bapGodparent/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?')); ?>  
+	'#', array('submit'=>array('bapGodparent/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?'));?>  
 
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,

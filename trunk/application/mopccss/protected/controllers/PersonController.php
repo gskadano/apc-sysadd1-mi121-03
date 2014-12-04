@@ -32,7 +32,7 @@ class PersonController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin'),
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
@@ -81,6 +81,12 @@ class PersonController extends Controller
 			$model->attributes=$_POST['Person'];
 			if($model->save())
 			{
+				$logC=new Logs;
+				$logC->employee_id= Yii::app()->user->id;
+				$logC->description= "Created a person: <a href=/mopccss/index.php?r=person/view&id=". $model->id . ">" . $model->FullName . "</a>";
+				$logC->dateTime= date('Y-m-d H:i:s');
+				$logC->save();
+				
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -110,7 +116,13 @@ class PersonController extends Controller
 		if(isset($_POST['Person']))
 		{
 			$model->attributes=$_POST['Person'];
-			if($model->save())
+			
+			$logC=new Logs;
+			$logC->employee_id= Yii::app()->user->id;
+			$logC->description= "Updated a person: <a href=/mopccss/index.php?r=person/view&id=". $model->id . ">" . $model->FullName . "</a>";
+			$logC->dateTime= date('Y-m-d H:i:s');
+			
+			if($model->save()&&$logC->save())
 			{
 				$this->redirect(array('view','id'=>$model->id));
 			}

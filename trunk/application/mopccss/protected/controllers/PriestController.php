@@ -82,12 +82,15 @@ class PriestController extends Controller
 		if(isset($_POST['Priest']))
 		{
 			$model->attributes=$_POST['Priest'];
+				
+			if($model->save())
 				//logs
 				$logC=new Logs;
 				$logC->employee_id= Yii::app()->user->id;
-				$logC->description= "Added ".$model->PFullName." on the priest list". $container->code;
+				$logC->description= "Create a priest: <a href=/mopccss/index.php?r=priest/view&id=". $model->id . ">" . $model->PFullName . "</a>";
 				$logC->dateTime= date('Y-m-d H:i:s');
-			if($model->save() && $logC->save())
+				$logC->save();
+				
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -107,16 +110,17 @@ class PriestController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		
-		//logs
-		$logU=new Logs;
-		$logU->employee_id= Yii::app()->user->id;
-		$logU->description= "Updated ".$model->PFullName." information";
-		$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Priest']))
 		{
 			$model->attributes=$_POST['Priest'];
+			
+			//logs
+			$logU=new Logs;
+			$logU->employee_id= Yii::app()->user->id;
+			$logU->description= "Updated a priest: <a href=/mopccss/index.php?r=priest/view&id=". $model->id . ">" . $model->PFullName . "</a>";
+			$logU->dateTime= date('Y-m-d H:i:s');
+			
 			if($model->save() && $logU->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

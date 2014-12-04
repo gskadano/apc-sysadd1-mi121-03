@@ -80,6 +80,9 @@ $this->menu=array(
 <?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/update.png" align="right"/>', 
 array('marGodparent/update', 'id'=>$row->id)); ?>
 
+<?php echo CHtml::link('<img src="' . Yii::app()->request->baseUrl . '/images/delete.png" align="right"/>',
+	'#', array('submit'=>array('marGodparent/delete','id'=>$row->id),'confirm' => 'Are you sure you want to delete?'));?> 
+
 <?php $this->widget ('zii.widgets.CdetailView', array(
         'data'=>$row,
         'attributes'=>array(

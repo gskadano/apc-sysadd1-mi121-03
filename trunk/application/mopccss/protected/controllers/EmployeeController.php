@@ -38,7 +38,7 @@ class EmployeeController extends Controller
 					((Yii::app()->user->type==="Admin"))'		//------------------------------------
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin'),
+				'actions'=>array('create','update','admin',),
 				/*'user'=>array('admin'),*/
 				'users'=>array('@'),
 				'expression'=>'isset(Yii::app()->user->type) && 
@@ -81,15 +81,15 @@ class EmployeeController extends Controller
 		if(isset($_POST['Employee']))
 		{
 			$model->attributes=$_POST['Employee'];
-			
-			//logs
-			$logC=new Logs;
-			$logC->employee_id= Yii::app()->user->id;
-			$logC->description= "Employee <a href=/mopccss/index.php?r=employee/view&id=". $model->id . ">" . $model->FullName . "</a> has been created ";
-			$logC->dateTime= date('Y-m-d H:i:s');
-			
 
-			if($model->save() && $logC->save()){
+			if($model->save()){
+				//logs
+				$logC=new Logs;
+				$logC->employee_id= Yii::app()->user->id;
+				$logC->description= "Created an employee: <a href=/mopccss/index.php?r=employee/view&id=". $model->id . ">" . $model->FullName . "</a> has been hired";
+				$logC->dateTime= date('Y-m-d H:i:s');
+				$logC->save();
+				
 				$this->redirect(array('view','id'=>$model->id));
 			}
 		}
@@ -115,7 +115,7 @@ class EmployeeController extends Controller
 			//logs
 			$logU=new Logs;
 			$logU->employee_id= Yii::app()->user->id;
-			$logU->description= "Created an employee: <a href=/mopccss/index.php?r=employee/view&id=". $model->id . ">" . $model->id . "</a>". $model->FullName ." information.";
+			$logU->description= "Updated an employee information: <a href=/mopccss/index.php?r=employee/view&id=". $model->id . ">" . $model->FullName . "</a>";
 			$logU->dateTime= date('Y-m-d H:i:s');
 
 		if(isset($_POST['Employee']))
