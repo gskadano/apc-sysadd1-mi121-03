@@ -8,12 +8,12 @@
 		if ($detect->isMobile() ) {
                    
  ?>
-<b><h1 style="font-size: 100px">About</h1></b>
+<center><b><h1 style="font-size: 100px">About</h1></b></center>
 
-<img src="http://directory.ucanews.com/uploads/images/1357896339.jpg" alt="mop logo" width="250" height="250">
-<b><h1>Military Ordinariate of the Philippines Profile</h1></b>
+<center><img src="https://lh3.googleusercontent.com/-E1_8yurOKgU/VGLlYOERueI/AAAAAAAAAEk/5A734tQ47as/s250-no/logo.png" alt="mop logo" width="250" height="250"></
+    <b><h1 style="font-size:60px ">Military Ordinariate of the Philippines Profile</h1></b>
 
-<p>The Military Ordinariate of the Philippines or MOP is a personal
+<p style="font-size:35px ">The Military Ordinariate of the Philippines or MOP is a personal
     diocese of men and women in uniform or for the different branch of service.
     The said branch of service includes the Armed Forces of the Philippines (A.F.P.),
     Philippine National Police (P.N.P.), Bureau of Jail Management and Penology (B.J.M.P.),
@@ -22,8 +22,8 @@
 </br>
 
 <img src="http://www.alconphils.com/wp-content/uploads/2014/02/afp.jpg" alt="afp logo" width="250" height="250">
-<h1>Armed Forces of the Philippines (AFP)</h1> 
-<p>This branch of the government is 
+<h1 style="font-size:60px ">Armed Forces of the Philippines (AFP)</h1> 
+<p style="font-size:35px">This branch of the government is 
     dependent to the Military Ordinariate of 
     the Philippines as its own diocese. Also,
     it is one of the main branches of service 
@@ -38,8 +38,8 @@
 </br>
 
 <img src="http://2.bp.blogspot.com/-6cOTG_P3w7Y/T27eRz7U-_I/AAAAAAAAAtw/hOTgWhgry5w/s1600/logo+pnp+3.png" alt="pnp logo" width="250" height="250">
-<h1>Philippine National Police (PNP)</h1> 
-<p>This is the civilian national police force of the Philippines that 
+<h1 style="font-size:60px ">Philippine National Police (PNP)</h1> 
+<p style="font-size:35px ">This is the civilian national police force of the Philippines that 
 aims to protect civilians and enforce the law. PNP is also part of 
 the main dependent organization of the Military Ordinariate of the Philippines.
 All of the personal files of these men including their Baptism, Confirmation and
@@ -50,8 +50,8 @@ of the Philippines.</p>
 
 
 <img src="http://globalnation.inquirer.net/files/2013/01/pcg-logo.jpg" alt="pcg logo" width="250" height="250">	
-<h1>Philippine Coast Guard</h1> 
-<p>This government organization provides armed and uniformed service and also 
+<h1 style="font-size:60px ">Philippine Coast Guard</h1> 
+<p style="font-size:35px ">This government organization provides armed and uniformed service and also 
 enforces law within Philippine waters. As one of the main branch of the Military
 Ordinariate of the Philippines it is also one of the main dependent branch of 
 government that needs the service of MOP when it comes to the storage of Baptism,
@@ -60,8 +60,8 @@ Confirmation and Wedding Certificates which are all important files.</p>
 </br>
 
 <img src="https://lh4.googleusercontent.com/-CzpDKCdcBJ0/TrjtsqxZcFI/AAAAAAAAAKc/SSWFcxGcLZQ/s400/bfp%252520logo.jpg" alt="bfp logo" width="250" height="250">
-<h1>Bureau Fire Protection</h1> 
-<p>Is an agency of the Department of Interior and Local Government (DILG) 
+<h1 style="font-size:60px ">Bureau Fire Protection</h1> 
+<p style="font-size:35px ">Is an agency of the Department of Interior and Local Government (DILG) 
 responsible for implementing national policies related to Firefighting 
 and Protection as well as implementation of the Philippine Fire Code (PD 1185),
 which was repealed and replaced by the New Fire Code of the Philippines (RA 9514).
@@ -71,8 +71,8 @@ of the administration and management of municipal and city fire and emergency se
 </br>
 
 <img src="<img src="https://lh4.googleusercontent.com/-CzpDKCdcBJ0/TrjtsqxZcFI/AAAAAAAAAKc/SSWFcxGcLZQ/s400/bfp%252520logo.jpg" alt="bjmp logo" width="250" height="250">
-<h1>Bureau of Jail and Management Penology</h1> 
-<p>is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to jail management and penology. 
+<h1 style="font-size:60px ">Bureau of Jail and Management Penology</h1> 
+<p style="font-size:35px ">is an agency of the Department of Interior and Local Government (DILG) responsible for implementing national policies related to jail management and penology. 
 Formerly known as the Constabulary Jail Bureau, the BJMP is in charge of prisoner handling and management of municipal and city jails all over the country.</p>
 </br>
 </br>
