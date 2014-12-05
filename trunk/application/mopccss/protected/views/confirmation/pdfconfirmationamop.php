@@ -149,7 +149,7 @@ $this->menu=array(
         </td>
         <td>
             <div style="font-size:16px;color:#000000;font-family:Times New Roman; text-align:right;">
-               <?php echo "Most Reverend ".$model->employee->FullName ; ?> 
+               <?php echo "Most Reverend ".$model->conf_priest; ?> 
             </div>
         </td>
     </tr>   
@@ -165,12 +165,11 @@ $this->menu=array(
             <?php if (count($en) !== 0){?>
             <?php foreach ($en as $row) { ?>
             <div style="font-size:16px;color:#000000;font-family:Times New Roman; text-align:right;">
-               <?php echo $row->person->FullName ; ?> 
+               <?php echo $row->conf_godparentname ; ?> 
             </div>
+			<?php }} ?>
         </td>
-    </tr>   
-    
-    <?php }} ?>
+    </tr>       
     
     <tr>
          <td>

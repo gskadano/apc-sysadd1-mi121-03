@@ -167,17 +167,16 @@ $this->menu=array(
             <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Principal Sponsor/s:</b>
             </div>
         </td>
-        <td>
+		<td>
             <?php $en=BapGodparent::model()->findAll('baptismal_id = :a', array(':a'=>$model->id));?>
             <?php if (count($en) !== 0){?>
             <?php foreach ($en as $row) { ?>
-            <div style="font-size:16px;color:#000000;font-family:Times New Roman; text-align:right;">
-               <?php echo $row->person->FullName . " " ; ?> 
-            </div>
+			<div style="font-size:16px;color:#000000;font-family:Times New Roman; text-align:right;">
+				<?php echo $row->bap_godparentname . " " ; ?> </br>
+			</div>
+			<?php }} ?>
         </td>
     </tr>   
-    
-    <?php }} ?>
     
     <tr>
          <td>

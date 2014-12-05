@@ -43,7 +43,7 @@ and <?php echo $model->bride->p_mother . " ," . $model->bride->p_address;?>
             <?php if (count($en) !== 0){?>
             <?php foreach ($en as $row) { ?>
            
-               <?php echo $row->person->FullName ; ?> 
+               <?php echo $row->mar_godparentname ; ?> 
             
         <?php }} ?>
 
