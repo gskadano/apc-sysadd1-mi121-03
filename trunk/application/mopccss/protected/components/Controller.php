@@ -15,6 +15,7 @@ class Controller extends CController
 	 */
 	public $menu=array();
 	public $cert=array();
+	public $certlist=array();
 	/**
 	 * @var array the breadcrumbs of the current page. The value of this property will
 	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}

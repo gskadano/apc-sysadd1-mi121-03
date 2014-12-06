@@ -522,7 +522,14 @@ a:hover {
 )); ?>
 
 	<div class="sky-form">
-		<div class="sky-form fieldset" style="padding:20px 20px 20px 20px; color:blue;">		
+		<div class="sky-form fieldset" style="padding:20px 20px 20px 20px; color:blue;">
+		
+			<?php if(Yii::app()->user->hasFlash('message')): ?>
+				<div class="flash-success">
+					<?php echo '<span style="color:red;text-align:center;font-weight:bold">' . Yii::app()->user->getFlash('message') . '</span>'; ?>
+				</div>
+			<?php endif; ?>
+			
 			<p class="note">Fields with <span class="required">*</span> are required.</p>
 			<div class="section">
 				<div class="form">

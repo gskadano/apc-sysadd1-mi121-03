@@ -20,6 +20,160 @@ $this->cert=array(
 	array('label'=>'Create Confirmation', 'url'=>array('confirmation/create', 'person_id'=>$model->id)),
 	array('label'=>'Create marriage', 'url'=>'#', 'linkOptions'=>array('onclick'=>'$("#mydialog").dialog("open"); return false;')),
 );
+
+$this->certlist=array(
+	array('label'=>'Get Certificates', 'url'=>'#', 'linkOptions'=>array('onclick'=>'$("#getcertficate").dialog("open"); return false;')),
+);
+?>
+
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-ui/jquery-ui.css" />
+<?php
+//Baptismal ID
+$sql=Baptismal::model()->findAll('person_id=:parent_id',array(':parent_id'=>$model->id));
+$data=CHtml::listData($sql,'id','id');
+foreach($data as $value=>$name)
+{
+	$bapID = $value;
+}
+//Confirmation ID
+$sql=Confirmation::model()->findAll('person_id=:parent_id',array(':parent_id'=>$model->id));
+$data=CHtml::listData($sql,'id','id');
+foreach($data as $value=>$name)
+{
+	$confID = $value;
+}
+//Marriage ID
+$sql=Marriage::model()->findAll('bride_id=:bride OR groom_id=:groom',array(':bride'=>$model->id, ':groom'=>$model->id));
+$data=CHtml::listData($sql,'id','id');
+foreach($data as $value=>$name)
+{
+	$marID = $value;
+}
+
+$bapsql=Baptismal::model()->findAll('person_id=:parent_id',array(':parent_id'=>$model->id));
+$confsql=Confirmation::model()->findAll('person_id=:parent_id',array(':parent_id'=>$model->id));
+$marsql=Marriage::model()->findAll('bride_id=:bride OR groom_id=:groom',array(':bride'=>$model->id, ':groom'=>$model->id));
+
+if(count($bapsql)==0&&count($confsql)==0&&count($marsql)==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+		),
+	));
+	echo "No available certificates";
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}else if(count($bapsql)!==0&&count($confsql)==0&&count($marsql)==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+			'buttons' => array(
+				array('text'=>'Baptismal Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('baptismal/view',array('id'=>$bapID)).'"}'),
+			),
+		),
+	));
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}else if(count($bapsql)!==0&&count($confsql)!==0&&count($marsql)==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+			'buttons' => array(
+				array('text'=>'Baptismal Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('baptismal/view',array('id'=>$bapID)).'"}'),
+				array('text'=>'Confirmation Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('confirmation/view',array('id'=>$confID)).'"}'),
+			),
+		),
+	));
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}else if(count($bapsql)!==0&&count($confsql)!==0&&count($marsql)!==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+			'buttons' => array(
+				array('text'=>'Baptismal Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('baptismal/view',array('id'=>$bapID)).'"}'),
+				array('text'=>'Confirmation Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('confirmation/view',array('id'=>$confID)).'"}'),
+				array('text'=>'Marriage Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('marriage/view',array('id'=>$marID)).'"}'),
+			),
+		),
+	));
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}else if(count($bapsql)==0&&count($confsql)!==0&&count($marsql)==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+			'buttons' => array(
+				array('text'=>'Confirmation Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('confirmation/view',array('id'=>$confID)).'"}'),
+			),
+		),
+	));
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}else if(count($bapsql)==0&&count($confsql)!==0&&count($marsql)!==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+			'buttons' => array(
+				array('text'=>'Confirmation Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('confirmation/view',array('id'=>$confID)).'"}'),
+				array('text'=>'Marriage Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('marriage/view',array('id'=>$marID)).'"}'),
+			),
+		),
+	));
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}else if(count($bapsql)!==0&&count($confsql)==0&&count($marsql)!==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+			'buttons' => array(
+				array('text'=>'Baptismal Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('baptismal/view',array('id'=>$bapID)).'"}'),
+				array('text'=>'Marriage Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('marriage/view',array('id'=>$marID)).'"}'),
+			),
+		),
+	));
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}else if(count($bapsql)==0&&count($confsql)==0&&count($marsql)!==0){
+	$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+		'id'=>'getcertficate',
+		// additional javascript options for the dialog plugin
+		'options'=>array(
+			'title'=>'Certificates Available',
+			'autoOpen'=>false,
+			'buttons' => array(
+				array('text'=>'Marriage Certificate','click'=> 'js:function(){window.location = "'
+					.$this->createUrl('marriage/view',array('id'=>$marID)).'"}'),
+			),
+		),
+	));
+	$this->endWidget('zii.widgets.jui.CJuiDialog');
+}
 ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-ui/jquery-ui.css" />
@@ -38,11 +192,8 @@ if($model->p_gender=="Female"){
 			),
 		),
 	));
-		if($model->p_gender=="Male"){
-			echo 'Create marriage certificate or add bride?';
-		}else if($model->p_gender=="Female"){
-			echo 'Create marriage certificate or add groom?';
-		}
+	
+	echo 'Create marriage certificate or add groom?';
 
 	$this->endWidget('zii.widgets.jui.CJuiDialog');
 }else if($model->p_gender=="Male"){
@@ -59,11 +210,8 @@ if($model->p_gender=="Female"){
 			),
 		),
 	));
-		if($model->p_gender=="Male"){
-			echo 'Create marriage certificate or add bride?';
-		}else if($model->p_gender=="Female"){
-			echo 'Create marriage certificate or add groom?';
-		}
+	
+	echo 'Create marriage certificate or add bride?';
 
 	$this->endWidget('zii.widgets.jui.CJuiDialog');
 }

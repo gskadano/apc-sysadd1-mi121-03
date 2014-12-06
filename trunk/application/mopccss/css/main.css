@@ -331,3 +331,42 @@ div.search-form
     padding-left:5px;
     border-left:10px #3c9438 solid;
 }
+
+.certList
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.certList li
+{
+	padding-bottom: 2px;
+}
+
+.certList li a
+{
+	font: bold 12px Arial;
+	color: #0066A4;
+	display: block;
+	padding: 2px 0 2px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.certList li a:visited
+{
+	color: #0066A4;
+}
+
+.certList li a:hover
+{
+	background: #80CFFF;
+	color:#3c9438;
+    transition: all 0.1s;
+    -moz-transition: all 0.1s; /* Firefox 4 */
+    -webkit-transition: all 0.1s; /* Safari and Chrome */
+    -o-transition: all 0.1s; /* Opera */
+    padding-left:5px;
+    border-left:10px #3c9438 solid;
+}

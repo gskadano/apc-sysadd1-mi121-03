@@ -61,18 +61,30 @@ class LoginForm extends CFormModel
 	 */
 	public function login()
 	{
-		if($this->_identity===null)
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			$this->_identity->authenticate();
+		$sql=Employee::model()->findAll('emp_username=:parent_id',array(':parent_id'=>$this->username));
+		$data=CHtml::listData($sql,'emp_retireDate','emp_retireDate');
+		foreach($data as $value=>$name){
+			$retire = $value;
 		}
-		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
-		{
-			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
-			Yii::app()->user->login($this->_identity,$duration);
-			return true;
+		if(count($sql)!==0){
+			//if($retire==null){
+			if(strtotime($retire) > strtotime(date('Y-m-d')) || $retire==null){
+				if($this->_identity===null)
+				{
+					$this->_identity=new UserIdentity($this->username,$this->password);
+					$this->_identity->authenticate();
+				}
+				if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+				{
+					$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+					Yii::app()->user->login($this->_identity,$duration);
+					return true;
+				}
+				else
+					return false;
+			}else{
+				Yii::app()->user->setFlash('message','Employee is already retired or has resigned.');
+			}
 		}
-		else
-			return false;
 	}
 }

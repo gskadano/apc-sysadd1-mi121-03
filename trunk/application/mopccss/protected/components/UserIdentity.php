@@ -42,14 +42,15 @@ class UserIdentity extends CUserIdentity
 		if ($user === null){	
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		}else if ($user->emp_password !== hash_hmac('sha256', $this->password, 
-		Yii::app()->params['encryptionKey'])){
+			Yii::app()->params['encryptionKey'])){
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
- 		}else{
+		}else{
 			$this->errorCode=self::ERROR_NONE;
 			$this->setState('type', $user->emp_usertype);
 			$this->_id = $user->id;
 		}
- 		return !$this->errorCode;
+		return !$this->errorCode;
+		
 	}
 	
 	public function getId(){

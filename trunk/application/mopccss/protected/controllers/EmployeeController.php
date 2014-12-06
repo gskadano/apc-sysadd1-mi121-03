@@ -152,7 +152,9 @@ class EmployeeController extends Controller
 			if($e->errorInfo[1] == 1451) {
 				header("HTTP/1.0 400 Relation Restriction");
 				//echo "Cannot delete employee! Refer to date of retirement.\n";
-				if($this->loadModel($id)->emp_retireDate != 0000-00-00){
+				//if($this->loadModel($id)->emp_retireDate != 0000-00-00){
+				$retireDate=$this->loadModel($id)->emp_retireDate;
+				if($this->loadModel($id)->emp_retireDate > strtotime(date('Y-m-d'))){
 					$this->redirect(array('employee/view','id'=>$id,
 						'error'=>'Cannot delete employee! It has created a record already. Refer to date of retirement.'));
 				}else{
