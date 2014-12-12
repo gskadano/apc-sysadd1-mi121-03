@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2014 at 07:44 AM
+-- Generation Time: Dec 12, 2014 at 01:29 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -41,14 +41,16 @@ CREATE TABLE IF NOT EXISTS `baptismal` (
   PRIMARY KEY (`id`),
   KEY `fk_baptismal_Employee1_idx` (`Employee_id`),
   KEY `fk_baptismal_client1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `baptismal`
 --
 
 INSERT INTO `baptismal` (`id`, `bap_bapDate`, `bap_priest`, `bap_church`, `bap_churchAdd`, `Employee_id`, `person_id`, `bap_bkno`, `bap_series`, `bap_pageno`, `bap_lineno`) VALUES
-(14, '1995-11-10', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay City', 1, 23, '009', '1995', '2', '1');
+(14, '1995-11-10', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay City', 1, 23, '009', '1995', '2', '1'),
+(15, '2014-12-05', 'Fr. Ross Pelayo', 'Shrine of Saint Therese of the Child Jesus', 'Pasay City', 1, 24, '200', '1996', '2', '2'),
+(16, '1996-12-11', 'Fr. Harley Flores', 'Shrine of Saint Therese of the Child Jesus', 'Pasay City', 3, 25, '200', '1996', '20', '2');
 
 -- --------------------------------------------------------
 
@@ -62,14 +64,16 @@ CREATE TABLE IF NOT EXISTS `bap_godparent` (
   `bap_godparentname` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_bapGodParent_baptismal1_idx` (`baptismal_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `bap_godparent`
 --
 
 INSERT INTO `bap_godparent` (`id`, `baptismal_id`, `bap_godparentname`) VALUES
-(23, 14, 'Mark Joshua Ronquillo');
+(23, 14, 'Mark Joshua Ronquillo'),
+(24, 14, 'John Emmanuel Tero'),
+(26, 16, 'Mark Anthony Andes');
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `church` (
   `ch_pic` longblob NOT NULL,
   `fileType` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `church`
@@ -115,14 +119,15 @@ CREATE TABLE IF NOT EXISTS `confirmation` (
   PRIMARY KEY (`id`),
   KEY `fk_confirmation_Employee1_idx` (`Employee_id`),
   KEY `fk_confirmation_person1_idx` (`person_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `confirmation`
 --
 
 INSERT INTO `confirmation` (`id`, `conf_confDate`, `conf_bapChurch`, `conf_bapAdd`, `conf_church`, `conf_priest`, `Employee_id`, `person_id`, `conf_bkno`, `conf_series`, `conf_lineno`, `conf_pageno`) VALUES
-(6, '2009-12-11', '', '', 'Shrine of Saint Therese of the Child Jesus', 'Fr. Harley Flores', 1, 23, '010', '1996', '3', '6');
+(6, '2009-12-11', '', '', 'Shrine of Saint Therese of the Child Jesus', 'Fr. Harley Flores', 1, 23, '010', '1996', '3', '6'),
+(7, '2014-12-04', '', '', 'Shrine of Saint Therese of the Child Jesus', 'Fr. Harley Flores', 2, 25, '060', '1996', '2', '2');
 
 -- --------------------------------------------------------
 
@@ -136,14 +141,16 @@ CREATE TABLE IF NOT EXISTS `conf_godparent` (
   `conf_godparentname` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_confGodParent_confirmation1_idx` (`confirmation_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `conf_godparent`
 --
 
 INSERT INTO `conf_godparent` (`id`, `confirmation_id`, `conf_godparentname`) VALUES
-(6, 6, 'Meynard Denoyo');
+(6, 6, 'Meynard Denoyo'),
+(7, 6, 'John Emmanuel Tero'),
+(8, 7, 'John Emmanuel Tero');
 
 -- --------------------------------------------------------
 
@@ -165,14 +172,16 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `church_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_Employee_church1_idx` (`church_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`id`, `emp_username`, `emp_password`, `emp_usertype`, `emp_fname`, `emp_lname`, `emp_email`, `emp_hireDate`, `emp_retireDate`, `emp_chapAssign`, `church_id`) VALUES
-(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', 'gskadano@gmail.com', '2012-12-04', NULL, 'MOP Chancery', 1);
+(1, 'gskadano', 'f48c9fe366f3c3f58ea9b18eb9724f1f01c6ab9390fb3c045d8e6690e1ee4761', 'Admin', 'Gene Anthony', 'Kadano', 'gskadano@gmail.com', '2012-12-04', NULL, 'MOP Chancery', 1),
+(2, 'mdronquillo', '75f3735825c0b6565a8afa3252277e3de30093611a2254e2efa8d2ad5be366ad', 'Regular', 'Mark Joshua', 'Ronquillo', 'mdronquillo@gmail.com', '2014-12-01', '2014-12-05', 'MOP Chancery', 1),
+(3, 'mrdenoyo', '28eea55060a66eb9ce46e7319841dc57fbf622a1ddec4bcc640ded32c096b415', 'Regular', 'Meynard', 'Denoyo', 'mrdenoyo@gmail.com', '2014-12-05', '2014-12-12', 'MOP Chancery', 1);
 
 -- --------------------------------------------------------
 
@@ -191,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `jqcalendar` (
   `Color` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `RecurringRule` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -206,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `dateTime` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_logs_employee1_idx` (`employee_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=90 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=102 ;
 
 --
 -- Dumping data for table `logs`
@@ -218,7 +227,19 @@ INSERT INTO `logs` (`id`, `employee_id`, `description`, `dateTime`) VALUES
 (86, 1, 'Created baptismal certificate : Baptismal of <a href=/mopccss/index.php?r=baptismal/view&id=14>Andes, Mark Anthony </a>', '2014-12-04 06:41:23'),
 (87, 1, 'Created confirmation certificate : Confirmation of <a href=/mopccss/index.php?r=confirmation/view&id=6>Andes, Mark Anthony </a>', '2014-12-04 06:56:27'),
 (88, 1, 'Created a person: <a href=/mopccss/index.php?r=person/view&id=24>Ferrer, Christine Joy </a>', '2014-12-04 06:58:59'),
-(89, 1, 'Created marriage certificate : Marriage of <a href=/mopccss/index.php?r=marriage/view&id=7>Ferrer, Christine Joy </a> and <a href=/mopccss/index.php?r=marriage/view&id=7>Andes, Mark Anthony </a>', '2014-12-04 07:11:14');
+(89, 1, 'Created marriage certificate : Marriage of <a href=/mopccss/index.php?r=marriage/view&id=7>Ferrer, Christine Joy </a> and <a href=/mopccss/index.php?r=marriage/view&id=7>Andes, Mark Anthony </a>', '2014-12-04 07:11:14'),
+(90, 1, 'Created a person: <a href=/mopccss/index.php?r=person/view&id=25>Flores, Jerica </a>', '2014-12-04 10:32:10'),
+(91, 1, 'Created baptismal certificate : Baptismal of <a href=/mopccss/index.php?r=baptismal/view&id=15>Ferrer, Christine Joy </a>', '2014-12-05 12:51:09'),
+(92, 1, 'Created an employee: <a href=/mopccss/index.php?r=employee/view&id=2>Ronquillo, Mark Joshua</a> has been hired', '2014-12-05 13:59:17'),
+(93, 1, 'Created an employee: <a href=/mopccss/index.php?r=employee/view&id=3>Denoyo, Meynard</a> has been hired', '2014-12-05 20:34:22'),
+(94, 1, 'Updated an employee information: <a href=/mopccss/index.php?r=employee/view&id=3>Denoyo, Meynard</a>', '2014-12-05 20:38:42'),
+(95, 1, 'Updated an employee information: <a href=/mopccss/index.php?r=employee/view&id=3>Denoyo, Meynard</a>', '2014-12-05 20:39:28'),
+(96, 1, 'Updated an employee information: <a href=/mopccss/index.php?r=employee/view&id=3>Denoyo, Meynard</a>', '2014-12-05 20:39:37'),
+(97, 3, 'Created baptismal certificate : Baptismal of <a href=/mopccss/index.php?r=baptismal/view&id=16>Flores, Jerica </a>', '2014-12-05 20:40:45'),
+(98, 1, 'Updated an employee information: <a href=/mopccss/index.php?r=employee/view&id=2>Ronquillo, Mark Joshua</a>', '2014-12-05 20:48:12'),
+(99, 1, 'Created confirmation certificate : Confirmation of <a href=/mopccss/index.php?r=confirmation/view&id=7>Flores, Jerica </a>', '2014-12-05 20:48:51'),
+(100, 2, 'Updated confirmation certificate : Confirmation of <a href=/mopccss/index.php?r=confirmation/view&id=7>Flores, Jerica </a>', '2014-12-05 20:49:28'),
+(101, 1, 'Updated an employee information: <a href=/mopccss/index.php?r=employee/view&id=2>Ronquillo, Mark Joshua</a>', '2014-12-05 20:49:55');
 
 -- --------------------------------------------------------
 
@@ -292,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `person` (
   `p_mother` varchar(100) NOT NULL,
   `ccertificate` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `person`
@@ -300,7 +321,8 @@ CREATE TABLE IF NOT EXISTS `person` (
 
 INSERT INTO `person` (`id`, `p_fname`, `p_middlename`, `p_lname`, `p_dateOfBirth`, `p_placeOfBirth`, `p_address`, `p_dateOfDeath`, `p_gender`, `p_father`, `p_mother`, `ccertificate`) VALUES
 (23, 'Mark Anthony', '', 'Andes', '1995-10-20', '', '', '0000-00-00', 'Male', 'Antonio Andes Sr.', 'Miriam Andes', ''),
-(24, 'Christine Joy', '', 'Ferrer', '1996-11-18', '', '', '0000-00-00', 'Female', 'Willie Ferrer', 'Ernestine Ferrer', '');
+(24, 'Christine Joy', '', 'Ferrer', '1996-11-18', '', '', '0000-00-00', 'Female', 'Willie Ferrer', 'Ernestine Ferrer', ''),
+(25, 'Jerica', '', 'Flores', '1996-06-12', '', '', '0000-00-00', 'Female', 'Roel Flores', 'Emily Flores', '');
 
 -- --------------------------------------------------------
 
