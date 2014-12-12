@@ -120,6 +120,11 @@ if(isset($_GET['error'])){
 			Church::model()->findAll(), 'id', 'ch_name'),
 			array('prompt' => 'Select a Church')
 			); ?>
+		<!--<?php $this->widget('ext.select2.ESelect2',array(
+			'model'=>$model,
+			'attribute'=>'church_id',
+			'data'=>CHtml::listData(Church::model()->findAll(), 'id', 'ch_name'),
+		)); ?>-->
 		<?php echo $form->error($model,'church_id'); ?>
 	</div>
 
