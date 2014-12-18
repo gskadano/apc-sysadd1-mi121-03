@@ -68,7 +68,7 @@ class LoginForm extends CFormModel
 		}
 		if(count($sql)!==0){
 			//if($retire==null){
-			if(strtotime($retire) > strtotime(date('Y-m-d')) || $retire==null){
+			if(strtotime($retire) > strtotime(date('Y-m-d')) || $retire==null || $retire=="0000-00-00"){
 				if($this->_identity===null)
 				{
 					$this->_identity=new UserIdentity($this->username,$this->password);
